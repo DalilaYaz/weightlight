@@ -5,9 +5,12 @@
     padding-left: 10% ;
     margin: 0 auto;
 }
-#formSign #signImg{
+#formSign{
     flex-grow: 1;
 }
-#signImg{
+#divSignImg{
+    flex-grow: 1; 
+}
+#imgSignUp{
     width: 45%;
 }

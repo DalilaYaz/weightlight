@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utilities.css">
 </head>
 <body>
     <p>Bienvenue sur <h2 class="mainLogo"><span id="green">Weight</span><span id="orange">Light</span></h2>, Inscrivez vous.</p>
@@ -40,8 +40,8 @@
 
             <p>Déjà inscrit ?</p><a href="./login.php">Connectez-vous</a><br>
         </div>
-        <div class="flex">
-            <img id="signImg" src="./images/home/diet.png" alt="" srcset="">
+        <div id="divSignImg">
+            <img id="imgSignUp"  src="./images/home/diet.png" alt="" srcset="">
         </div>
     </div>
 </body>
