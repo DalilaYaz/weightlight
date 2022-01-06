@@ -1,16 +1,13 @@
-#conteneurSign{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 10% ;
-    margin: 0 auto;
+#conteneurSign {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10%;
+  margin: 0 auto;
 }
-#formSign{
-    flex-grow: 1;
+#formSign #signImg {
+  flex-grow: 1;
 }
-#divSignImg{
-    flex-grow: 1; 
-}
-#imgSignUp{
-    width: 45%;
+#signImg {
+  width: 45%;
 }
