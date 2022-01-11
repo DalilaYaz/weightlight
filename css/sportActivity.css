@@ -1,0 +1,72 @@
+body {
+  background-color: var(--clr-back);
+}
+
+p {
+  margin-top: 2rem;
+}
+
+.row {
+  display: flex;
+  /* flex-direction: space-evenly; */
+}
+
+.cards {
+  text-align: center;
+  width: 77%;
+  margin: auto;
+  padding-top: 2rem;
+}
+
+.cards .number {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  border-radius: 12%;
+  padding: 0.9rem;
+}
+
+.card1 {
+  background-color: var(--clr-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  text-align: center;
+  padding: 4rem;
+}
+
+.card2 {
+  background-color: var(--clr-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 2rem;
+}
+
+span {
+  font-weight: bold;
+}
+
+footer {
+  background-color: var(--clr-lightGreen);
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* BUTTON */
+
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.7rem 1.7rem;
+}
+
+.btnPrimary {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  /* width: 39%; */
+  font-weight: bold;
+}
+
+.btnPrimary:hover {
+  border: 2px solid var(--clr-green);
+  color: var(--clr-green);
+  background-color: var(--clr-white);
+}

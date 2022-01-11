@@ -1,0 +1,71 @@
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+img {
+  width: 440px;
+  height: 440px;
+}
+
+.desc1,
+.desc2 {
+  font-weight: bold;
+}
+
+.desc1 {
+  margin-bottom: 2rem;
+}
+
+.desc2 {
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: var(--clr-lightGreen);
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+/*=======================   FORM STYLES   ========================*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: none;
+  border-bottom: 3px solid var(--clr-green);
+  width: 89%;
+  outline: none;
+  padding: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.btnPrimary {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  width: 39%;
+  font-weight: bold;
+}
+
+.btnPrimary:hover {
+  border: 2px solid var(--clr-green);
+  color: var(--clr-green);
+  background-color: var(--clr-white);
+}

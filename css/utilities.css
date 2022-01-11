@@ -27,23 +27,6 @@ a {
   color: var(--clr-black);
 }
 
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 34px;
-}
-
-h3 {
-  font-size: 25px;
-}
-
-p {
-  line-height: 1.5;
-  font-size: 20px;
-}
-
 /*========= Navigation ===========*/
 
 ul {
@@ -55,10 +38,10 @@ nav a,
 header a {
   text-decoration: none;
   color: inherit;
-  font-size: 24px;
+  font-size: 15px;
   display: block;
   padding: 0.8rem;
-  text-transform: uppercase;
+
   font-weight: bold;
 }
 
@@ -74,17 +57,16 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.67rem;
+  padding: 0.8rem;
   background: linear-gradient(
     180deg,
     rgba(57, 173, 144, 0.27) 15.62%,
     rgba(57, 173, 144, 0.0432) 85.94%
   );
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
 }
 
 header .line {
-  min-height: 3vh;
+  min-height: 2vh;
   width: 100%;
   background-color: var(--clr-green);
 }
@@ -95,8 +77,15 @@ header .line {
 
 .green {
   color: var(--clr-green);
+  font-weight: bold;
+  font-style: italic;
 }
 
 .orange {
   color: var(--clr-orange);
+  font-weight: bold;
+  font-style: italic;
+}
+.mainLogo {
+  font-size: 24px;
 }

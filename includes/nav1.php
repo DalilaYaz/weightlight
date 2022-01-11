@@ -13,7 +13,7 @@
             </ul>
         </nav>
 
-        <a href="" id="logoutStyle"> se déconnecter</a>
+        <a href="" id="logoutStyle"> Se Déconnecter</a>
 
     </div>
 </header>

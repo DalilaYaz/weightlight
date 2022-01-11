@@ -1,0 +1,78 @@
+.flex {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 2rem;
+}
+
+.row {
+  display: flex;
+  /* justify-content: space-evenly; */
+}
+
+img {
+  width: 369px;
+}
+
+.desc1,
+.desc2 {
+  font-weight: bold;
+}
+
+.desc1 {
+  margin: 1rem 0 2.99rem 0;
+}
+
+.desc2 {
+  margin-top: 2rem;
+}
+
+footer {
+  background-color: var(--clr-lightGreen);
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/*=======================   FORM STYLES   ========================*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"] {
+  border: none;
+  border-bottom: 3px solid var(--clr-green);
+  width: 90%;
+  outline: none;
+  padding: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.field {
+  margin-bottom: 2rem;
+}
+
+.btnPrimary {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  width: 39%;
+  font-weight: bold;
+}
+
+.btnPrimary:hover {
+  border: 2px solid var(--clr-green);
+  color: var(--clr-green);
+  background-color: var(--clr-white);
+}

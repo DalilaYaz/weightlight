@@ -1,0 +1,56 @@
+body {
+  background-color: var(--clr-back);
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.row p {
+  margin-left: 1rem;
+}
+
+.underline {
+  border-bottom: 3px solid var(--clr-green);
+  width: 55%;
+  margin: auto;
+  margin-bottom: 2.78rem;
+}
+
+img {
+  width: 70px;
+  margin-bottom: 0.57rem;
+}
+
+.cards {
+  text-align: center;
+  width: 74%;
+  margin: auto;
+  padding: 2rem;
+}
+
+.card1 {
+  background-color: var(--clr-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  text-align: center;
+  padding: 4rem;
+}
+
+.card2 {
+  background-color: var(--clr-white);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  padding: 2rem;
+}
+
+.icons {
+  color: var(--clr-green);
+}
+
+.icons i + i {
+  margin-left: 0.34rem;
+}
+
+p {
+  font-weight: bold;
+}
