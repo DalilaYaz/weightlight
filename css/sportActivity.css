@@ -11,7 +11,7 @@ p {
   justify-content: space-between;
 }
 
-span:after {
+.linee:after {
   display: inline-block;
   content: "";
   border-top: 0.3rem solid black;
