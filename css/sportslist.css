@@ -1,0 +1,9 @@
+p{
+    background-color: yellow;
+}
+#conteneur{
+    display: flex;
+}
+#colGauche{
+    border: 1px solid black;
+}

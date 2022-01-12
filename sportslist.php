@@ -13,11 +13,19 @@
     <!-- utilities.css Représente le code css commun entre les pages -->
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sportslist.css">
     <title>WeightLight</title>
 </head>
 
 <body>
-
+    <div id="conteneur">
+        <div id="colGauche">
+            <p>coucou</p>
+        </div>
+        <div>
+            <img src="./images/sports/foot.png" alt="">
+        </div>
+    </div>
 </body>
 
 
