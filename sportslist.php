@@ -18,11 +18,36 @@
 </head>
 
 <body>
-    <div id="conteneur">
-        <div id="colGauche">
-            <p>coucou</p>
+    <div class="flex">
+        <div class="row">
+            <label for="sport-select">Activité sportif </label>
+
+            <select name="sports" id="sport-select">
+                <option value="">Nom de l'activité</option>
+                <option value="dog">Course à pieds</option>
+                <option value="cat">Football</option>
+                <option value="hamster">Basket-ball</option>
+                <option value="parrot">Natation</option>
+                <option value="spider">Cyclisme</option>
+                <option value="goldfish">Pêche</option>
+            </select> 
+            
+            <label for="duration-select">Duration </label>
+            <select name="duration" id="duration-select">
+                <option value="">Duration</option>
+                <option value="5m">5 minutes</option>
+                <option value="10m">10 minutes</option>
+                <option value="15m">15 minutes</option>
+                <option value="20m">20 minutes</option>
+                <option value="30m">30 minutes</option>
+                <option value="45m">45 minutes</option>
+                <option value="1h">1 heure</option>
+                <option value="2h">2 heures</option>
+                <option value="3h">3 heures</option>
+            </select> 
+            <button>Ajouter</button>
         </div>
-        <div>
+        <div class="row">
             <img src="./images/sports/foot.png" alt="">
         </div>
     </div>

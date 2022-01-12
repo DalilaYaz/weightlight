@@ -21,7 +21,7 @@
     <div class="cards">
 
         <div class="card1 row">
-            <div>
+            <div class="linee">
                 <span class="number">1</span>
                 <p>Activité <br> sportive</p>
             </div>
