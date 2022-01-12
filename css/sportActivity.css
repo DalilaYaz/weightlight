@@ -8,16 +8,7 @@ p {
 
 .row {
   display: flex;
-  justify-content: space-between;
-}
-
-span:after {
-  display: inline-block;
-  content: "";
-  border-top: 0.3rem solid black;
-  width: 4rem;
-  margin: 0 1rem;
-  transform: translateY(-1rem);
+  justify-content: space-around;
 }
 
 .cards {

@@ -19,6 +19,7 @@
 <body>
 
     <div class="cards">
+
         <div class="card1 row">
             <div>
                 <span class="number">1</span>
@@ -43,6 +44,7 @@
                 <button type="submit" class="btnPrimary" value="Suivant">Suivant</button>
             </form>
         </div>
+
     </div>
 </body>
 
