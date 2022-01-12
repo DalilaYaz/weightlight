@@ -25,9 +25,9 @@
                 <h2>Vivez votre régime dans <span class="green">l’harmonie</span>
                     et le <span class="orange">confort.</span></h2>
 
-                <button type="submit" class="btnPrimary" value="S'inscrire">S'inscrire</button>
+                <button type="submit" class="btnPrimary" value="S'inscrire"><a href="signup.php">S'inscrire</a></button>
 
-                <button type="submit" class="btnSecondary" value="Se Connecter">Se connecter</button>
+                <button type="submit" class="btnSecondary" value="Se Connecter"><a href="login.php">Se connecter</a></button>
             </div>
 
             <img src="images/home/main.jpg" alt="">
@@ -51,7 +51,7 @@
 
                 <div class="center">
                     <img src="images/home/fct2.png" alt="">
-                    <p>Meilleur traqueur <br> de calories</p>
+                    <p>Meilleur traqueur de calories</p>
                 </div>
 
                 <div>
