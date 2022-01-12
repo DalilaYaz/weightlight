@@ -8,7 +8,16 @@ p {
 
 .row {
   display: flex;
-  /* flex-direction: space-evenly; */
+  justify-content: space-between;
+}
+
+span:after {
+  display: inline-block;
+  content: "";
+  border-top: 0.3rem solid black;
+  width: 4rem;
+  margin: 0 1rem;
+  transform: translateY(-1rem);
 }
 
 .cards {
@@ -42,14 +51,6 @@ span {
   font-weight: bold;
 }
 
-footer {
-  background-color: var(--clr-lightGreen);
-  text-align: center;
-  font-weight: bold;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
 /* BUTTON */
 
 button {
@@ -57,11 +58,10 @@ button {
   border-radius: 4px;
   padding: 0.7rem 1.7rem;
 }
-
 .btnPrimary {
   background-color: var(--clr-green);
   color: var(--clr-white);
-  /* width: 39%; */
+
   font-weight: bold;
 }
 

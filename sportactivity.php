@@ -44,9 +44,6 @@
             </form>
         </div>
     </div>
-
-
-
 </body>
 
 <footer>WeightLight &copy 2022 - IUT Calais</footer>
