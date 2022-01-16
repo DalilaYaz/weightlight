@@ -3,10 +3,6 @@
   padding-bottom: 0;
 }
 
-/* a {
-  color: var(--clr-green);
-} */
-
 .row {
   display: flex;
   /* flex-wrap: wrap; */
@@ -97,4 +93,116 @@ button + button {
 .fonctionnalite .row {
   margin-top: 2rem;
   align-items: flex-end;
+}
+
+footer {
+  background-color: var(--clr-green);
+  text-align: center;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+/*==================  Testimonials ================*/
+
+.testimonials {
+  padding: 2.67rem;
+  text-align: center;
+}
+
+.testimonials i {
+  color: var(--clr-green);
+  margin-bottom: 0.89rem;
+}
+
+.testimonials .title {
+  color: var(--clr-green);
+}
+
+.testimonials h3 {
+  color: var(--clr-green);
+  margin-top: 0.89rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.88rem;
+  margin-top: 1rem;
+}
+
+.card {
+  border: 2px solid var(--clr-green);
+  border-radius: 23px;
+  padding: 1rem;
+}
+
+/*==================  NewsLetters  ================*/
+
+.newsletter {
+  padding: 3.88rem;
+  background-color: var(--clr-lightGreen);
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.newsletter h2 {
+  color: var(--clr-white);
+}
+
+.newsletter .desc {
+  margin-top: 1rem;
+}
+
+.newsletter i {
+  color: var(--clr-green);
+  margin-right: 0.78rem;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 35px;
+}
+
+.rightCol {
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  margin-bottom: 0.89rem;
+}
+
+input[type="text"],
+input[type="email"] {
+  border: none;
+  border-radius: 28px;
+  width: 85%;
+  outline: none;
+  padding: 17px;
+}
+
+::placeholder {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+button {
+  border: none;
+  border-radius: 25px;
+  padding: 13px;
+  font-size: 14px;
+  margin-top: 1.55rem;
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+}
+
+footer {
+  background-color: var(--clr-green);
+  padding: 1rem;
+  color: var(--clr-white);
 }

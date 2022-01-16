@@ -12,21 +12,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <!-- utilities.css Représente le code css commun entre les pages -->
     <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/homeuser.css">
     <title>WeightLight</title>
 </head>
 
 <body>
-    <div>
-        <div>
+    <main>
+        <div class="headerInfo">
+            <div class="greenBlock flex">
+                <h3>Hi, Daniel Commandant ! Voici votre résumé quotidien</h3>
+                <span>11/01/2022</span>
+            </div>
+
+            <div class="flex">
+                <div>
+                    <p class="image"> Charger une photo</p>
+                    <div class="flex">
+                        <p class="weight">Poids : 60Kg </p>
+                        <i class="fas fa-edit"></i>
+                    </div>
+
+                </div>
+
+                <div>
+                    <p>Nombre de Repas :</p>
+                    <p>Nombre de Repas :</p>
+                    <p>Nombre de Repas :</p>
+                </div>
+                <div>
+                    <p>Nombre de Repas :</p>
+                    <p>Nombre de Repas :</p>
+                    <p>Nombre de Repas :</p>
+                </div>
+            </div>
+
 
         </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+        <img src="images/home/chart.png" class="chartImg" alt="">
+    </main>
+
+
 </body>
 
 

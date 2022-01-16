@@ -18,6 +18,8 @@
 
 <body>
 
+    <!-- ================== ShowCase ===================== -->
+
     <section class="showCase">
 
         <div class="row">
@@ -35,7 +37,7 @@
 
     </section>
 
-
+    <!-- ================== Fonctionnality ===================== -->
 
     <section class="fonctionnalite">
 
@@ -67,11 +69,78 @@
 
 
         </div>
+    </section>
 
+    <!-- ================== ShowCase ===================== -->
+
+    <section class="testimonials">
+        <h2 class="title">Avis de Nos Clients</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus, id ullam maxime quasi repellat nostrum natus, architecto accusamus, eaque porro tempora optio? Ipsum, doloremque animi sint enim a molestiae.</p>
+                <h3 class="avisName">Lorem - Lorem</h3>
+            </div>
+
+            <div class="card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus, id ullam maxime quasi repellat nostrum natus, architecto accusamus, eaque porro tempora optio? Ipsum, doloremque animi sint enim a molestiae.</p>
+                <h3 class="avisName">Lorem - Lorem</h3>
+            </div>
+
+            <div class="card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus, id ullam maxime quasi repellat nostrum natus, architecto accusamus, eaque porro tempora optio? Ipsum, doloremque animi sint enim a molestiae.</p>
+                <h3 class="avisName">Lorem - Lorem</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== NewsLetter ===================== -->
+
+
+    <section class="newsletter">
+
+        <div class="content">
+
+            <div class="leftCol">
+                <h2><i class="fas fa-paper-plane"></i>NewsLetter</h2>
+
+                <p class="desc">Inscrivez-vous et vous recevrez des informations sur les dernières mises à jour et nouvelles sur la plate-forme <span class="green"> weight</span><span class="orange">light.</span></p>
+            </div>
+
+            <div class="rightCol">
+                <input type="text" name="name" id="name" placeholder="Votre Nom">
+
+                <input type="email" name="email" id="email" placeholder="Votre Email Address">
+
+                <button type="submit" class="btn" value="Adhérer maintenant!">Adhérer maintenant!</button>
+
+            </div>
+
+        </div>
 
 
     </section>
 
+    <footer>
+        <p>WeightLight &copy; 2022 IUT CALAIS</p>
+    </footer>
 
 
 

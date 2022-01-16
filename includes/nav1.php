@@ -7,8 +7,8 @@
         <nav>
             <ul>
                 <li><a href="homeUser.php">Accueil</a></li>
-                <li><a href="meals.php">Nutrition</a></li>
-                <li><a href="mealProgram.php">Programme</a></li>
+                <li><a href="details.php">Nutrition</a></li>
+                <li><a href="meals.php">Programme</a></li>
                 <li><a href="sportsList.php">Sport</a></li>
             </ul>
         </nav>
