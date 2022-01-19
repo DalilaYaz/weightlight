@@ -84,7 +84,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p>Très bonne application. C'est facile à utiliser et cela m'a beaucoup aidé à suivre mon poids et ce que je mange pendant la journée. Merci pour ce travail incroyable.</p>
+                <p>Superbe application de suivi ! J'adore ! Peut être mettre un peu plus d'aliments qu'on puisse saisir. </p>
                 <h3 class="avisName">Ailee</h3>
             </div>
 
@@ -108,7 +108,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p>Très bonne application. C'est facile à utiliser et cela m'a beaucoup aidé à suivre mon poids et ce que je mange pendant la journée. Merci pour ce travail incroyable.</p>
+                <p>Bonne application dans l'ensemble, quelques problèmes et bogues à régler</p>
                 <h3 class="avisName">Albert</h3>
             </div>
         </div>
