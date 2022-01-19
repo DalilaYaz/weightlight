@@ -21,7 +21,7 @@
 
     <div class="main">
         <!-- DIV1 : INFO -->
-        <div class="row info">
+        <div class="rowTop info">
 
             <p class="textColor">Glisser pour déposez vos repas dans la liste <i class="fas fa-info-circle"></i> </p>
 

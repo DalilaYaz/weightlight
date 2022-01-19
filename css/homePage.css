@@ -126,7 +126,7 @@ footer {
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.88rem;
+  grid-gap: 3rem;
   margin-top: 1rem;
 }
 

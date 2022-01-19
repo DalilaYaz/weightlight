@@ -81,10 +81,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus, id ullam maxime quasi repellat nostrum natus, architecto accusamus, eaque porro tempora optio? Ipsum, doloremque animi sint enim a molestiae.</p>
-                <h3 class="avisName">Lorem - Lorem</h3>
+                <p>Très bonne application. C'est facile à utiliser et cela m'a beaucoup aidé à suivre mon poids et ce que je mange pendant la journée. Merci pour ce travail incroyable.</p>
+                <h3 class="avisName">Ailee</h3>
             </div>
 
             <div class="card">
@@ -93,9 +94,10 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                 </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus, id ullam maxime quasi repellat nostrum natus, architecto accusamus, eaque porro tempora optio? Ipsum, doloremque animi sint enim a molestiae.</p>
-                <h3 class="avisName">Lorem - Lorem</h3>
+                <p>Très bonne application. C'est facile à utiliser et cela m'a beaucoup aidé à suivre mon poids et ce que je mange pendant la journée. Merci pour ce travail incroyable.</p>
+                <h3 class="avisName">Natalie</h3>
             </div>
 
             <div class="card">
@@ -103,10 +105,11 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est doloribus, id ullam maxime quasi repellat nostrum natus, architecto accusamus, eaque porro tempora optio? Ipsum, doloremque animi sint enim a molestiae.</p>
-                <h3 class="avisName">Lorem - Lorem</h3>
+                <p>Très bonne application. C'est facile à utiliser et cela m'a beaucoup aidé à suivre mon poids et ce que je mange pendant la journée. Merci pour ce travail incroyable.</p>
+                <h3 class="avisName">Albert</h3>
             </div>
         </div>
     </section>

@@ -58,7 +58,7 @@
             <!-- PASSWORD -->
 
             <div class="field">
-                <label for="">Mot de pass</label> <br>
+                <label for="">Mot de passe</label> <br>
                 <input type="password" name="password" id="password">
             </div>
 
@@ -89,7 +89,6 @@
 
             <button type="submit" class="btnPrimary" value="S'inscrire">S'inscrire</button>
 
-            <!-- <p class="desc2"> Déja inscrit?<a href="signup.php"><span class="orange"> Connectez-vous.</span></a></p> -->
 
         </form>
 

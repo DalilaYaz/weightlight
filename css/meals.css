@@ -2,6 +2,11 @@
   padding: 0 3rem 0 3rem;
 }
 
+.rowtop {
+  display: flex;
+  justify-content: space-between;
+}
+
 .rowNav a {
   text-decoration: none;
 }
@@ -55,7 +60,7 @@ img {
   font-weight: bold;
 }
 
-.row {
+.rowmenu {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -111,7 +116,7 @@ input[type="search"] {
   border-radius: 10px;
 }
 
-.program .row {
+.program .rowmenu {
   align-items: flex-start;
 }
 
