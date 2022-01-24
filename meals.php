@@ -54,7 +54,7 @@
 
                     <div class="meals">
                         <!-- MEAL 1 -->
-                        <div class="meal">
+                        <div class="meal" draggable="true">
                             <img src="images/meals/balls.png" alt="">
                             <div class="mealInfo">
                                 <h3> Protein Balls</h3>
@@ -66,7 +66,7 @@
                             </div> -->
                         </div>
 
-                        <div class="meal">
+                        <div class="meal" draggable="true">
                             <img src="images/meals/snack.png" alt="">
                             <div class="mealInfo">
                                 <h3> Snickers sans Sucre Raffiné ni Beurre</h3>
@@ -78,7 +78,7 @@
                             </div> -->
                         </div>
 
-                        <div class="meal">
+                        <div class="meal" draggable="true">
                             <img src="images/meals/Rectangle 39.png" alt="">
                             <div class="mealInfo">
                                 <h3> Salade Niçoise</h3>
