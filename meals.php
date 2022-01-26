@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/meals.css">
+    <script type="text/javascript" src="./js/meals.js"></script>
     <title>WeightLight</title>
 </head>
 
@@ -52,10 +53,10 @@
 
                     <!-- PART 2 : MEALS -->
 
-                    <div class="meals">
+                    <div class="meals" ondragstart="start(event)">
                         <!-- MEAL 1 -->
                         <div class="meal" draggable="true">
-                            <img src="images/meals/balls.png" alt="">
+                            <img src="images/meals/balls.png" alt="" id="1" draggable="true">
                             <div class="mealInfo">
                                 <h3> Protein Balls</h3>
                                 <h4>150 calories</h4>
@@ -67,7 +68,7 @@
                         </div>
 
                         <div class="meal" draggable="true">
-                            <img src="images/meals/snack.png" alt="">
+                            <img src="images/meals/snack.png" alt=""id="2" draggable="true">
                             <div class="mealInfo">
                                 <h3> Snickers sans Sucre Raffiné ni Beurre</h3>
                                 <h4>135 calories</h4>
@@ -79,7 +80,7 @@
                         </div>
 
                         <div class="meal" draggable="true">
-                            <img src="images/meals/Rectangle 39.png" alt="">
+                            <img src="images/meals/Rectangle 39.png" alt="" id="3" draggable="true">
                             <div class="mealInfo">
                                 <h3> Salade Niçoise</h3>
                                 <h4>100 calories</h4>
@@ -91,7 +92,7 @@
                         </div>
 
                         <div class="meal">
-                            <img src="images/meals/soupe.png" alt="">
+                            <img src="images/meals/soupe.png" alt="" id="4" draggable="true">
                             <div class="mealInfo">
                                 <h3> Soupe au Lait de Coco </h3>
                                 <h4>115 calories</h4>
@@ -103,7 +104,7 @@
                         </div>
                         <!-- MEAL 2 -->
                         <div class="meal">
-                            <img src="images/meals/pasta (1).png" alt="">
+                            <img src="images/meals/pasta (1).png" alt="" id="5" draggable="true">
 
                             <div class="mealInfo">
                                 <h3> Pâtes à la crème
@@ -222,13 +223,13 @@
                                     <span>Petit <br> Déjeuner</span>
                                 </th>
 
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
                             </tr>
 
                             <tr>
@@ -236,13 +237,13 @@
                                 <th class="rotate">
                                     <span> Déjeuner</span>
                                 </th>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
                             </tr>
 
                             <tr>
@@ -251,13 +252,13 @@
                                     <span> Collation</span>
                                 </th>
 
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
                             </tr>
 
                             <tr>
@@ -267,13 +268,13 @@
                                     <span> Dîner</span>
                                 </th>
 
-                                <td><i class=<td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
-                                <td><i class="fas fa-cloud-upload-alt"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
+                                <td><i class="fas fa-cloud-upload-alt" ondragstart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)" onDragLeave="leave(event)"></i></td>
                             </tr>
 
                         </tbody>
