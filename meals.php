@@ -53,10 +53,10 @@
 
                     <!-- PART 2 : MEALS -->
 
-                    <div class="meals" ondragstart="start(event)">
+                    <div class="meals" ondragstart="start(event)" >
                         <!-- MEAL 1 -->
-                        <div class="meal" draggable="true">
-                            <img src="images/meals/balls.png" alt="" id="1" draggable="true">
+                        <div class="meal" id="1" draggable="true">
+                            <img src="images/meals/balls.png" alt="" >
                             <div class="mealInfo">
                                 <h3> Protein Balls</h3>
                                 <h4>150 calories</h4>
@@ -67,8 +67,8 @@
                             </div> -->
                         </div>
 
-                        <div class="meal" draggable="true">
-                            <img src="images/meals/snack.png" alt=""id="2" draggable="true">
+                        <div class="meal" id="2" draggable="true">
+                            <img src="images/meals/snack.png" alt="">
                             <div class="mealInfo">
                                 <h3> Snickers sans Sucre Raffiné ni Beurre</h3>
                                 <h4>135 calories</h4>
@@ -79,8 +79,8 @@
                             </div> -->
                         </div>
 
-                        <div class="meal" draggable="true">
-                            <img src="images/meals/Rectangle 39.png" alt="" id="3" draggable="true">
+                        <div class="meal" id="3" draggable="true" >
+                            <img src="images/meals/Rectangle 39.png" alt="" >
                             <div class="mealInfo">
                                 <h3> Salade Niçoise</h3>
                                 <h4>100 calories</h4>
@@ -91,8 +91,8 @@
                             </div> -->
                         </div>
 
-                        <div class="meal">
-                            <img src="images/meals/soupe.png" alt="" id="4" draggable="true">
+                        <div class="meal" id="4" draggable="true">
+                            <img src="images/meals/soupe.png" alt="" >
                             <div class="mealInfo">
                                 <h3> Soupe au Lait de Coco </h3>
                                 <h4>115 calories</h4>
@@ -103,8 +103,8 @@
                             </div> -->
                         </div>
                         <!-- MEAL 2 -->
-                        <div class="meal">
-                            <img src="images/meals/pasta (1).png" alt="" id="5" draggable="true">
+                        <div class="meal" id="5" draggable="true">
+                            <img src="images/meals/pasta (1).png" alt="" >
 
                             <div class="mealInfo">
                                 <h3> Pâtes à la crème
