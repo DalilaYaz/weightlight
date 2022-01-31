@@ -18,7 +18,19 @@
 
 <body>
 
+<?php
 
+require_once("class/class_bdd.php");
+
+$server = "localhost";
+$DBName = "weightlight";
+$user = "root";
+$pass = "";
+
+$objBDD = new bdd($server, $DBName, $user, $pass);
+$objLog = new log("./log/log.txt");
+$objLog->writeLog("Connexion vers la base de donnée");
+?>
     <div class="flex">
 
         <form action="" method="">
@@ -34,19 +46,45 @@
                 <input type="password" name="password" id="password" placeholder="Saisir votre mot de pass">
             </div>
 
-            <button type="submit" class="btnPrimary" value="Se Connecter">Se Connecter</button>
+            <button type="submit" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>
 
-            <p class="desc2"> Nouveau utilisateur?<a href="signup.php"><span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></a></p>
+            <p class="desc2"> Nouveau utilisateur ?<a href="signup.php"><span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></a></p>
 
         </form>
 
         <img src="images/home/lifestyle.jpg" alt="">
 
     </div>
+    <?php
+    session_start();
+
+    if (isset($_POST['email']) && isset($_POST['password'])) {
+
+    // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
+    // pour éliminer toute attaque de type injection SQL et XSS
+
+    if ($_POST['email'] !== "" && $_POST['password'] !== "") {
+        $array = array($_POST['email'], $_POST['password']);
+        $requete = "SELECT idUser As nb FROM utilisateur where email = ? and password = ? ";
+        $res = $objBDD->select($requete, $array);
+        
+        if ($res[0]->nb != 0) // nom d'utilisateur et mot de passe correctes
+        {
+            $_SESSION['idUser'] = $res[0]->nb;
+            header('Location: homeuser.php?id_user='.$res[0]->nb);
+            $objLog->writeLog("Connexion réussie de l'utilisateur<br>");
+        } else {
+            header('Location: index.php?erreur=1'); // utilisateur ou mot de passe incorrect
+            $objLog->writeLog("Erreur de saisie de login ou mot de passe<br>");
+        }
+    } else {
+        header('Location: index.php?erreur=2'); // utilisateur ou mot de passe vide
+        $objLog->writeLog("Erreur login ou mot de passe vide<br>");
+    }
+}
 
 
-
-
+?>
 </body>
 
 <footer>WeightLight &copy 2022 - IUT Calais</footer>
