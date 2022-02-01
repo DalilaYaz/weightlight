@@ -2,12 +2,12 @@
 
 class BDD
 {
-    private $conn;
-    private $dbname;
     private $host;
+    private $dbname;
     private $user;
-
+    private $conn;
     // Constructor
+    
     public function __construct($host, $dbname, $username,  $pass)
     {
         try {

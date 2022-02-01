@@ -72,11 +72,11 @@ class User
 
     public function connectUser($email, $password, $db): string
     {
-        $role = "";
+        $role="";
         $password = md5($password);
 
 
-        $sql = "SELECT * FROM utilisateur WHERE  email='$email' AND password='$password'";
+        $sql = "SELECT * FROM utilisateur WHERE email='$email' AND password='$password'";
 
 
         $result = $db->getCon()->query($sql);
@@ -86,9 +86,10 @@ class User
             $row = $result->fetch(PDO::FETCH_ASSOC);
 
             $_SESSION['id'] = $row['idUser'];
-            $id = $row['id'];
+            $_SESSION['userRole'] = $row['userRole'];
+            $role = $row['userRole'];
         }
-        return $id;
+        return $role;
     }
 
     public function disconnectUser(): bool
