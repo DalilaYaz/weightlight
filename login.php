@@ -13,7 +13,7 @@
     <!-- utilities.css Représente le code css commun entre les pages -->
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/login.css">
-    <title>WeightLight</title>
+    <title>Connexion</title>
 </head>
 
 <body>
@@ -67,7 +67,7 @@
             <button type="submit" name="submit" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>
 
             
-            <p class="desc2"> Nouveau utilisateur ?<a href="signup.php"><span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></a></p>
+            <p class="desc2"> Nouveau utilisateur ?<span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></p>
 
         </form>
 

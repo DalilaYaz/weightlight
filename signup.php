@@ -6,14 +6,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inscription</title>
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/signup.css">
 
 </head>
 
 <body>
+    <?php require_once 'class/BDD.php' ?>
+    <?php require_once 'class/User.php' ?>
 
+    <?php
+    session_start();
+
+    if ($_SESSION['userRole'] != 'admin') {
+
+        header("Location: login.php");
+    }
+    $db = new BDD('localhost', 'weightlight', 'root', '');
+    $user = new User();
+    if (isset($_POST['submit'])) {
+        $_POST['role'] = 'normal';
+        $set = $user->set($_POST);
+        if ($set) {
+            $res = $user->addUser($db);
+            if ($res) {
+                $sucMsg = "User Added Successfully";
+            } else {
+                $sucMsg = "Failed to Add user";
+            }
+        }
+    }
+    ?>
 
     <div class="flex">
 
@@ -38,12 +62,12 @@
 
             <div class="field row">
                 <div>
-                    <label for="weight">Poids</label>
+                    <label for="weight">Poids ( kg )</label>
                     <input type="number" name="weight" id="weight">
                 </div>
 
                 <div>
-                    <label for="height">Taille</label>
+                    <label for="height">Taille ( cm )</label>
                     <input type="number" name="height" id="height">
                 </div>
             </div>
@@ -69,7 +93,6 @@
                 <input type="date" name="birthday" id="birthday">
             </div>
 
-
             <!-- SEXE
 
             <div class="row field">
@@ -89,7 +112,7 @@
 
             <button type="submit" class="btnPrimary" value="S'inscrire">S'inscrire</button>
 
-
+            <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange">Connectez-vous.</a></span></a></p>
         </form>
 
         <!-- ILLUSTRATION -->

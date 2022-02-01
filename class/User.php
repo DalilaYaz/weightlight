@@ -52,15 +52,19 @@ class User
     public function addUser($db): bool
 
     {
-        $sql = "INSERT INTO utilisateur(userName, lastName, email, password, userRole) 
-        VALUES (:userName,:lastName,:email,:password,:userRole)";
+        $sql = "INSERT INTO utilisateur(nomUt, prenomUt,email, password, userRole, poids, taille,sexe,dateNaiss) 
+        VALUES (:lastName,:userName,:email,:password,'membre',:weight,:height,'homme',:dateNaiss)";
 
         $stmt = $db->getCon()->prepare($sql);
-        $stmt->bindValue(':userName', $this->userName);
         $stmt->bindValue(':lastName', $this->lastName);
+        $stmt->bindValue(':userName', $this->userName);
         $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':password', md5($this->password));
-        $stmt->bindValue(':userRole', $this->role);
+        //$stmt->bindValue(':userRole', $this->role);
+        $stmt->bindValue(':weight', $this->weight);
+        $stmt->bindValue(':height', $this->height);
+        //$stmt->bindValue(':sexe', $this->sexe);
+        $stmt->bindValue(':dateNaiss', $this->dateNaiss);
 
 
         if ($stmt->execute()) {
