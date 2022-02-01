@@ -87,6 +87,11 @@ header .line {
   font-weight: bold;
   font-style: italic;
 }
-.mainLogo {
-  font-size: 24px;
+
+/*========== Mobile Styles ===========*/
+
+@media screen and (max-width: 870px) {
+  .mainLogo {
+    font-size: 12px;
+  }
 }

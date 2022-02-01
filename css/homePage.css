@@ -206,3 +206,14 @@ footer {
   padding: 1rem;
   color: var(--clr-white);
 }
+
+/*===============  Mobile ===============*/
+
+@media screen and (max-width: 740px) {
+  h2 {
+    font-size: 12px;
+  }
+  .fonctionnalite .row {
+    flex-direction: column;
+  }
+}

@@ -39,7 +39,7 @@
 
         <div class="program">
 
-            <div class="row">
+            <div class="rowProgram">
                 <!--=================== LEFT COL ====================-->
                 <div class="leftCol">
                     <!-- PART 1 : INFO -->
@@ -53,18 +53,15 @@
 
                     <!-- PART 2 : MEALS -->
 
-                    <div class="meals" ondragstart="start(event)" >
+                    <div class="meals" ondragstart="start(event)">
                         <!-- MEAL 1 -->
                         <div class="meal" id="1" draggable="true">
-                            <img src="images/meals/balls.png" alt="" >
+                            <img src="images/meals/balls.png" alt="">
                             <div class="mealInfo">
                                 <h3> Protein Balls</h3>
                                 <h4>150 calories</h4>
                             </div>
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash" class="trash"></i>
-                            </div> -->
+
                         </div>
 
                         <div class="meal" id="2" draggable="true">
@@ -73,38 +70,29 @@
                                 <h3> Snickers sans Sucre Raffiné ni Beurre</h3>
                                 <h4>135 calories</h4>
                             </div>
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash" class="trash"></i>
-                            </div> -->
+
                         </div>
 
-                        <div class="meal" id="3" draggable="true" >
-                            <img src="images/meals/Rectangle 39.png" alt="" >
+                        <div class="meal" id="3" draggable="true">
+                            <img src="images/meals/Rectangle 39.png" alt="">
                             <div class="mealInfo">
                                 <h3> Salade Niçoise</h3>
                                 <h4>100 calories</h4>
                             </div>
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash" class="trash"></i>
-                            </div> -->
+
                         </div>
 
                         <div class="meal" id="4" draggable="true">
-                            <img src="images/meals/soupe.png" alt="" >
+                            <img src="images/meals/soupe.png" alt="">
                             <div class="mealInfo">
                                 <h3> Soupe au Lait de Coco </h3>
                                 <h4>115 calories</h4>
                             </div>
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash" class="trash"></i>
-                            </div> -->
+
                         </div>
                         <!-- MEAL 2 -->
                         <div class="meal" id="5" draggable="true">
-                            <img src="images/meals/pasta (1).png" alt="" >
+                            <img src="images/meals/pasta (1).png" alt="">
 
                             <div class="mealInfo">
                                 <h3> Pâtes à la crème
@@ -112,10 +100,7 @@
                                 <h4>200 calories</h4>
                             </div>
 
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash"></i>
-                            </div> -->
+
                         </div>
 
                         <div class="meal">
@@ -126,10 +111,7 @@
                                 <h4>150 calories</h4>
                             </div>
 
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash"></i>
-                            </div> -->
+
                         </div>
                         <!-- MEAL 3 -->
 
@@ -139,10 +121,7 @@
                                 <h3>Filet de saumon avec riz</h3>
                                 <h4>270 calories</h4>
                             </div>
-                            <!-- <div class="icons">
-                                <i class="fas fa-pen"></i>
-                                <i class="fas fa-trash"></i>
-                            </div> -->
+
                         </div>
                         <!-- MEAL 4 -->
 

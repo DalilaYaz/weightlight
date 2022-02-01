@@ -22,7 +22,7 @@
     <div class="flex">
 
         <form action="" method="">
-            <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
+            <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>, Connectez vous !</p>
 
             <div class="field">
                 <label for="email">Email</label> <br>

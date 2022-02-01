@@ -24,7 +24,7 @@
 
         <div class="row">
             <div>
-                <h2>Vivez votre régime dans <span class="green">l’harmonie</span>
+                <h2 class="quote">Vivez votre régime dans <span class="green">l’harmonie</span>
                     et le <span class="orange">confort.</span></h2>
 
                 <button type="submit" class="btnPrimary" value="S'inscrire"><a href="signup.php">S'inscrire</a></button>
