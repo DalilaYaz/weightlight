@@ -22,8 +22,7 @@
     <?php require_once 'class/User.php' ?>
     <?php require_once 'class/Log.php' ?>
 
-    <?php
-    session_start();
+    <?php session_start();
     $db = new BDD('localhost', 'weightlight', 'root', '');
     $user = new User();
     $Log = new log("logDirect.txt");
@@ -39,7 +38,7 @@
         } else if ($res === 'normal') {
             header("Location: homeuser.php");
         } else {
-            $error = "Invalid Credentials";
+            $error = "Login ou mot de passe incorrect";
         }
     }
     ?>

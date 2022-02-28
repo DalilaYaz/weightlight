@@ -76,7 +76,7 @@ class User
 
     public function connectUser($email, $password, $db): string
     {
-        $role="";
+        $role = "";
         $password = md5($password);
 
 

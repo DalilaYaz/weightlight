@@ -15,19 +15,27 @@
 <body>
     <?php require_once 'class/BDD.php' ?>
     <?php require_once 'class/User.php' ?>
+    <?php require_once 'class/Log.php' ?>
+    <?php session_start();
 
-    <?php
-    session_start();
-
-    if ($_SESSION['userRole'] != 'admin') {
-
-        header("Location: login.php");
-    }
     $db = new BDD('localhost', 'weightlight', 'root', '');
     $user = new User();
+    $Log = new log("logDirect.txt");
+
     if (isset($_POST['submit'])) {
-        $_POST['role'] = 'normal';
-        $set = $user->set($_POST);
+        $_POST['role'] = 'membre';
+        $array = array();
+        $firstname = htmlspecialchars($_POST['firstname']);
+        $lastname = htmlspecialchars($_POST['lastname']);
+        $weight = htmlspecialchars($_POST['weight']);
+        $height = htmlspecialchars($_POST['height']);
+        $email = htmlspecialchars($_POST['email']);
+        $password = htmlspecialchars($_POST['password']);
+        $birthday = htmlspecialchars($_POST['birthday']);
+
+        array_push($array, $firstname,$lastname,$weight,$height,$email,$password,$birthday);
+        /*
+        $set = $user->set($array);
         if ($set) {
             $res = $user->addUser($db);
             if ($res) {
@@ -35,8 +43,9 @@
             } else {
                 $sucMsg = "Failed to Add user";
             }
-        }
-    }
+      }
+     
+    */}
     ?>
 
     <div class="flex">
@@ -124,43 +133,5 @@
 </body>
 
 <footer>WeightLight &copy 2022 - IUT Calais</footer>
-
-</html>
-
-
-<!-- <label for=""><b>Prenom</b></label><br>
-            <input type="text" name="" id=""><br>
-
-            <label for=""><b>Nom</b></label><br>
-            <input type="text" name="" id=""><br>
-
-            <label for=""><b>Email</b></label><br>
-            <input type="text" name="" id=""><br>
-
-            <label for=""><b>Mot de passe</b></label><br>
-            <input type="text" name="" id=""><br>
-
-            <label for=""><b>Sexe</b></label><br>
-            <input type="radio" name="Sexe" id="SexeChoice1">
-            <label for="SexeChoice1">Féminin</label>
-            <input type="radio" name="Sexe" id="SexeChoice2">
-            <label for="SexeChoice2">Masculin</label>
-            <input type="radio" name="Sexe" id="SexeChoice3">
-            <label for="SexeChoice3">Autre</label> <br>
-
-            <label for=""><b>Poids</b></label><br>
-            <input type="text" name="" id=""><br>
-            <label for=""><b>Taille</b></label><br>
-            <input type="text" name="" id=""><br>
-            <label for=""><b>Date de naissance</b></label><br>
-            <input type="text" name="" id=""><br>
-            <input type="button" value="Créer en compte"><br>
-
-            <p>Déjà inscrit ?</p><a href="./login.php">Connectez-vous</a><br>
-        </div>
-        <img id="signImg" src="./images/home/diet.png" alt="" srcset="">
-
-
-</body>
 
 </html>
