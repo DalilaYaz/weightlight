@@ -88,6 +88,49 @@ header .line {
   font-style: italic;
 }
 
+footer {
+  background-color: var(--clr-green);
+  color: var(--clr-white);
+  padding: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer h3 {
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 2rem;
+  color: #ffc04d;
+}
+.footerRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+footer p {
+  margin-bottom: 0.78rem;
+}
+
+.sitemap ul {
+  display: block;
+}
+
+.sitemap li {
+  margin-bottom: 0.78rem;
+}
+
+.socialMedia {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialMedia i {
+  color: #fff;
+  font-size: 28px;
+  margin-bottom: 0.78rem;
+}
+
 /*========== Mobile Styles ===========*/
 
 @media screen and (max-width: 870px) {

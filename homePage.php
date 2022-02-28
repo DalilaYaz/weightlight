@@ -13,7 +13,7 @@
     <!-- utilities.css Représente le code css commun entre les pages -->
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/homePage.css">
-    <title>WeightLight</title>
+    <title>WeightLight - Page d'Accueil</title>
 </head>
 
 <body>
@@ -21,27 +21,21 @@
     <!-- ================== ShowCase ===================== -->
 
     <section class="showCase">
-
         <div class="row">
             <div>
                 <h2 class="quote">Vivez votre régime dans <span class="green">l’harmonie</span>
                     et le <span class="orange">confort.</span></h2>
 
                 <button type="submit" class="btnPrimary" value="S'inscrire"><a href="signup.php">S'inscrire</a></button>
-
                 <button type="submit" class="btnSecondary" value="Se Connecter"><a href="login.php">Se connecter</a></button>
             </div>
-
             <img src="images/home/main.jpg" alt="">
         </div>
-
     </section>
 
     <!-- ================== Fonctionnality ===================== -->
 
     <section class="fonctionnalite">
-
-
         <div>
             <h2>Fonctionnalités de WeightLight</h2>
 
@@ -57,17 +51,10 @@
                 </div>
 
                 <div>
-                    <img src="images/home/fact3.png" alt="">
-                    <p>Régime alimentaire</p>
-                </div>
-
-                <div>
                     <img src="images/home/fact4.png" class="" alt="">
                     <p>Programme de repas</p>
                 </div>
             </div>
-
-
         </div>
     </section>
 
@@ -141,11 +128,7 @@
 
     </section>
 
-    <footer>
-        <p>WeightLight &copy; 2022 IUT CALAIS</p>
-    </footer>
-
-
+    <?php require_once 'includes/footer.php' ?>
 
 </body>
 

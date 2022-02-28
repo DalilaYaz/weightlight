@@ -2,7 +2,10 @@
 
     <div class="line"></div>
     <div class="rowmenu rowNav">
-        <h1 class="mainLogo"><span class="green">Weight</span><span class="orange">Light</span></h1>
+
+        <a href="homePage.php">
+            <h1 class="mainLogo"><span class="green">Weight</span><span class="orange">Light</span></h1>
+        </a>
 
         <nav>
             <ul>
