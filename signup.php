@@ -45,6 +45,9 @@
                 $sucMsg = "Failed to Add user";
             }
         }
+        else{
+            $sucMsg = "Failed to Set User";
+        }
     }
     ?>
 
@@ -119,6 +122,9 @@
 
             <!-- BUTTON S'INSCRIRE -->
             <button type="submit" class="btnPrimary" value="S'inscrire">S'inscrire</button>
+            <?php if (isset($sucMsg)) {
+                echo $sucMsg;
+            } ?>
         </form>
         <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange">Connectez-vous.</a></span></a></p>
 
