@@ -33,8 +33,9 @@
         $password = htmlspecialchars($_POST['password']);
         $birthday = htmlspecialchars($_POST['birthday']);
 
-        array_push($array, $firstname,$lastname,$weight,$height,$email,$password,$birthday);
-        /*
+        array_push($array, $firstname, $lastname, $weight, $height, $email, $password, $birthday);
+
+
         $set = $user->set($array);
         if ($set) {
             $res = $user->addUser($db);
@@ -43,14 +44,13 @@
             } else {
                 $sucMsg = "Failed to Add user";
             }
-      }
-     
-    */}
+        }
+    }
     ?>
 
     <div class="flex">
 
-        <form action="" method="">
+        <form action="" method="POST">
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>, Inscrivez-vous !</p>
 
             <!-- NOM ET PRENOM -->
@@ -118,11 +118,10 @@
             </div> -->
 
             <!-- BUTTON S'INSCRIRE -->
-
             <button type="submit" class="btnPrimary" value="S'inscrire">S'inscrire</button>
-
-            <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange">Connectez-vous.</a></span></a></p>
         </form>
+        <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange">Connectez-vous.</a></span></a></p>
+
 
         <!-- ILLUSTRATION -->
 
