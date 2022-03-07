@@ -93,13 +93,7 @@ button + button {
 .fonctionnalite .row {
   margin-top: 2rem;
   align-items: flex-end;
-}
-
-footer {
-  background-color: var(--clr-green);
-  text-align: center;
-  font-weight: bold;
-  padding: 1rem;
+  flex-wrap: wrap;
 }
 
 /*==================  Testimonials ================*/
@@ -201,8 +195,22 @@ button {
   color: var(--clr-white);
 }
 
-footer {
-  background-color: var(--clr-green);
-  padding: 1rem;
-  color: var(--clr-white);
+/*===============  Mobile ===============*/
+
+@media screen and (max-width: 740px) {
+  /* .row {
+    flex-direction: column;
+  } */
+
+  .quote {
+    font-size: 14px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+  .fonctionnalite img {
+    border-radius: 50%;
+    width: 200px;
+  }
 }

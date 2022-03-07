@@ -13,37 +13,19 @@
     <!-- utilities.css Représente le code css commun entre les pages -->
     <link rel="stylesheet" href="css/utilities.css">
     <link rel="stylesheet" href="css/login.css">
-    <title>WeightLight</title>
+    <title>Connexion</title>
 </head>
 
 <body>
 
     <?php require_once 'class/BDD.php' ?>
-    <?php // require_once 'class/Task.php' 
-    ?>
     <?php require_once 'class/User.php' ?>
     <?php require_once 'class/Log.php' ?>
 
-
-    <?php
-    session_start();
+    <?php session_start();
     $db = new BDD('localhost', 'weightlight', 'root', '');
-
     $user = new User();
     $Log = new log("logDirect.txt");
-
-    try {
-
-        log::directWritelog("logDirect.txt", "log1", 1, "INFO");
-
-        throw new Exception('Connexion  échoué.');
-        log::directWritelog("logDirect.txt", "log1", 3, "ERROR");
-    } catch (Exception $e) {
-        log::directWritelog("logDirect.txt", "log2", 5, "CATCH ! " . $e);
-        log::directWritelog("logDirect.txt", "log3", 3, "ERROR");
-    } finally {
-        log::directWritelog("logDirect.txt", "log4", 3, "ERROR");
-    }
 
     if (isset($_POST['submit'])) {
         $email = $_POST['email'];
@@ -51,10 +33,12 @@
 
         $res = $user->connectUser($email, $password, $db);
 
-        if ($res != 0) {
+        if ($res === 'admin') {
+            header("Location: homeuser.php");
+        } else if ($res === 'normal') {
             header("Location: homeuser.php");
         } else {
-            $error = "Invalid Credentials";
+            $error = "Login ou mot de passe incorrect";
         }
     }
     ?>
@@ -62,9 +46,7 @@
     <div class="flex">
 
         <form action="" method="POST">
-            <?php if (isset($error)) {
-                echo $error;
-            } ?>
+
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
 
             <div class="field">
@@ -77,10 +59,14 @@
                 <input type="password" name="password" id="password" placeholder="Saisir votre mot de pass" required>
             </div>
 
-            <button type="submit" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>
+            <?php if (isset($error)) {
+                echo $error . "<br><br>";
+            } ?>
+
+            <button type="submit" name="submit" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>
 
 
-            <p class="desc2"> Nouveau utilisateur ?<a href="signup.php"><span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></a></p>
+            <p class="desc2"> Nouveau utilisateur ?<span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></p>
 
         </form>
 

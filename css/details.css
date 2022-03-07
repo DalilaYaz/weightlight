@@ -27,14 +27,14 @@ img {
   text-align: center;
   width: 74%;
   margin: auto;
-  padding: 2rem;
+  padding: 1.55rem;
 }
 
 .card1 {
   background-color: var(--clr-white);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   text-align: center;
-  padding: 4rem;
+  padding: 2.78rem;
 }
 
 .card2 {
@@ -51,7 +51,9 @@ img {
   margin-left: 0.34rem;
 }
 
-p {
+p.desc1,
+p.mealType {
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -114,4 +116,28 @@ p {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+/*===============     =================*/
+
+@media screen and (max-width: 870px) {
+  .cards {
+    width: 84%;
+  }
+  .card1 {
+    padding: 2rem;
+  }
+
+  p.mealType {
+    font-size: 12px;
+  }
+
+  img {
+    width: 55px;
+  }
+}
+
+@media screen and (max-width: 708px) {
+  p.mealType {
+    display: none;
+  }
 }

@@ -24,26 +24,13 @@
         <div class="card1">
             <p class="desc1">Votre journal alimentaire pour le : 02/02/2022</p>
 
-            <!-- <div class="row">
-                <div>
-                    <img src="" alt="">
-                </div>
-
-                <div class="row">
-                    <p>PETIT DÉJEUNER</p> <br>
-                    <p>DÉJEUNER</p>
-                    <p>COLLATION</p> <br>
-                    <p>DîNER</p>
-
-                </div>
-            </div> -->
         </div>
 
         <div class="card2">
             <div class="row underline">
                 <div class="row">
                     <img src="images/meals/breakfast.png" alt="">
-                    <p>PETIT <br> DÉJEUNER</p>
+                    <p class="mealType">PETIT <br> DÉJEUNER</p>
                 </div>
 
                 <div class="icons row">
@@ -79,7 +66,7 @@
             <div class="row underline">
                 <div class="row">
                     <img src="images/meals/lunch.png" alt="">
-                    <p>DÉJEUNER</p>
+                    <p class="mealType">DÉJEUNER</p>
                 </div>
 
                 <div class="icons row">
@@ -92,7 +79,7 @@
             <div class="row underline">
                 <div class="row">
                     <img src="images/meals/collation.png" alt="">
-                    <p>COLLATION</p>
+                    <p class="mealType">COLLATION</p>
                 </div>
 
                 <div class="icons row">
@@ -105,7 +92,7 @@
             <div class="row underline">
                 <div class="row">
                     <img src="images/meals/dinner.png" alt="">
-                    <p>DîNER</p>
+                    <p class="mealType">DîNER</p>
                 </div>
 
                 <div class="icons row">
@@ -118,8 +105,6 @@
 
 
         </div>
-
-
     </div>
 
 <script src="js/details.js"></script>
