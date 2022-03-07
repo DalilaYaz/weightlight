@@ -182,12 +182,12 @@ function genrateHTML(results) {
     </div> 
         `*/
         showINHTML += `
-        <div class="meal" id="5" draggable="true">
+        <div class="meal" draggable="true">
             <img src="images/meals/pasta (1).png" alt="">
 
                  <div class="mealInfo">
-                        <h3> Pâtes à la crème de Parmesan</h3>
-                        <h4>200 calories</h4>
+                        <h3>${result.recipe.label}</h3>
+                        <h4>Calories: ${result.recipe.calories.toFixed(2)}</h4>
                 </div>
                 
         </div>`
