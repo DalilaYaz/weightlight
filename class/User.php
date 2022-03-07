@@ -5,13 +5,16 @@
 class User
 {
     private  $id;
-    private  $userName;
-    private  $lastName;
+    private  $firstname;
+    private  $lastname;
     private $email;
     private $password;
     private  $role;
-
-
+    private $height;
+    private $weight;
+    private $sexe;
+    private $dateNaiss;
+    
     // Constructeur
     public function __construct()
     {
@@ -28,11 +31,11 @@ class User
         if (array_key_exists('id', $data)) {
             $this->id = $data['id'];
         }
-        if (array_key_exists('userName', $data)) {
-            $this->userName = $data['userName'];
+        if (array_key_exists('firstname', $data)) {
+            $this->firstname = $data['firstname'];
         }
-        if (array_key_exists('lastName', $data)) {
-            $this->lastName = $data['lastName'];
+        if (array_key_exists('lastname', $data)) {
+            $this->lastName = $data['lastname'];
         }
         if (array_key_exists('email', $data)) {
             $this->email = $data['email'];
@@ -40,38 +43,39 @@ class User
         if (array_key_exists('role', $data)) {
             $this->role = $data['role'];
         }
+        if (array_key_exists('weight', $data)) {
+            $this->weight = $data['weight'];
+        }
+        if (array_key_exists('height', $data)) {
+            $this->height = $data['height'];
+        }
         if (array_key_exists('password', $data)) {
             $this->password = $data['password'];
         }
-
+        
         return true;
     }
 
     //Functions
 
-    public function addUser($db): bool
+    public function addUser($db)
 
     {
-        $sql = "INSERT INTO utilisateur(nomUt, prenomUt,email, password, userRole, poids, taille,sexe,dateNaiss) 
-        VALUES (:lastName,:userName,:email,:password,'membre',:weight,:height,'homme',:dateNaiss)";
+        $sql = "INSERT INTO utilisateur(prenomUt, nomUt,email, password, userRole, poids, weight,height,dateNaiss) 
+        VALUES (:firstname,:lastname,:email,:password, :userRole,:weight,:height,:sexe,:dateNaiss)";
 
         $stmt = $db->getCon()->prepare($sql);
-        $stmt->bindValue(':lastName', $this->lastName);
-        $stmt->bindValue(':userName', $this->userName);
+        $stmt->bindValue(':firstname', $this->firstname);
+        $stmt->bindValue(':lastname', $this->lastname);
         $stmt->bindValue(':email', $this->email);
         $stmt->bindValue(':password', md5($this->password));
-        //$stmt->bindValue(':userRole', $this->role);
+        $stmt->bindValue(':userRole', $this->role);
         $stmt->bindValue(':weight', $this->weight);
         $stmt->bindValue(':height', $this->height);
-        //$stmt->bindValue(':sexe', $this->sexe);
+        $stmt->bindValue(':sexe', $this->sexe);
         $stmt->bindValue(':dateNaiss', $this->dateNaiss);
 
-
-        if ($stmt->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+        $stmt->execute();
     }
 
     public function connectUser($email, $password, $db): string
