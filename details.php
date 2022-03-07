@@ -18,9 +18,11 @@
 
 <body>
 
+
+
     <div class="cards">
         <div class="card1">
-            <p class="desc1">Votre journal alimentaire pour le : 06/01/2022</p>
+            <p class="desc1">Votre journal alimentaire pour le : 02/02/2022</p>
 
             <!-- <div class="row">
                 <div>
@@ -45,7 +47,29 @@
                 </div>
 
                 <div class="icons row">
-                    <i class="fas fa-info-circle"></i>
+
+
+                
+
+                  <!-- Trigger/Open The Modal -->
+                    <button id="myBtn"><i class="fas fa-info-circle"></i></button>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Some text in the Modal..Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+
+                    </div>
+
+
+
+
+
+                    
                     <i class="fas fa-plus-circle"></i>
                     <i class="fas fa-pen-square"></i>
                 </div>
@@ -97,6 +121,8 @@
 
 
     </div>
+
+<script src="js/details.js"></script>
 
 </body>
 
