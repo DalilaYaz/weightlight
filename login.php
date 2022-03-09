@@ -18,34 +18,9 @@
 
 <body>
 
-    <?php require_once 'class/BDD.php' ?>
-    <?php require_once 'class/User.php' ?>
-    <?php require_once 'class/Log.php' ?>
-
-    <?php session_start();
-    $db = new BDD('localhost', 'weightlight', 'root', '');
-    $user = new User();
-    $Log = new log("logDirect.txt");
-
-    if (isset($_POST['submit'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $res = $user->connectUser($email, $password, $db);
-
-        if ($res === 'admin') {
-            header("Location: homeuser.php");
-        } else if ($res === 'normal') {
-            header("Location: homeuser.php");
-        } else {
-            $error = "Login ou mot de passe incorrect";
-        }
-    }
-    ?>
-
     <div class="flex">
 
-        <form action="" method="POST">
+    <form action="index.php" method="post">
 
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
 

@@ -12,48 +12,11 @@
 
 </head>
 
-<body>
-    <?php require_once 'class/BDD.php' ?>
-    <?php require_once 'class/User.php' ?>
-    <?php require_once 'class/Log.php' ?>
-    <?php session_start();
-
-    $db = new BDD('localhost', 'weightlight', 'root', '');
-    $user = new User();
-    $Log = new log("logDirect.txt");
-
-    if (isset($_POST['submit'])) {
-        $_POST['role'] = 'membre';
-        $array = array();
-        $firstname = htmlspecialchars($_POST['firstname']);
-        $lastname = htmlspecialchars($_POST['lastname']);
-        $weight = htmlspecialchars($_POST['weight']);
-        $height = htmlspecialchars($_POST['height']);
-        $email = htmlspecialchars($_POST['email']);
-        $password = htmlspecialchars($_POST['password']);
-        $birthday = htmlspecialchars($_POST['birthday']);
-
-        array_push($array, $firstname, $lastname, $weight, $height, $email, $password, $birthday);
-
-
-        $set = $user->set($array);
-        if ($set) {
-            $res = $user->addUser($db);
-            if ($res) {
-                $sucMsg = "User Added Successfully";
-            } else {
-                $sucMsg = "Failed to Add user";
-            }
-        }
-        else{
-            $sucMsg = "Failed to Set User";
-        }
-    }
-    ?>
+<body>           
 
     <div class="flex">
 
-        <form action="" method="POST">
+    <form action=" " method="post">
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>, Inscrivez-vous !</p>
 
             <!-- NOM ET PRENOM -->

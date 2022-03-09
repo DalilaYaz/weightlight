@@ -48,10 +48,12 @@
 
 
         </div>
-        <img src="images/home/chart.png" class="chartImg" alt="">
+        
+            <canvas id="graph"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     </main>
 
-
+    <script src="js/homeUser.js"></script>
 </body>
 
 
