@@ -133,8 +133,16 @@ footer p {
 
 /*========== Mobile Styles ===========*/
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 670px) {
   .mainLogo {
-    font-size: 12px;
+    display: none;
+  }
+
+  img {
+    margin-top: 1.2rem;
+  }
+
+  .rowNav a {
+    display: none;
   }
 }

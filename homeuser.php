@@ -36,14 +36,15 @@
 
                 <div>
                     <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
+                    <p>Journée :</p>
+                    <p>Sport :</p>
                 </div>
 
                 <div>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
+                    <p>Petit-déjeuner :</p>
+                    <p>Collation Midi :</p>
+                    <p>Dîner :</p>
+                    <p>Totale de calories :</p>
                 </div>
             </div>
 

@@ -28,7 +28,7 @@ img {
   text-align: center;
   width: 74%;
   margin: auto;
-  padding: 1.55rem;
+  padding: 3rem;
 }
 
 .card1 {
@@ -42,14 +42,6 @@ img {
   background-color: var(--clr-white);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   padding: 2rem;
-}
-
-.icons {
-  color: var(--clr-green);
-}
-
-.icons i + i {
-  margin-left: 0.34rem;
 }
 
 p.desc1,
@@ -81,28 +73,32 @@ p.mealType {
 .fas {
   color: var(--clr-green);
 }
+.fa-pen-square:before,
+.fa-plus-circle:before {
+  margin-left: 0.56rem !important;
+}
 
 /*===============   Responsive  =================*/
 
-@media screen and (max-width: 870px) {
-  .cards {
-    width: 84%;
-  }
-  .card1 {
-    padding: 1rem;
-  }
-
+@media screen and (max-width: 670px) {
   p.mealType {
-    font-size: 12px;
+    display: none;
   }
 
   img {
-    width: 55px;
+    width: 50%;
   }
-}
 
-@media screen and (max-width: 708px) {
-  p.mealType {
-    display: none;
+  .card2 .card1 {
+    padding: 0.77rem !important;
+  }
+
+  .underline {
+    width: 80%;
+  }
+
+  .cards {
+    width: 84%;
+    padding: 0.78rem;
   }
 }

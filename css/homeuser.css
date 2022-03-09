@@ -54,18 +54,9 @@ i {
   cursor: pointer;
 }
 
-.chartImg {
-  width: 100%;
-  margin-top: 4rem;
-}
-
 .flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around !important;
   align-items: center;
   padding: 0.89rem;
-}
-
-.chart {
-  padding-top: 3rem;
 }
