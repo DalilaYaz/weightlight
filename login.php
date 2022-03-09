@@ -20,7 +20,7 @@
 
     <div class="flex">
 
-    <form action="index.php" method="post">
+        <form action="index.php" method="post">
 
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
 
@@ -51,6 +51,6 @@
 
 </body>
 
-<footer>WeightLight &copy 2022 - IUT Calais</footer>
+<!-- <footer>WeightLight &copy 2022 - IUT Calais</footer> -->
 
 </html>

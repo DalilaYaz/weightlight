@@ -12,11 +12,11 @@
 
 </head>
 
-<body>           
+<body>
 
     <div class="flex">
 
-    <form action=" " method="post">
+        <form action=" " method="post">
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>, Inscrivez-vous !</p>
 
             <!-- NOM ET PRENOM -->
@@ -24,12 +24,12 @@
             <div class="field row">
                 <div>
                     <label for="firstname">Prénom </label>
-                    <input type="text" name="firstname" required >
+                    <input type="text" name="firstname" required>
                 </div>
 
                 <div>
                     <label for="lastname">Nom</label>
-                    <input type="text" name="lastname" required >
+                    <input type="text" name="lastname" required>
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
             <!-- PASSWORD -->
 
             <div class="field">
-                <label for=password">Mot de passe</label> <br>
+                <label for="password">Mot de passe</label> <br>
                 <input type="password" name="password" required>
             </div>
 
@@ -68,28 +68,13 @@
                 <input type="date" name="birthday" required>
             </div>
 
-            <!-- SEXE
-
-            <div class="row field">
-                <label for="" class="sexLabel">Sexe</label>
-                <div>
-                    <input type="radio" name="Sexe" id="SexeChoice1">
-                    <label for="SexeChoice1">Féminin</label>
-                </div>
-
-                <div>
-                    <input type="radio" name="Sexe" id="SexeChoice2">
-                    <label for="SexeChoice2">Masculin</label>
-                </div>
-            </div> -->
-
             <!-- BUTTON S'INSCRIRE -->
             <button type="submit" class="btnPrimary" value="Sign Up" name="create">S'inscrire</button>
-            <?php if (isset($sucMsg)) {
-                echo $sucMsg;
-            } ?>
+
+
+            <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange"> Connectez-vous.</a></span></a></p>
         </form>
-        <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange">Connectez-vous.</a></span></a></p>
+
 
 
         <!-- ILLUSTRATION -->
@@ -100,6 +85,6 @@
 
 </body>
 
-<footer>WeightLight &copy 2022 - IUT Calais</footer>
+<!-- <footer>WeightLight &copy 2022 - IUT Calais</footer> -->
 
 </html>
