@@ -17,9 +17,12 @@ let myChart = new Chart(graph, {
                 'rgba(251, 226, 4, 1)',
                 'rgba(126, 243, 122, 1)',
             ],
+            
             borderWidth: 1
         }]
     },
+
+    
     options:{
       responsive: true,
       maintainAspectRatio: false,
