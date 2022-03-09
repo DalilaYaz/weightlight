@@ -71,8 +71,8 @@
             <!-- BUTTON S'INSCRIRE -->
             <button type="submit" class="btnPrimary" value="Sign Up" name="create">S'inscrire</button>
 
+            <p class="desc2"> Déjà inscrit? <span class="orange"> <a href="login.php" class="orange"> Connectez-vous.</a></span></p>
 
-            <p class="desc2"> Déjà inscrit ?<a href="login.php" class="orange"> Connectez-vous.</a></span></a></p>
         </form>
 
 

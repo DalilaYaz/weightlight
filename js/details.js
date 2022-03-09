@@ -23,6 +23,13 @@ let myChart = new Chart(graph, {
     options:{
       responsive: true,
       maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: true,
+          position: 'right',
+          fontSize : 50,
+        }
+      },
       title:{
         display: true,
         text:"Calories",

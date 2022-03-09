@@ -9,7 +9,7 @@ let myChart = new Chart(graph, {
         'Collation', 
         'Dîner'],
         datasets: [{
-            label: 'Total de la journée: 2265 KCAL',
+            label: 'calories',
             data: [20, 40, 15, 25],
             backgroundColor: [
                 'rgba(67, 164, 216, 1)',
