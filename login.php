@@ -1,13 +1,13 @@
 <?php require_once 'includes/nav2.php' ?>
 
 <?php
-    session_start();
-    $sessionId = $_SESSION['id'] ?? '';
-    $sessionRole = $_SESSION['role'] ?? '';
-    if ( $sessionId && $sessionRole ) {
-        header( "location:index.php" );
-        die();
-    }
+session_start();
+$sessionId = $_SESSION['id'] ?? '';
+$sessionRole = $_SESSION['role'] ?? '';
+if ($sessionId && $sessionRole) {
+    header("location:login.php");
+    die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -65,4 +65,3 @@
 <!-- <footer>WeightLight &copy 2022 - IUT Calais</footer> -->
 
 </html>
-
