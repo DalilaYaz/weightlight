@@ -23,13 +23,13 @@
 
             <div class="field row">
                 <div>
-                    <label for="firstName">Prénom </label>
-                    <input type="text" name="firstName" id="firstName">
+                    <label for="firstname">Prénom </label>
+                    <input type="text" name="firstname" required >
                 </div>
 
                 <div>
-                    <label for="lastName">Nom</label>
-                    <input type="text" name="lastName" id="lastName">
+                    <label for="lastname">Nom</label>
+                    <input type="text" name="lastname" required >
                 </div>
             </div>
 
@@ -38,34 +38,34 @@
             <div class="field row">
                 <div>
                     <label for="weight">Poids ( kg )</label>
-                    <input type="number" name="weight" id="weight">
+                    <input type="number" name="weight" required>
                 </div>
 
                 <div>
                     <label for="height">Taille ( cm )</label>
-                    <input type="number" name="height" id="height">
+                    <input type="number" name="height" required>
                 </div>
             </div>
 
             <!-- EMAIL -->
 
             <div class="field">
-                <label for="email">Email</label> <br>
-                <input type="email" name="email" id="email">
+                <label for="email">Adresse mail</label> <br>
+                <input type="email" name="email" required>
             </div>
 
             <!-- PASSWORD -->
 
             <div class="field">
-                <label for="">Mot de passe</label> <br>
-                <input type="password" name="password" id="password">
+                <label for=password">Mot de passe</label> <br>
+                <input type="password" name="password" required>
             </div>
 
             <!-- DATE DE NAISSANCE -->
 
             <div class="field">
                 <label for="birthday">Date de naissance</label> <br>
-                <input type="date" name="birthday" id="birthday">
+                <input type="date" name="birthday" required>
             </div>
 
             <!-- SEXE
@@ -84,7 +84,7 @@
             </div> -->
 
             <!-- BUTTON S'INSCRIRE -->
-            <button type="submit" class="btnPrimary" value="S'inscrire">S'inscrire</button>
+            <button type="submit" class="btnPrimary" value="Sign Up" name="create">S'inscrire</button>
             <?php if (isset($sucMsg)) {
                 echo $sucMsg;
             } ?>
