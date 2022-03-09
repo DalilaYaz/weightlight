@@ -20,16 +20,19 @@
 
     <div class="cards">
 
-    <!-- card 1 graphe -->
+        <!-- card 1 graphe -->
         <div class="card1">
             <p class="desc1">Votre journal alimentaire pour le : 02/02/2022</p>
+            <div style="height: 200px; margin-top: 1.3rem;">
                 <canvas id="graph"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+            </div>
+
         </div>
 
-    <!-- card 2 meals -->
+        <!-- card 2 meals -->
 
-    <div class="card2">
+        <div class="card2">
 
             <!-- =========== Block PETIT DÉJEUNER =========== -->
 
@@ -92,7 +95,7 @@
 
     </div>
 
-<script src="js/details.js"></script>
+    <script src="js/details.js"></script>
 
 </body>
 

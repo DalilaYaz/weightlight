@@ -2,7 +2,7 @@
 
 const graph = document.getElementById('graph').getContext('2d');
 let myChart = new Chart(graph, {
-    type: 'pie',
+    type: 'doughnut',
     data: {
         labels: ['Petit déjeuner', 
         'Déjeuner', 
@@ -21,15 +21,18 @@ let myChart = new Chart(graph, {
         }]
     },
     options:{
+      responsive: true,
+      maintainAspectRatio: false,
       title:{
         display: true,
         text:"Calories",
         fontSize: 14,
+        
       },
+
       layout:{
         padding:{
         top: 10,
-        backgroundColor: "red",
         
         },
       },

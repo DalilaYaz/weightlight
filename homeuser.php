@@ -39,7 +39,7 @@
                     <p>Nombre de Repas :</p>
                     <p>Nombre de Repas :</p>
                 </div>
-                
+
                 <div>
                     <p>Nombre de Repas :</p>
                     <p>Nombre de Repas :</p>
@@ -49,9 +49,9 @@
 
 
         </div>
-        
-            <canvas id="graph"></canvas>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+
+        <canvas id="graph"></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
     </main>
 
     <script src="js/homeUser.js"></script>
