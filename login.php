@@ -1,4 +1,15 @@
 <?php require_once 'includes/nav2.php' ?>
+
+<?php
+    session_start();
+    $sessionId = $_SESSION['id'] ?? '';
+    $sessionRole = $_SESSION['role'] ?? '';
+    if ( $sessionId && $sessionRole ) {
+        header( "location:index.php" );
+        die();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +31,7 @@
 
     <div class="flex">
 
-        <form action="index.php" method="post">
+        <form action="login_core.php" method="GET">
 
             <p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
 
@@ -54,3 +65,4 @@
 <!-- <footer>WeightLight &copy 2022 - IUT Calais</footer> -->
 
 </html>
+
