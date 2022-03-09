@@ -1,5 +1,53 @@
 <?php require_once 'includes/nav2.php' ?>
 
+
+
+<?php require_once 'db_con.php'; 
+session_start();
+if(isset($_SESSION['user_login'])){
+	header('Location: homeuser.php');
+}
+	if (isset($_POST['login'])) {
+		$email= $_POST['email'];
+		$password= $_POST['password'];
+
+
+		$input_arr = array();
+
+		if (empty($email)) {
+			$input_arr['input_user_error']= "Username Is Required!";
+		}
+
+		if (empty($password)) {
+			$input_arr['input_pass_error']= "Password Is Required!";
+		}
+
+		if(count($input_arr)==0){
+			$query = "SELECT * FROM `users` WHERE `email` = '$email';";
+			$result = mysqli_query($db_con, $query);
+			if (mysqli_num_rows($result)==1) {
+				$row = mysqli_fetch_assoc($result);
+				if ($row['password']==sha1(md5($password))) {
+					if ($row['status']=='active') {
+						$_SESSION['user_login']=$email;
+						header('Location: homeuser.php');
+					}else{
+						$status_inactive = "Your Status is inactive, please contact with admin or support!";
+					}
+				}else{
+					$worngpass= "This password Wrong!";	
+				}
+			}else{
+				$usernameerr= "Username Not Found!";
+			}
+		}
+		
+	}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 

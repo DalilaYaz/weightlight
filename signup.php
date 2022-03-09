@@ -1,4 +1,85 @@
 <?php require_once 'includes/nav2.php' ?>
+
+
+<?php require_once 'db_con.php'; 
+	session_start();
+	if (isset($_POST['signup'])) {
+		$name = $_POST['nomUt'];
+        $prenom = $_POST['prenomUt'];
+		$email = $_POST['email'];
+		$password = $_POST['password'];
+		$poids= $_POST['poids'];
+        $taille= $_POST['taille'];
+        $dateNaiss= $_POST['dateNaiss'];
+
+
+		$photo = explode('.', $_FILES['avatar']['name']);
+		$photo= end($photo);
+		$photo_name= $username.'.'.$photo;
+
+		$input_error = array();
+		if (empty($name)) {
+			$input_error['nomUt'] = "The Name Filed is Required";
+		}
+        if (empty($prenom)) {
+			$input_error['prenomUt'] = "The Name Filed is Required";
+		}
+		if (empty($email)) {
+			$input_error['email'] = "The Email Filed is Required";
+		}
+		if (empty($password)) {
+			$input_error['password'] = "The Password Filed is Required";
+		}
+        if (empty($poids)) {
+			$input_error['poids'] = "The poids Filed is Required";
+		}
+        if (empty($taille)) {
+			$input_error['taille'] = "The taille Filed is Required";
+		}
+		if (empty($photo)) {
+			$input_error['avatar'] = "The avatar Filed is Required";
+		}
+
+		if (!empty($password)) {
+			if ($c_password!==$password) {
+				$input_error['notmatch']="You Typed Wrong Password!";
+			}
+		}
+
+		if (count($input_error)==0) {
+			$check_email= mysqli_query($db_con,"SELECT * FROM `users` WHERE `email`='$email';");
+
+			if (mysqli_num_rows($check_email)==0) {
+				$check_username= mysqli_query($db_con,"SELECT * FROM `users` WHERE `username`='$username';");
+				if (mysqli_num_rows($check_username)==0) {
+					if (strlen($username)>7) {
+						if (strlen($password)>7) {
+								$password = sha1(md5($password));
+							$query = "INSERT INTO `utilisateur`(`nomUt`, `prenomUt`,`avatar`, `email`, `password`, `poids`, `taille`,`dateNaiss` ) VALUES ('$name', '$prenom', '$avatar ','$email', '$password','$poids','$taille', '$dateNaiss');";
+									$result = mysqli_query($db_con,$query);
+								if ($result) {
+									move_uploaded_file($_FILES['avatar']['tmp_name'], 'images/'.$photo_name);
+									header('Location: signup.php?insert=sucess');
+								}else{
+									header('Location: signup.php?insert=error');
+								}
+						}else{
+							$passlan="This password more than 8 charset";
+						}
+					}else{
+						$usernamelan= 'This username more than 8 charset';
+					}
+			}else{
+				$email_error= "This email already exists";
+			}
+			
+		}
+		
+	}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
