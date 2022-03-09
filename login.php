@@ -103,4 +103,3 @@ if(isset($_SESSION['user_login'])){
 <!-- <footer>WeightLight &copy 2022 - IUT Calais</footer> -->
 
 </html>
-
