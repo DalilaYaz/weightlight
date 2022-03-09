@@ -1,18 +1,3 @@
-/* ==================  SCROLL BAR  ======================== */
-
-::-webkit-scrollbar {
-  width: 0.76rem;
-}
-::-webkit-scrollbar-track {
-  background: var(--clr-green);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--clr-green);
-  border-radius: 100vw;
-}
-
-/* ==================    ======================== */
-
 .rowNav {
   padding: 0 3rem 0 3rem;
 }

@@ -54,8 +54,150 @@
 
 
                     <!-- PART 2 : MEALS -->
+                    <div class="meals">
+                        <!-- MEAL 1 -->
+                        <div class="meal">
+                            <img src="images/meals/balls.png" alt="">
+                            <div class="mealInfo">
+                                <h3> Protein Balls</h3>
+                                <h4>150 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash" class="trash"></i>
+                            </div> -->
+                        </div>
 
-                    <!-- les repas tableaux -->
+                        <div class="meal">
+                            <img src="images/meals/snack.png" alt="">
+                            <div class="mealInfo">
+                                <h3> Snickers sans Sucre Raffiné ni Beurre</h3>
+                                <h4>135 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash" class="trash"></i>
+                            </div> -->
+                        </div>
+
+                        <div class="meal">
+                            <img src="images/meals/Rectangle 39.png" alt="">
+                            <div class="mealInfo">
+                                <h3> Salade Niçoise</h3>
+                                <h4>100 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash" class="trash"></i>
+                            </div> -->
+                        </div>
+
+                        <div class="meal">
+                            <img src="images/meals/soupe.png" alt="">
+                            <div class="mealInfo">
+                                <h3> Soupe au Lait de Coco </h3>
+                                <h4>115 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash" class="trash"></i>
+                            </div> -->
+                        </div>
+                        <!-- MEAL 2 -->
+                        <div class="meal">
+                            <img src="images/meals/pasta (1).png" alt="">
+
+                            <div class="mealInfo">
+                                <h3> Pâtes à la crème
+                                    de Parmesan</h3>
+                                <h4>200 calories</h4>
+                            </div>
+
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+
+                        <div class="meal">
+                            <img src="images/meals/donuts.png" alt="">
+
+                            <div class="mealInfo">
+                                <h3> Protein Donuts</h3>
+                                <h4>150 calories</h4>
+                            </div>
+
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+                        <!-- MEAL 3 -->
+
+                        <div class="meal">
+                            <img src="images/meals/salmon.png" alt="">
+                            <div class="mealInfo">
+                                <h3>Filet de saumon avec riz</h3>
+                                <h4>270 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+                        <!-- MEAL 4 -->
+
+                        <div class="meal">
+                            <img src="images/meals/pasta.png" alt="">
+                            <div class="mealInfo">
+                                <h3>Filet de saumon avec riz</h3>
+                                <h4>270 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+
+                        <div class="meal">
+                            <img src="images/meals/break.png" alt="">
+                            <div class="mealInfo">
+                                <h3>Pancakes aux pommes</h3>
+                                <h4>120 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+
+                        <div class="meal">
+                            <img src="images/meals/pudding.png" alt="">
+                            <div class="mealInfo">
+                                <h3>Pudding </h3>
+                                <h4>90 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+
+                        <div class="meal">
+                            <img src="images/meals/barre.png" alt="">
+                            <div class="mealInfo">
+                                <h3>Barres de Céréales sans Sucre ni matières grasses</h3>
+                                <h4>100 calories</h4>
+                            </div>
+                            <!-- <div class="icons">
+                                <i class="fas fa-pen"></i>
+                                <i class="fas fa-trash"></i>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- les repas tableaux -->
                 <!--=================== RIGHT COL ====================-->
 
                 <div class="rightCol">
@@ -149,25 +291,25 @@
 <script type="text/javascript">
     form = document.querySelector('form')
 
-form.addEventListener('submit', function(e) {
-    inpValue = document.getElementById("search").value
-    fetchData4mAPI(inpValue)
-})
+    form.addEventListener('submit', function(e) {
+        inpValue = document.getElementById("search").value
+        fetchData4mAPI(inpValue)
+    })
 
-async function fetchData4mAPI(inpVal) {
-    app_id = '4668f675';
-    app_key = '83ebe392045317318b82a28e72035092';
-    baseURl = `https://api.edamam.com/search?q=${inpVal}&app_id=${app_id}&app_key=${app_key}&to=4`;
-    result = await fetch(baseURl);
-    datas = await result.json()
-    console.log(datas)
-    genrateHTML(datas.hits);
-}
+    async function fetchData4mAPI(inpVal) {
+        app_id = '4668f675';
+        app_key = '83ebe392045317318b82a28e72035092';
+        baseURl = `https://api.edamam.com/search?q=${inpVal}&app_id=${app_id}&app_key=${app_key}&to=4`;
+        result = await fetch(baseURl);
+        datas = await result.json()
+        console.log(datas)
+        genrateHTML(datas.hits);
+    }
 
-function genrateHTML(results) {
-    showINHTML = '';
-    results.map(result => {
-       /* showINHTML += `
+    function genrateHTML(results) {
+        showINHTML = '';
+        results.map(result => {
+            /* showINHTML += `
         <div class="col-3 my-3">
         <div class="card">
             <div class="card-body">
@@ -181,7 +323,7 @@ function genrateHTML(results) {
         </div>
     </div> 
         `*/
-        showINHTML += `
+            showINHTML += `
         <div class="meal" draggable="true">
             <img src="images/meals/pasta (1).png" alt="">
 
@@ -191,9 +333,10 @@ function genrateHTML(results) {
                 </div>
                 
         </div>`
-        document.querySelector('.meals').innerHTML = showINHTML;
+            document.querySelector('.meals').innerHTML = showINHTML;
 
-    })}
+        })
+    }
 </script>
 
 </html>

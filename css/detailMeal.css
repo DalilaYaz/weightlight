@@ -1,0 +1,50 @@
+body {
+    background-color: var(--clr-back);
+  }
+  
+  img {
+    width: 70px;
+    margin-bottom: 0.57rem;
+    margin-top: 1.97rem;
+  }
+  
+  p.desc1,
+  p.mealType {
+    font-size: 14px;
+  }
+  .mealInfo {
+    padding-top: 2rem;
+  
+    text-align: center;
+  }
+  .mealInfo p {
+    margin-left: 0;
+  }
+  .caloriesInfo {
+    padding: 1.89rem;
+    color: black;
+    font-size: 14px;
+  }
+  .caloriesInfo p {
+    margin-bottom: 0.78rem;
+  }
+  
+  .caloriesInfo .intro {
+    margin-bottom: 1rem;
+  }
+  
+  .detail {
+    background-color: var(--clr-white);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    text-align: center;
+    font-weight: bold;
+    width: 55%;
+    height: auto;
+    margin: auto;
+    margin-top: 3rem;
+    border-radius: 10px;
+  }
+  
+  a {
+    color: var(clr--green);
+  }
