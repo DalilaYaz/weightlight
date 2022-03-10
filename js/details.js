@@ -50,6 +50,9 @@ let myChart = new Chart(graph, {
       },
 
     },
+
+   
 });
+
 
 

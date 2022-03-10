@@ -65,5 +65,7 @@ new Chart("myChart", {
     
     }
   }
+
+  
 });
 

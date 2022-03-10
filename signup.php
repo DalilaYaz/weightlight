@@ -1,5 +1,6 @@
 <?php require_once 'includes/nav2.php' ?>
-
+<?php include('database.php') ?>
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,20 +18,21 @@
 
 	<div class="flex">
 
-		<form action=" " method="post">
+		<form action="signup.php" method="post">
+			<?php include('errors.php'); ?>
 			<p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>, Inscrivez-vous !</p>
 
 			<!-- NOM ET PRENOM -->
 
 			<div class="field row">
 				<div>
-					<label for="firstname">Prénom </label>
-					<input type="text" name="firstname" required>
+					<label for="prenomUt">Prénom </label>
+					<input type="text" name="prenomUt" value="<?php echo $prenomUt; ?>" required>
 				</div>
 
 				<div>
-					<label for="lastname">Nom</label>
-					<input type="text" name="lastname" required>
+					<label for="nomUt">Nom</label>
+					<input type="text" name="nomUt" value="<?php echo $nomUt; ?>" required>
 				</div>
 			</div>
 
@@ -38,13 +40,13 @@
 
 			<div class="field row">
 				<div>
-					<label for="weight">Poids ( kg )</label>
-					<input type="number" name="weight" required>
+					<label for="poids">Poids ( kg )</label>
+					<input type="number" name="poids" value="<?php echo $poids; ?>" required>
 				</div>
 
 				<div>
-					<label for="height">Taille ( cm )</label>
-					<input type="number" name="height" required>
+					<label for="taille">Taille ( cm )</label>
+					<input type="number" name="taille" value="<?php echo $taille; ?>" required>
 				</div>
 			</div>
 
@@ -52,25 +54,25 @@
 
 			<div class="field">
 				<label for="email">Adresse mail</label> <br>
-				<input type="email" name="email" required>
+				<input type="email" name="email" value="<?php echo $email; ?>" required>
 			</div>
 
 			<!-- PASSWORD -->
 
 			<div class="field">
 				<label for="password">Mot de passe</label> <br>
-				<input type="password" name="password" required>
+				<input type="password" name="password" value="<?php echo $password; ?>" required>
 			</div>
 
 			<!-- DATE DE NAISSANCE -->
 
 			<div class="field">
-				<label for="birthday">Date de naissance</label> <br>
-				<input type="date" name="birthday" required>
+				<label for="dateNaiss">Date de naissance</label> <br>
+				<input type="date" name="dateNaiss" value="<?php echo $dateNaiss; ?>" required>
 			</div>
 
 			<!-- BUTTON S'INSCRIRE -->
-			<button type="submit" class="btnPrimary" value="Sign Up" name="create">S'inscrire</button>
+			<button type="submit" class="btnPrimary" value="Sign Up" name="reg_user">S'inscrire</button>
 
 			<p class="desc2"> Déjà inscrit? <span class="orange"> <a href="login.php" class="orange"> Connectez-vous.</a></span></p>
 

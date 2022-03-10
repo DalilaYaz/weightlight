@@ -21,7 +21,7 @@
 
 	<div class="flex">
 
-		<form action="" method="">
+		<form action="loginProcess.php" method="post">
 
 			<p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
 
