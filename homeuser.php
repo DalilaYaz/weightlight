@@ -34,25 +34,27 @@
 
                 </div>
 
-                <div>
-                    <p>Nombre de Repas :</p>
-                    <p>Journée :</p>
-                    <p>Sport :</p>
+                <div class="mg">
+                    <p>Petit-déjeuner : 200</p>
+                    <p>Collation Midi : 200</p>
+                    <p>Dîner : 120 </p>
+                    <p>Totale de calories : 520</p>
                 </div>
 
-                <div>
-                    <p>Petit-déjeuner :</p>
-                    <p>Collation Midi :</p>
-                    <p>Dîner :</p>
-                    <p>Totale de calories :</p>
+
+                <div class="mg mg-2">
+                    <p>Nombre de Repas : 3</p>
+                    <p>Journée : 12/12/2022</p>
+                    <p>Sport : Velo</p>
                 </div>
             </div>
 
 
         </div>
-
-        <canvas id="graph"></canvas>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        <div style="width:100%; margin-top:5rem">
+            <canvas id="myChart"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        </div>
     </main>
 
     <script src="js/homeUser.js"></script>
