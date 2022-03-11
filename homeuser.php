@@ -31,10 +31,28 @@ if (isset($_GET['logout'])) {
 
 <body>
     <main>
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="error success">
+                <h3>
+                    <?php
+                    echo $_SESSION['success'];
+                    unset($_SESSION['success']);
+                    ?>
+                </h3>
+            </div>
+        <?php endif ?>
+
+        <!-- logged in user information -->
+
+        <?php
+        // Return current date from the remote server
+        $today = date("d/m/y");
+        ?>
+
         <div class="headerInfo">
             <div class="greenBlock flex">
-                <h3>Hi, Daniel Commandant ! Voici votre résumé quotidien</h3>
-                <span>11/01/2022</span>
+                <h3>Hi, <?php echo $_SESSION['email'] ?> ! Voici votre résumé quotidien</h3>
+                <span><?php echo $today ?></span>
             </div>
 
             <div class="flex">

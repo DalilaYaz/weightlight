@@ -1,5 +1,5 @@
 <?php require_once 'includes/nav2.php' ?>
-
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,8 +21,8 @@
 
 	<div class="flex">
 
-		<form action="loginProcess.php" method="post">
-
+		<form action="login.php" method="post">
+			<?php include('errors.php'); ?>
 			<p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
 
 			<div class="field">
@@ -35,7 +35,7 @@
 				<input type="password" name="password" id="password" placeholder="Saisir votre mot de pass" required>
 			</div>
 
-			<button type="submit" name="submit" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>
+			<button type="submit" name="login_user" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>
 
 
 			<p class="desc2"> Nouveau utilisateur ?<span class="orange"> <a href="signup.php" class="orange">Inscrivez-vous.</a></span></p>
