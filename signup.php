@@ -52,23 +52,6 @@
 			if (mysqli_num_rows($check_email)==0) {
 				$check_username= mysqli_query($db_con,"SELECT * FROM `users` WHERE `username`='$username';");
 				if (mysqli_num_rows($check_username)==0) {
-					if (strlen($username)>7) {
-						if (strlen($password)>7) {
-								$password = sha1(md5($password));
-							$query = "INSERT INTO `utilisateur`(`nomUt`, `prenomUt`,`avatar`, `email`, `password`, `poids`, `taille`,`dateNaiss` ) VALUES ('$name', '$prenom', '$avatar ','$email', '$password','$poids','$taille', '$dateNaiss');";
-									$result = mysqli_query($db_con,$query);
-								if ($result) {
-									move_uploaded_file($_FILES['avatar']['tmp_name'], 'images/'.$photo_name);
-									header('Location: signup.php?insert=sucess');
-								}else{
-									header('Location: signup.php?insert=error');
-								}
-						}else{
-							$passlan="This password more than 8 charset";
-						}
-					}else{
-						$usernamelan= 'This username more than 8 charset';
-					}
 			}else{
 				$email_error= "This email already exists";
 			}
