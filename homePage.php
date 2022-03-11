@@ -45,12 +45,12 @@
                     <p>Suivez votre poids</p>
                 </div>
 
-                <div class="center">
+                <div class="center responsive">
                     <img src="images/home/fct2.png" alt="">
                     <p>Meilleur traqueur de calories</p>
                 </div>
 
-                <div>
+                <div class="responsive">
                     <img src="images/home/fact4.png" class="" alt="">
                     <p>Programme de repas</p>
                 </div>

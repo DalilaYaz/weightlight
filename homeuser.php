@@ -1,4 +1,17 @@
 <?php require_once 'includes/nav1.php' ?>
+<?php
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header("location: login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +31,28 @@
 
 <body>
     <main>
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="error success">
+                <h3>
+                    <?php
+                    echo $_SESSION['success'];
+                    unset($_SESSION['success']);
+                    ?>
+                </h3>
+            </div>
+        <?php endif ?>
+
+        <!-- logged in user information -->
+
+        <?php
+        // Return current date from the remote server
+        $today = date("d/m/y");
+        ?>
+
         <div class="headerInfo">
             <div class="greenBlock flex">
-                <h3>Hi, Daniel Commandant ! Voici votre résumé quotidien</h3>
-                <span>11/01/2022</span>
+                <h3>Hi, <?php echo $_SESSION['email'] ?> ! Voici votre résumé quotidien</h3>
+                <span><?php echo $today ?></span>
             </div>
 
             <div class="flex">
@@ -34,24 +65,27 @@
 
                 </div>
 
-                <div>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
+                <div class="mg">
+                    <p>Petit-déjeuner : 200</p>
+                    <p>Collation Midi : 200</p>
+                    <p>Dîner : 120 </p>
+                    <p>Totale de calories : 520</p>
                 </div>
 
-                <div>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
-                    <p>Nombre de Repas :</p>
+
+                <div class="mg mg-2">
+                    <p>Nombre de Repas : 3</p>
+                    <p>Journée : 12/12/2022</p>
+                    <p>Sport : Velo</p>
                 </div>
             </div>
 
 
         </div>
-
-        <canvas id="graph"></canvas>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        <div style="width:100%; margin-top:5rem">
+            <canvas id="myChart"></canvas>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+        </div>
     </main>
 
     <script src="js/homeUser.js"></script>

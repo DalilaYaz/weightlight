@@ -1,5 +1,6 @@
 .flex {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   padding: 2rem;
@@ -41,4 +42,13 @@ button {
   color: var(--clr-white);
   width: 39%;
   font-weight: bold;
+}
+
+@media screen and (max-width: 670px) {
+  img {
+    width: 100%;
+  }
+  .flex {
+    margin: 2rem 0;
+  }
 }

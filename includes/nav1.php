@@ -16,7 +16,7 @@
             </ul>
         </nav>
 
-        <a href="login.php" id="logoutStyle"> Se Déconnecter</a>
+        <a href="logout.php" id="logoutStyle"> Se Déconnecter</a>
 
     </div>
 </header>

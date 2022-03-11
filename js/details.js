@@ -32,7 +32,8 @@ let myChart = new Chart(graph, {
           display: true,
           position: 'right',
          
-        }
+        },
+        
       },
       title:{
         display: true,
@@ -49,4 +50,9 @@ let myChart = new Chart(graph, {
       },
 
     },
+
+   
 });
+
+
+

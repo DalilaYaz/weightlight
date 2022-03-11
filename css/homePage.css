@@ -5,7 +5,7 @@
 
 .row {
   display: flex;
-  /* flex-wrap: wrap; */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -133,7 +133,7 @@ button + button {
 /*==================  NewsLetters  ================*/
 
 .newsletter {
-  padding: 3.88rem;
+  padding: 3rem;
   background-color: var(--clr-lightGreen);
 }
 
@@ -159,7 +159,7 @@ button + button {
 .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 35px;
+  grid-gap: 30px;
 }
 
 .rightCol {
@@ -197,13 +197,33 @@ button {
 
 /*===============  Mobile ===============*/
 
-@media screen and (max-width: 740px) {
-  /* .row {
-    flex-direction: column;
-  } */
+@media screen and (max-width: 670px) {
+  .row {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .showCase img {
+    width: 70%;
+  }
+
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+  }
+
+  .responsive {
+    margin-top: 1.66rem;
+  }
+
+  .cards,
+  .content {
+    grid-template-columns: 1fr;
+  }
 
   .quote {
-    font-size: 14px;
+    font-size: 16px;
+    margin-top: 1rem;
   }
 
   h2 {

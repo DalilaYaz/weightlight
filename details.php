@@ -1,4 +1,6 @@
 <?php require_once 'includes/nav1.php' ?>
+
+<?php $today = date("d/m/y"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +24,7 @@
 
         <!-- card 1 graphe -->
         <div class="card1">
-            <p class="desc1">Votre journal alimentaire pour le : 02/02/2022</p>
+            <p class="desc1">Votre journal alimentaire pour le : <?php echo $today ?></p>
             <div style="height: 200px; margin-top: 1.3rem;">
                 <canvas id="graph"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
