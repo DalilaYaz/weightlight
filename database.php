@@ -8,3 +8,4 @@ if (!$db) {
 } else {
     // echo "your connected";
 }
+?>

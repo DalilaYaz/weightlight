@@ -26,13 +26,13 @@
 
 			<div class="field row">
 				<div>
-					<label for="prenomUt">Prénom </label>
-					<input type="text" name="prenomUt" value="<?php echo $prenomUt; ?>" required>
+					<label for="firstname">Prénom </label>
+					<input type="text" name="firstname" value="<?php echo $firstname; ?>" required>
 				</div>
 
 				<div>
-					<label for="nomUt">Nom</label>
-					<input type="text" name="nomUt" value="<?php echo $nomUt; ?>" required>
+					<label for="lastname">Nom</label>
+					<input type="text" name="lastname" value="<?php echo $lastname; ?>" required>
 				</div>
 			</div>
 
