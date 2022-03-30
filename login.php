@@ -27,7 +27,7 @@
 
 			<div class="field">
 				<label for="email">Email</label> <br>
-				<input type="email" name="email" id="email" placeholder="Saisir votre email ici" required>
+				<input type="email" name="email" id="email" placeholder="Saisir votre email" required>
 			</div>
 
 			<div class="field">
