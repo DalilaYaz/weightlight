@@ -23,16 +23,16 @@
 
 		<form action="login.php" method="post">
 			<?php include('errors.php'); ?>
-			<p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>,Connectez vous !</p>
+			<p class="desc1">Bienvenue sur<span class="green"> Weight</span><span class="orange">Light</span>. Connectez vous !</p>
 
 			<div class="field">
 				<label for="email">Email</label> <br>
-				<input type="email" name="email" id="email" placeholder="Saisir votre email ici" required>
+				<input type="email" name="email" id="email" placeholder="Saisir votre email" required>
 			</div>
 
 			<div class="field">
 				<label for="password">Mot de passe</label> <br>
-				<input type="password" name="password" id="password" placeholder="Saisir votre mot de pass" required>
+				<input type="password" name="password" id="password" placeholder="Saisir votre mot de passe" required>
 			</div>
 
 			<button type="submit" name="login_user" class="btnPrimary" value="Se Connecter" id="submit">Se Connecter</button>

@@ -1,5 +1,30 @@
 <?php require_once 'includes/nav1.php' ?>
+<?php
 
+include "database.php";
+
+if (isset($_POST['submit'])) {
+
+  $intitule = $_POST['intitule'];
+
+  $calories = $_POST['calories'];
+
+  $sql = "INSERT INTO `repas`(`intitule`, `calories`) VALUES ('$intitule','$calories')";
+
+  $result = $db->query($sql);
+
+  if ($result == TRUE) {
+
+    echo "New record created successfully.";
+  } else {
+
+    echo "Error:" . $sql . "<br>" . $db->error;
+  }
+
+  $db->close();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
