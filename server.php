@@ -2,8 +2,8 @@
 session_start();
 
 // initializing variables
-$lastname = "";
-$firstname = "";
+$nomUt = "";
+$prenomUt = "";
 $email    = "";
 $password = "";
 $poids    = "";
@@ -17,8 +17,8 @@ include('database.php');
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
     // receive all input values from the form
-    $lastname = mysqli_real_escape_string($db, $_POST['lastname']);
-    $firstname = mysqli_real_escape_string($db, $_POST['firstname']);
+    $nomUt = mysqli_real_escape_string($db, $_POST['nomUt']);
+    $prenomUt = mysqli_real_escape_string($db, $_POST['prenomUt']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
     $poids = mysqli_real_escape_string($db, $_POST['poids']);
@@ -37,7 +37,7 @@ if (isset($_POST['reg_user'])) {
 
     // first check the database to make sure 
     // a user does not already exist with the same username and/or email
-    $user_check_query = "SELECT * FROM utilisateur WHERE email='$email' OR lastname='$lastname' LIMIT 1";
+    $user_check_query = "SELECT * FROM utilisateur WHERE email='$email' OR nomUt='$nomUt' LIMIT 1";
     $result = mysqli_query($db, $user_check_query);
     $user = mysqli_fetch_assoc($result);
 
@@ -52,8 +52,8 @@ if (isset($_POST['reg_user'])) {
     if (count($errors) == 0) {
         $password = md5($password); //encrypt the password before saving in the database
 
-        $query = "INSERT INTO utilisateur (lastname, firstname, email, password, poids, taille, dateNaiss) 
-  			  VALUES('$lastname', '$firstname','$email', '$password', '$poids', '$taille', '$dateNaiss')";
+        $query = "INSERT INTO utilisateur (nomUt, prenomUt, email, password, poids, taille, dateNaiss) 
+  			  VALUES('$nomUt', '$prenomUt','$email', '$password', '$poids', '$taille', '$dateNaiss')";
         mysqli_query($db, $query);
         $_SESSION['email'] = $email;
 
