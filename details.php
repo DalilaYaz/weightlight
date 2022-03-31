@@ -18,31 +18,8 @@
     <title>WeightLight</title>
 </head>
 
-<?php
-// ouverture de la connexion
-
-$dsn = 'mysql:host=localhost;dbname=weightlight';
-$username = 'root';
-$password = '';
-
-$db = mysql_connect($dsn, $username, $password);
-
-// création de la requête
-$requete = "SELECT intitule FROM repas";
-
-// envoi de la requête et récupération du résultat
-$listeRepas = $db->query($requete)->fetchAll(PDO::FETCH_ASSOC); ?>
-
 <body>
-    <ul>
-        <?php foreach ($listeRepas as $repas) { ?>
-            <li>
-                <h3>
-                    <?= "{$repas['intitule']}" ?>
-                </h3>
-            </li>
-        <?php } ?>
-    </ul>
+
     <div class="cards">
 
         <!-- card 1 graphe -->
