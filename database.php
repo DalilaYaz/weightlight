@@ -1,10 +1,16 @@
 <?php
-$url = 'localhost';
-$username = 'root';
-$password = '';
-$db = mysqli_connect($url, $username, $password, "weightlight");
-if (!$db) {
-    die('Could not Connect My Sql:' . mysql_error());
-} else {
-    // echo "your connected";
+
+$servername = "localhost";
+
+$username = "root";
+
+$password = "";
+
+$dbname = "weightlight";
+
+$db = new mysqli($servername, $username, $password, $dbname);
+
+if ($db->connect_error) {
+
+    die("Connection failed: " . $db->connect_error);
 }
