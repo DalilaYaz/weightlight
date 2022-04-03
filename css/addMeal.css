@@ -25,7 +25,7 @@ input[type="text"] {
   border: none;
   border: 1px solid var(--clr-green);
   border-radius: 12px;
-  width: 80%;
+  width: 90%;
   outline: none;
   padding: 8px;
   margin-top: 0.67rem;
@@ -58,6 +58,16 @@ label {
   background-color: var(--clr-white);
 }
 
+
+.flex {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+  width: 50%;
+}
 @media screen and (max-width: 670px) {
   .mainBlock {
     width: 80% !important;

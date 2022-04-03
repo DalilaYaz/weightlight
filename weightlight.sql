@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 09 mars 2022 à 10:48
+-- Généré le : dim. 03 avr. 2022 à 12:08
 -- Version du serveur : 10.4.21-MariaDB
 -- Version de PHP : 8.0.12
 
@@ -37,6 +37,27 @@ CREATE TABLE `consommer` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `demo`
+--
+
+CREATE TABLE `demo` (
+  `id` int(11) NOT NULL,
+  `name` varchar(191) NOT NULL,
+  `gender` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `demo`
+--
+
+INSERT INTO `demo` (`id`, `name`, `gender`) VALUES
+(0, '', ''),
+(0, '', 'Male'),
+(0, 'testchaima', 'Female');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `pratiquer`
 --
 
@@ -60,6 +81,18 @@ CREATE TABLE `repas` (
   `calories` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `repas`
+--
+
+INSERT INTO `repas` (`idRepas`, `intitule`, `imgRepas`, `calories`) VALUES
+(1, 'sdhfgdsf', NULL, '323234'),
+(2, 'test', NULL, '123 kcal'),
+(3, 'poulet', NULL, '12 kcal'),
+(4, 'sdhf', NULL, '2346'),
+(5, 'nbfvhsd', NULL, '4532'),
+(6, 'gdhf', NULL, '34');
+
 -- --------------------------------------------------------
 
 --
@@ -70,20 +103,22 @@ CREATE TABLE `sport` (
   `idSport` int(11) NOT NULL,
   `nomSport` varchar(50) DEFAULT NULL,
   `isActif` tinyint(1) DEFAULT NULL,
-  `imgSport` varchar(50) DEFAULT NULL
+  `duree` char(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `sport`
 --
 
-INSERT INTO `sport` (`idSport`, `nomSport`, `isActif`, `imgSport`) VALUES
+INSERT INTO `sport` (`idSport`, `nomSport`, `isActif`, `duree`) VALUES
 (1, 'Football', NULL, NULL),
 (2, 'Natation', NULL, NULL),
 (3, 'Basket-ball', NULL, NULL),
 (4, 'Cyclisme', NULL, NULL),
 (5, 'Course à pied', NULL, NULL),
-(6, 'Pêche', NULL, NULL);
+(6, 'Pêche', NULL, NULL),
+(12, 'Natation', NULL, NULL),
+(13, 'gfg', NULL, '34');
 
 -- --------------------------------------------------------
 
@@ -124,6 +159,18 @@ CREATE TABLE `utilisateur` (
   `taille` varchar(50) DEFAULT NULL,
   `dateNaiss` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`idUser`, `nomUt`, `prenomUt`, `avatar`, `email`, `password`, `poids`, `taille`, `dateNaiss`) VALUES
+(3, 'Chaimaa', 'Lougsari', NULL, 'chaima.lougsari@gmail.com', '464769b881b0cd17cae450c9ceb81f30', '48', '162', '2000-12-06'),
+(4, 'test1', 'test1', NULL, 'test@gmail.com', '098f6bcd4621d373cade4e832627b4f6', '123', '123', '2022-03-18'),
+(5, 'test2', 'test2', NULL, 'test2@gmail.com', 'ad0234829205b9033196ba818f7a872b', '122', '213', '2022-03-01'),
+(6, 'sdvsdkhfsd', 'snbdfvhsdfsk', NULL, 'test3@gmail.com', '098f6bcd4621d373cade4e832627b4f6', '23', '23', '2022-04-01'),
+(7, 'dvfhdsf', 'dsghfsd', NULL, 'test4@gmail.com', '098f6bcd4621d373cade4e832627b4f6', '213', '23', '2022-03-19'),
+(8, '', '', NULL, 'test7@gmail.com', 'b04083e53e242626595e2b8ea327e525', '23', '213', '2022-03-09');
 
 --
 -- Index pour les tables déchargées
@@ -176,13 +223,13 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `repas`
 --
 ALTER TABLE `repas`
-  MODIFY `idRepas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRepas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `sport`
 --
 ALTER TABLE `sport`
-  MODIFY `idSport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `idSport` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT pour la table `type`
@@ -194,7 +241,7 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT pour la table `utilisateur`
 --
 ALTER TABLE `utilisateur`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Contraintes pour les tables déchargées

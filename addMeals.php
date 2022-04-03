@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 
   if ($result == TRUE) {
 
-    echo "New record created successfully.";
+    echo '<script>alert("Repas ajouté avec succès")</script>';
   } else {
 
     echo "Error:" . $sql . "<br>" . $db->error;
