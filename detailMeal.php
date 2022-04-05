@@ -31,21 +31,20 @@
                 </div>
                 <?php
                 include('database.php');
-                $meal_query = "SELECT * FROM repas";
+                $meal_query = "
+                SELECT repas.intitule, repas.calories 
+                FROM repas 
+                JOIN consommer 
+                ON repas.idRepas = consommer.idRepas
+                WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idType = " . $_GET['idType'] ;
+                
                 $result = mysqli_query($db, $meal_query);
                 $array = array();
-                while ($donnees = $result->fetch_assoc()) {
+                while ($donnees = mysqli_fetch_array($result)) {
                     array_push($array, $donnees['calories']);
 
-                ?>
-
-                    <p>
-                        <?php echo $donnees['intitule']; ?>
-                        <?php echo "( " . $donnees['calories'] . " kcal )"  ?>
-
-                    </p>
-
-                <?php
+                    echo "<p>" . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . "</p>";
                 }
                 $sum = array_sum($array);
                 ?>
