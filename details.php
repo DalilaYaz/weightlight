@@ -46,7 +46,7 @@
 
                 <div class="icons row">
                     <a href="detailMeal.php?idType=1"><i class="fas fa-info-circle"></i></a>
-                    <a href="addMeals.php"><i class="fas fa-plus-circle"></i></a>
+                    <a href="addMeals.php?idType=1"><i class="fas fa-plus-circle"></i></a>
                     <a href="deleteMeal.php"><i class="fas fa-pen-square"></i></a>
                 </div>
             </div>
