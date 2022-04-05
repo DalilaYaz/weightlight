@@ -1,19 +1,26 @@
 <?php require_once 'includes/nav1.php' ?>
 <?php
 
-include "database.php";
-
+include("database.php") ;
+$idType = $_GET['idType'];
 if (isset($_POST['submit'])) {
 
   $intitule = $_POST['intitule'];
-
   $calories = $_POST['calories'];
 
-  $sql = "INSERT INTO `repas`(`intitule`, `calories`) VALUES ('$intitule','$calories')";
-
+  $sql = "INSERT INTO repas(intitule, calories) VALUES ('$intitule','$calories')";
   $result = $db->query($sql);
-
-  if ($result == TRUE) {
+  
+  $search_query = "SELECT idRepas FROM repas WHERE intitule = '$intitule'";
+  $result2 = mysqli_query($db, $search_query);
+  $array = array();
+  while ($donnees = mysqli_fetch_array($result2)) {
+    array_push($array, $donnees['idRepas']);
+  }
+  $sql2 = "INSERT INTO consommer VALUES ( 4 , $array[0] , $idType , CURRENT_DATE )";
+  $result3 = $db->query($sql2);
+  
+  if ($result == true) {
 
     echo '<script>alert("Repas ajouté avec succès")</script>';
   } else {
