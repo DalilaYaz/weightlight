@@ -46,7 +46,7 @@
 
                 <div class="icons row">
                     <a href="detailMeal.php?idType=1"><i class="fas fa-info-circle"></i></a>
-                    <a href="addMeals.php"><i class="fas fa-plus-circle"></i></a>
+                    <a href="addMeals.php?idType=1"><i class="fas fa-plus-circle"></i></a>
                 </div>
             </div>
 
@@ -59,7 +59,7 @@
                 </div>
                 <div class="icons row">
                     <a href="detailMeal.php?idType=2"><i class="fas fa-info-circle"></i></a>
-                    <a href="addMeals.php"><i class="fas fa-plus-circle"></i></a>
+                    <a href="addMeals.php?idType=2"><i class="fas fa-plus-circle"></i></a>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                 </div>
                 <div class="icons row">
                     <a href="detailMeal.php?idType=3"><i class="fas fa-info-circle"></i></a>
-                    <a href="addMeals.php"><i class="fas fa-plus-circle"></i></a>
+                    <a href="addMeals.php?idType=3"><i class="fas fa-plus-circle"></i></a>
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
                 </div>
                 <div class="icons row">
                     <a href="detailMeal.php?idType=4"><i class="fas fa-info-circle"></i></a>
-                    <a href="addMeals.php"><i class="fas fa-plus-circle"></i></a>
+                    <a href="addMeals.php?idType=4"><i class="fas fa-plus-circle"></i></a>
                 </div>
             </div>
 
