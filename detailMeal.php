@@ -18,6 +18,7 @@
 </head>
 
 
+
 <body>
     <main>
         <div class="detail">
@@ -28,10 +29,26 @@
                     <p>Bonjour <span class="orange">Daniel Commandant </span></p>
                     <p>vous avez consommé pendant ce repas :</p>
                 </div>
-                <p>Un croissant pur beurre ( 236 Kcal )</p>
-                <p>Un verre de jus d’orange frais de 20 cl ( 21 kcal )</p>
-                <p> Une tasse de café de 20 cl ( 11 kcal )</p>
-                <p>Total de la journée : <span class="green">268 Kcal </span> obtenu pendant votre repas.</p>
+                <?php
+                include('database.php');
+                $meal_query = "
+                SELECT repas.intitule, repas.calories 
+                FROM repas 
+                JOIN consommer 
+                ON repas.idRepas = consommer.idRepas
+                WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idType = " . $_GET['idType'] ;
+                
+                $result = mysqli_query($db, $meal_query);
+                $array = array();
+                while ($donnees = mysqli_fetch_array($result)) {
+                    array_push($array, $donnees['calories']);
+
+                    echo "<p>" . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . "</p>";
+                }
+                $sum = array_sum($array);
+                ?>
+                <p>Total de la journée : <span class="green"><?php echo $sum ?> Kcal </span> obtenu pendant votre repas.</p>
             </div>
         </div>
     </main>
