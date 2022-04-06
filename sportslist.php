@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
     $sql2 = "INSERT INTO pratiquer VALUES ( 4 , $array[0] , $array[1]  , CURRENT_DATE )";
     $result3 = $db->query($sql2);
     if ($result == TRUE) {
-        echo '<script>alert("Sport ajouté avec succès")</script>';
+        header('location: homeuser.php');
     } else {
 
         echo "Error:" . $sql . "<br>" . $db->error;

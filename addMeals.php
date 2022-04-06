@@ -4,7 +4,7 @@ session_start();
 include("database.php");
 $idType = $_GET['idType'];
 if (isset($_POST['submit'])) {
-  
+
   $intitule = $_POST['intitule'];
   $calories = $_POST['calories'];
 
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
 
   if ($result == true) {
 
-    echo '<script>alert("Repas ajouté avec succès")</script>';
+    header('location: details.php');
   } else {
 
     echo "Error:" . $sql . "<br>" . $db->error;
