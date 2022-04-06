@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
   $sql = "INSERT INTO repas(intitule, calories) VALUES ('$intitule','$calories')";
   $result = $db->query($sql);
   
-  $search_query = "SELECT idRepas FROM repas WHERE intitule = '$intitule'";
+  $search_query = "SELECT idRepas FROM repas WHERE intitule = '$intitule' AND idRepas = ( SELECT MAX( idRepas ) FROM repas )";
   $result2 = mysqli_query($db, $search_query);
   $array = array();
   while ($donnees = mysqli_fetch_array($result2)) {

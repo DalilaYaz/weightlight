@@ -6,15 +6,21 @@ include "database.php";
 if (isset($_POST['submit'])) {
 
     $nomSport = $_POST['nomSport'];
-
     $duree = $_POST['duree'];
 
     $sql = "INSERT INTO `sport`(`nomSport`, `duree`) VALUES ('$nomSport','$duree')";
-
     $result = $db->query($sql);
 
+    $search_query = "SELECT idSport,duree FROM sport WHERE nomSport = '$nomSport' AND idSport = ( SELECT MAX( idSport ) FROM sport )";
+    $result2 = mysqli_query($db, $search_query);
+    $array = array();
+    while ($donnees = mysqli_fetch_array($result2)) {
+        array_push($array, $donnees['idSport'],$donnees['duree']);
+    }
+    var_dump($array);
+    $sql2 = "INSERT INTO pratiquer VALUES ( 4 , $array[0] , $array[1]  , CURRENT_DATE )";
+    $result3 = $db->query($sql2);
     if ($result == TRUE) {
-
         echo '<script>alert("Sport ajouté avec succès")</script>';
     } else {
 

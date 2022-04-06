@@ -49,11 +49,20 @@ if (isset($_GET['logout'])) {
         // Return current date from the remote server
         $today = date("d/m/y");
 
+
+
         ?>
 
         <div class="headerInfo">
             <div class="greenBlock flex">
-                <h3>Hi, <?php echo $_SESSION['email'] ?> ! Voici votre résumé quotidien</h3>
+                <h3>Hi, <?php
+
+                        $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['prenomUt'];
+                        }
+                        ?> ! Voici votre résumé quotidien</h3>
                 <span><?php echo $today ?></span>
             </div>
 
@@ -61,7 +70,12 @@ if (isset($_GET['logout'])) {
                 <div>
                     <p class="image"> Charger une photo</p>
                     <div class="flex">
-                        <p class="weight">Poids : 60Kg </p>
+                        <p class="weight">Poids :
+                        <?php $search_query = "SELECT poids FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['poids'];
+                        }?> Kg </p>
                         <i class="fas fa-edit"></i>
                     </div>
 
@@ -83,19 +97,19 @@ if (isset($_GET['logout'])) {
                         }
                         ?>
                     </p>
-                    <p> Déjeuner : 
+                    <p> Déjeuner :
                         <?php
                         $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
                                          WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
                                          AND c.idType = 2
                                          AND c.dateCons = CURRENT_DATE";
-                                    $result = mysqli_query($db, $search_query);
-                                    while ($donnees = mysqli_fetch_array($result)) {
-                                        echo $donnees['SUM(calories)'];
-                                    }
-                                    ?></p>
-                    <p> Collation :  <?php
-                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['SUM(calories)'];
+                        }
+                        ?></p>
+                    <p> Collation : <?php
+                                    $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
                                          WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
                                          AND c.idType = 3
                                          AND c.dateCons = CURRENT_DATE";
@@ -104,37 +118,47 @@ if (isset($_GET['logout'])) {
                                         echo $donnees['SUM(calories)'];
                                     }
                                     ?></p>
-                    <p>Dîner :  <?php
-                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                    <p>Dîner : <?php
+                                $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
                                          WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
                                          AND c.idType = 4
                                          AND c.dateCons = CURRENT_DATE";
-                                    $result = mysqli_query($db, $search_query);
-                                    while ($donnees = mysqli_fetch_array($result)) {
-                                        echo $donnees['SUM(calories)'];
-                                    }
-                                    ?></p>
-                    <p>Totale de calories :  <?php
-                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                                $result = mysqli_query($db, $search_query);
+                                while ($donnees = mysqli_fetch_array($result)) {
+                                    echo $donnees['SUM(calories)'];
+                                }
+                                ?></p>
+                    <p>Totale de calories : <?php
+                                            $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
                                          WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
                                          AND c.dateCons = CURRENT_DATE";
-                                    $result = mysqli_query($db, $search_query);
-                                    while ($donnees = mysqli_fetch_array($result)) {
-                                        echo $donnees['SUM(calories)'];
-                                    }
-                                    ?></p>
+                                            $result = mysqli_query($db, $search_query);
+                                            while ($donnees = mysqli_fetch_array($result)) {
+                                                echo $donnees['SUM(calories)'];
+                                            }
+                                            ?></p>
                 </div>
 
 
                 <div class="mg mg-2">
-                    <p>Nombre de Repas :  <?php
-                        $search_query = "SELECT COUNT(*) FROM type";
-                                    $result = mysqli_query($db, $search_query);
-                                    while ($donnees = mysqli_fetch_array($result)) {
-                                        echo $donnees['COUNT(*)'];
-                                    }
-                                    ?></p>
-                    <p>Sport : Velo</p>
+                    <p>Nombre de Repas : <?php
+                                            $search_query = "SELECT COUNT(*) FROM type";
+                                            $result = mysqli_query($db, $search_query);
+                                            while ($donnees = mysqli_fetch_array($result)) {
+                                                echo $donnees['COUNT(*)'];
+                                            }
+                                            ?></p>
+                    <p>Sport :
+                        <?php
+                        $search_query = "SELECT nomSport FROM sport s INNER JOIN pratiquer p ON s.idSport = p.idSport
+                                         WHERE p.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         AND p.dateSport = CURRENT_DATE";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['nomSport'];
+                        }
+                        ?>
+                    </p>
                 </div>
             </div>
 
