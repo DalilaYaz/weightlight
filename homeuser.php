@@ -170,7 +170,7 @@ if (isset($_GET['logout'])) {
                             while ($donnees = mysqli_fetch_array($result)) {
                                 echo $donnees['poids'];
                             } ?> Kg </p>
-                        <i class="fas fa-edit"></i>
+                        <a href="modifyPoids.php"><i class="fas fa-edit"></i></a>
                     </div>
 
                 </div>
