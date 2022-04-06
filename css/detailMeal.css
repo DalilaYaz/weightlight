@@ -49,6 +49,10 @@ a {
   color: var(clr--green);
 }
 
+
+.fas {
+  color: var(--clr-green) !important;
+}
 @media screen and (max-width: 670px) {
   .detail {
     width: 80% !important;

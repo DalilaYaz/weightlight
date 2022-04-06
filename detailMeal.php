@@ -1,5 +1,5 @@
 <?php require_once 'includes/nav1.php';
-include('database.php');    
+include('database.php');
 session_start();
 ?>
 
@@ -30,12 +30,12 @@ session_start();
             <div class="caloriesInfo">
                 <div class="intro">
                     <p>Bonjour <span class="orange"><?php
-                        $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
-                        $result = mysqli_query($db, $search_query);
-                        while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['prenomUt'];
-                        }
-                        ?> </span></p>
+                                                    $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                                                    $result = mysqli_query($db, $search_query);
+                                                    while ($donnees = mysqli_fetch_array($result)) {
+                                                        echo $donnees['prenomUt'];
+                                                    }
+                                                    ?> </span></p>
                     <p>vous avez consommé pendant ce repas :</p>
                 </div>
                 <?php
