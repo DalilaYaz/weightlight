@@ -1,6 +1,6 @@
 <?php require_once 'includes/nav1.php' ?>
 <?php
-include('database.php');     
+include('database.php');
 session_start();
 if (isset($_POST['submit'])) {
 
@@ -8,13 +8,13 @@ if (isset($_POST['submit'])) {
     $sql = "UPDATE utilisateur SET poids = {$poids} WHERE idUser = ( SELECT idUser WHERE email = '{$_SESSION['email']}' ) ";
     $result = $db->query($sql);
     if ($result == true) {
-  
-      echo '<script>alert("Poids modifié avec succès")</script>';
+
+        header('location: homeuser.php');
     } else {
-  
-      echo "Error:" . $sql . "<br>" . $db->error;
+
+        echo "Error:" . $sql . "<br>" . $db->error;
     }
-  
+
     $db->close();
 }
 
