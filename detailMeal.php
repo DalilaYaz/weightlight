@@ -48,14 +48,14 @@ session_start();
                 WHERE consommer.dateCons = CURRENT_DATE
                 AND consommer.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                 AND consommer.idType = " . $_GET['idType'];
-                
+
 
                 $result = mysqli_query($db, $meal_query);
                 $array = array();
                 while ($donnees = mysqli_fetch_array($result)) {
                     array_push($array, $donnees['calories']);
 
-                    echo "<p> - " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>" . "</p>";
+                    echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>" . "</p>";
                 }
                 $sum = array_sum($array);
                 ?>
