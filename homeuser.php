@@ -150,7 +150,6 @@ if (isset($_GET['logout'])) {
         <div class="headerInfo">
             <div class="greenBlock flex">
                 <h3>Bonjour <?php
-
                         $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {

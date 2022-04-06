@@ -1,4 +1,7 @@
-<?php require_once 'includes/nav1.php' ?>
+<?php require_once 'includes/nav1.php';
+include('database.php');    
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +29,13 @@
             <p>PETIT DÉJEUNER</p>
             <div class="caloriesInfo">
                 <div class="intro">
-                    <p>Bonjour <span class="orange">Daniel Commandant </span></p>
+                    <p>Bonjour <span class="orange"><?php
+                        $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['prenomUt'];
+                        }
+                        ?> </span></p>
                     <p>vous avez consommé pendant ce repas :</p>
                 </div>
                 <?php
