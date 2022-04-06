@@ -2,7 +2,7 @@
 <?php
 
 include "database.php";
-
+session_start();
 if (isset($_POST['submit'])) {
 
     $nomSport = $_POST['nomSport'];
@@ -17,7 +17,13 @@ if (isset($_POST['submit'])) {
     while ($donnees = mysqli_fetch_array($result2)) {
         array_push($array, $donnees['idSport'], $donnees['duree']);
     }
-    $sql2 = "INSERT INTO pratiquer VALUES ( 4 , $array[0] , $array[1]  , CURRENT_DATE )";
+
+    $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
+    $result_id = mysqli_query($db, $search_id);
+    while ($donnees = mysqli_fetch_array($result_id)) {
+        $idUser = $donnees['idUser'];
+    }
+    $sql2 = "INSERT INTO pratiquer VALUES ( $idUser , $array[0] , $array[1]  , CURRENT_DATE )";
     $result3 = $db->query($sql2);
     if ($result == TRUE) {
         header('location: homeuser.php');

@@ -14,13 +14,9 @@ if (isset($_GET['idRepas'])) {
 
     if ($result == true && $result2 == true) {
         echo '<script>alert("Repas supprimé avec succès")</script>';
-    }
-
-    /*if ($result == TRUE && $result2 == TRUE) {
-        echo " deleted successfully.";
-    } else {
+    }else {
 
         echo "Error:" . $sql . "<br>" . $db->error;
         echo "Error:" . $sql2 . "<br>" . $db->error;
-    }*/
+    }
 }

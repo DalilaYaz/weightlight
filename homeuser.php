@@ -1,7 +1,7 @@
 <?php require_once 'includes/nav1.php' ?>
 <?php
 session_start();
-
+var_dump($_SESSION['email']);
 if (!isset($_SESSION['email'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
@@ -150,12 +150,12 @@ if (isset($_GET['logout'])) {
         <div class="headerInfo">
             <div class="greenBlock flex">
                 <h3>Bonjour <?php
-                        $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
-                        $result = mysqli_query($db, $search_query);
-                        while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['prenomUt'];
-                        }
-                        ?> ! Voici votre résumé quotidien !</h3>
+                            $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                            $result = mysqli_query($db, $search_query);
+                            while ($donnees = mysqli_fetch_array($result)) {
+                                echo $donnees['prenomUt'];
+                            }
+                            ?> ! Voici votre résumé quotidien !</h3>
                 <span><?php echo $today ?></span>
             </div>
 
@@ -178,56 +178,74 @@ if (isset($_GET['logout'])) {
                     <p>Petit-déjeuner :
 
                         <?php
-                        $search_query = "
-        SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
-        AND c.idType = 1
-        AND c.dateCons = CURRENT_DATE 
-        ";
+                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
+                        AND c.idType = 1
+                        AND c.dateCons = CURRENT_DATE ";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['SUM(calories)'] . " kcal";
+                            if ($donnees['SUM(calories)'] == null) {
+                                echo "0 kcal";
+                            } else {
+                                echo $donnees['SUM(calories)'] . " kcal";
+                            }
                         }
                         ?>
                     </p>
                     <p> Déjeuner :
                         <?php
                         $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND c.idType = 2
                                          AND c.dateCons = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['SUM(calories)'] . " kcal";
+                            if ($donnees['SUM(calories)'] == null) {
+                                echo "0 kcal";
+                            } else {
+                                echo $donnees['SUM(calories)'] . " kcal";
+                            }
                         }
                         ?></p>
                     <p> Collation : <?php
                                     $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND c.idType = 3
                                          AND c.dateCons = CURRENT_DATE";
                                     $result = mysqli_query($db, $search_query);
                                     while ($donnees = mysqli_fetch_array($result)) {
-                                        echo $donnees['SUM(calories)'] . " kcal";
+                                        if ($donnees['SUM(calories)'] == null) {
+                                            echo "0 kcal";
+                                        } else {
+                                            echo $donnees['SUM(calories)'] . " kcal";
+                                        }
                                     }
                                     ?></p>
                     <p>Dîner : <?php
                                 $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                          WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND c.idType = 4
                                          AND c.dateCons = CURRENT_DATE";
                                 $result = mysqli_query($db, $search_query);
                                 while ($donnees = mysqli_fetch_array($result)) {
-                                    echo $donnees['SUM(calories)'] . " kcal";
+                                    if ($donnees['SUM(calories)'] == null) {
+                                        echo "0 kcal";
+                                    } else {
+                                        echo $donnees['SUM(calories)'] . " kcal";
+                                    }
                                 }
                                 ?></p>
-                    <p>Totale de calories : <?php
+                    <p>Total de calories : <?php
                                             $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                                            WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                             WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                             AND c.dateCons = CURRENT_DATE";
                                             $result = mysqli_query($db, $search_query);
                                             while ($donnees = mysqli_fetch_array($result)) {
-                                                echo $donnees['SUM(calories)'] . " kcal";
+                                                if ($donnees['SUM(calories)'] == null) {
+                                                    echo "0 kcal";
+                                                } else {
+                                                    echo $donnees['SUM(calories)'] . " kcal";
+                                                }
                                             }
                                             ?></p>
                 </div>
@@ -244,16 +262,20 @@ if (isset($_GET['logout'])) {
                     <p>Sport :
                         <?php
                         $search_query = "SELECT nomSport FROM sport s INNER JOIN pratiquer p ON s.idSport = p.idSport
-                                         WHERE p.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         WHERE p.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND p.dateSport = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
-                        while ($donnees = mysqli_fetch_array($result)) {
-                            if ($donnees['nomSport'] == null) {
-                                echo "Aucun sport de la journée";
-                            }else{
+                        if ($result == null) {
+                            echo "Aucun sport de la journée";
+                        } else {
+                            while ($donnees = mysqli_fetch_array($result)) {
                                 echo $donnees['nomSport'];
                             }
+                            
                         }
+                            
+                        
+                        
                         ?>
                     </p>
                 </div>

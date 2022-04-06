@@ -1,4 +1,5 @@
-<?php require_once 'includes/nav1.php' ?>
+<?php require_once 'includes/nav1.php';
+session_start()?>
 
 <?php $today = date("d/m/y"); ?>
 <!DOCTYPE html>
@@ -53,6 +54,7 @@
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
                 WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                 AND consommer.idType = 1" ;
                 
                 $result = mysqli_query($db, $meal_query);
@@ -83,6 +85,7 @@
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
                 WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                 AND consommer.idType = 2" ;
                 
                 $result = mysqli_query($db, $meal_query);
@@ -113,6 +116,7 @@
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
                 WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                 AND consommer.idType = 3" ;
                 
                 $result = mysqli_query($db, $meal_query);
@@ -143,6 +147,7 @@
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
                 WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                 AND consommer.idType = 4" ;
                 
                 $result = mysqli_query($db, $meal_query);

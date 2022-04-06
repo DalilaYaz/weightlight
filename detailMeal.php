@@ -46,7 +46,9 @@ session_start();
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
                 WHERE consommer.dateCons = CURRENT_DATE
+                AND consommer.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                 AND consommer.idType = " . $_GET['idType'];
+                
 
                 $result = mysqli_query($db, $meal_query);
                 $array = array();
