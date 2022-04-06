@@ -1,10 +1,10 @@
 <?php require_once 'includes/nav1.php' ?>
 <?php
-
+session_start();
 include("database.php");
 $idType = $_GET['idType'];
 if (isset($_POST['submit'])) {
-
+  
   $intitule = $_POST['intitule'];
   $calories = $_POST['calories'];
 
@@ -17,7 +17,14 @@ if (isset($_POST['submit'])) {
   while ($donnees = mysqli_fetch_array($result2)) {
     array_push($array, $donnees['idRepas']);
   }
-  $sql2 = "INSERT INTO consommer VALUES ( 4 , $array[0] , $idType , CURRENT_DATE )";
+
+  $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
+  $result_id = mysqli_query($db, $search_id);
+  while ($donnees = mysqli_fetch_array($result_id)) {
+    $idUser = $donnees['idUser'];
+  }
+
+  $sql2 = "INSERT INTO consommer VALUES ( $idUser , $array[0] , $idType , CURRENT_DATE )";
   $result3 = $db->query($sql2);
 
   if ($result == true) {
