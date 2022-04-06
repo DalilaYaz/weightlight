@@ -1,7 +1,7 @@
 <?php require_once 'includes/nav1.php' ?>
 <?php
 
-include("database.php") ;
+include("database.php");
 $idType = $_GET['idType'];
 if (isset($_POST['submit'])) {
 
@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 
   $sql = "INSERT INTO repas(intitule, calories) VALUES ('$intitule','$calories')";
   $result = $db->query($sql);
-  
+
   $search_query = "SELECT idRepas FROM repas WHERE intitule = '$intitule' AND idRepas = ( SELECT MAX( idRepas ) FROM repas )";
   $result2 = mysqli_query($db, $search_query);
   $array = array();
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
   }
   $sql2 = "INSERT INTO consommer VALUES ( 4 , $array[0] , $idType , CURRENT_DATE )";
   $result3 = $db->query($sql2);
-  
+
   if ($result == true) {
 
     echo '<script>alert("Repas ajouté avec succès")</script>';

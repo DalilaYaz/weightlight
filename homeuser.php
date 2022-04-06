@@ -71,12 +71,12 @@ if (isset($_GET['logout'])) {
                     <p class="image"> Charger une photo</p>
                     <div class="flex">
                         <p class="weight">Poids :
-                        <?php $search_query = "SELECT poids FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
-                        $result = mysqli_query($db, $search_query);
-                        while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['poids'];
-                        }?> Kg </p>
-                        <i class="fas fa-edit"></i>
+                            <?php $search_query = "SELECT poids FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                            $result = mysqli_query($db, $search_query);
+                            while ($donnees = mysqli_fetch_array($result)) {
+                                echo $donnees['poids'];
+                            } ?> Kg </p>
+                        <a href="modifyPoids.php"><i class="fas fa-edit"></i></a>
                     </div>
 
                 </div>
