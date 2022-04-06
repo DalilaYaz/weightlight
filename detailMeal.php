@@ -37,8 +37,8 @@
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
                 WHERE consommer.dateCons = CURRENT_DATE
-                AND consommer.idType = " . $_GET['idType'] ;
-                
+                AND consommer.idType = " . $_GET['idType'];
+
                 $result = mysqli_query($db, $meal_query);
                 $array = array();
                 while ($donnees = mysqli_fetch_array($result)) {
