@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $result2 = mysqli_query($db, $search_query);
     $array = array();
     while ($donnees = mysqli_fetch_array($result2)) {
-        array_push($array, $donnees['idSport'],$donnees['duree']);
+        array_push($array, $donnees['idSport'], $donnees['duree']);
     }
     $sql2 = "INSERT INTO pratiquer VALUES ( 4 , $array[0] , $array[1]  , CURRENT_DATE )";
     $result3 = $db->query($sql2);
@@ -30,6 +30,7 @@ if (isset($_POST['submit'])) {
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,6 +66,7 @@ if (isset($_POST['submit'])) {
                 </div>
 
                 <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>
+
 
             </form>
         </div>

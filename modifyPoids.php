@@ -29,10 +29,12 @@
             </div>
 
 
-            <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>
+            <button type="submit" name="submit" class="btnPrimary" value="Modifier" id="submit">Modifier</button>
 
         </form>
     </div>
 </body>
+
+
 
 </html>

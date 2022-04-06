@@ -48,7 +48,7 @@ if (isset($_GET['logout'])) {
         include('database.php');
         // Return current date from the remote server
         $today = date("d/m/y");
-        $day_less_one = date("d/m/y", ( time() - 86400));
+        $day_less_one = date("d/m/y", (time() - 86400));
         ?>
 
         <div class="headerInfo">
@@ -171,39 +171,37 @@ if (isset($_GET['logout'])) {
     </main>
 
     <script>
+        var vartoday = <?php echo json_encode($today) ?>;
+        var day_less_one = <?php echo json_encode($day_less_one) ?>;
+        var xValues = [300, 400, 500, 600, 700, 800, day_less_one, vartoday];
 
-    
-var vartoday = <?php echo json_encode($today)?>;
-var day_less_one = <?php echo json_encode($day_less_one)?>;
-var xValues = [300,400,500,600,700,800,day_less_one,vartoday];
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    data: [1060, 1060, 1070, 1110, 1330, 2210, 7830, 2478],
+                    label: 'Calories',
+                    borderColor: '#fe9124',
+                    fill: false
+                }, {
+                    data: [1700, 1900, 2000, 2700, 4000, 5000, 6000, 7000],
+                    label: 'Poids',
+                    borderColor: '#39ad90',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
 
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [1060,1060,1070,1110,1330,2210,7830,2478],
-      label: 'Calories',
-      borderColor: '#fe9124',
-      fill:false
-    },{
-      data: [1700,1900,2000,2700,4000,5000,6000,7000],
-      label: 'Poids',
-      borderColor: '#39ad90',
-      fill: false
-    }]
-  },
-  options: {
-    responsive: true,
-     
-    legend: {
-      display: true,
-    
-    }
-  }
+                legend: {
+                    display: true,
 
-  
-});
+                }
+            }
+
+
+        });
     </script>
 </body>
 
