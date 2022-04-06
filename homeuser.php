@@ -48,19 +48,115 @@ if (isset($_GET['logout'])) {
         include('database.php');
         // Return current date from the remote server
         $today = date("d/m/y");
-        $day_less_one = date("d/m/y", ( time() - 86400));
+        $day_less_1 = date("d/m/y", (time() - 1 * 86400));
+        $day_less_2 = date("d/m/y", (time() - 2 * 86400));
+        $day_less_3 = date("d/m/y", (time() - 3 * 86400));
+        $day_less_4 = date("d/m/y", (time() - 4 * 86400));
+        $day_less_5 = date("d/m/y", (time() - 5 * 86400));
+        $day_less_6 = date("d/m/y", (time() - 6 * 86400));
+        $day_less_7 = date("d/m/y", (time() - 7 * 86400));
+
+        $search_cal_today = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                      AND c.dateCons = CURRENT_DATE";
+        $result = mysqli_query($db, $search_cal_today);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_today = 0;
+            } else {
+                $cal_today = $donnees['SUM(calories)'];
+            }
+        }
+
+        $search_cal_day_less_1 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                      AND c.dateCons = CURRENT_DATE - 1";
+        $result = mysqli_query($db, $search_cal_day_less_1);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_1 = 0;
+            } else {
+                $cal_day_less_1 = $donnees['SUM(calories)'];
+            }
+        }
+        $search_cal_day_less_2 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                      AND c.dateCons = CURRENT_DATE - 2";
+        $result = mysqli_query($db, $search_cal_day_less_2);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_2 = 0;
+            } else {
+                $cal_day_less_2 = $donnees['SUM(calories)'];
+            }
+        }
+        $search_cal_day_less_3 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        AND c.dateCons = CURRENT_DATE - 3";
+        $result = mysqli_query($db, $search_cal_day_less_3);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_3 = 0;
+            } else {
+                $cal_day_less_3 = $donnees['SUM(calories)'];
+            }
+        }
+        $search_cal_day_less_4 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        AND c.dateCons = CURRENT_DATE - 4";
+        $result = mysqli_query($db, $search_cal_day_less_4);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_4 = 0;
+            } else {
+                $cal_day_less_4 = $donnees['SUM(calories)'];
+            }
+        }
+        $search_cal_day_less_5 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        AND c.dateCons = CURRENT_DATE - 5";
+        $result = mysqli_query($db, $search_cal_day_less_5);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_5 = 0;
+            } else {
+                $cal_day_less_5 = $donnees['SUM(calories)'];
+            }
+        }
+        $search_cal_day_less_6 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        AND c.dateCons = CURRENT_DATE - 6";
+        $result = mysqli_query($db, $search_cal_day_less_6);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_6 = 0;
+            } else {
+                $cal_day_less_6 = $donnees['SUM(calories)'];
+            }
+        }
+        $search_cal_day_less_7 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        AND c.dateCons = CURRENT_DATE - 7";
+        $result = mysqli_query($db, $search_cal_day_less_7);
+        while ($donnees = mysqli_fetch_array($result)) {
+            if ($donnees['SUM(calories)'] == null) {
+                $cal_day_less_7 = 0;
+            } else {
+                $cal_day_less_7 = $donnees['SUM(calories)'];
+            }
+        }
         ?>
 
         <div class="headerInfo">
             <div class="greenBlock flex">
-                <h3>Hi, <?php
+                <h3>Bonjour <?php
 
                         $search_query = "SELECT prenomUt FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
                             echo $donnees['prenomUt'];
                         }
-                        ?> ! Voici votre résumé quotidien</h3>
+                        ?> ! Voici votre résumé quotidien !</h3>
                 <span><?php echo $today ?></span>
             </div>
 
@@ -69,11 +165,11 @@ if (isset($_GET['logout'])) {
                     <p class="image"> Charger une photo</p>
                     <div class="flex">
                         <p class="weight">Poids :
-                        <?php $search_query = "SELECT poids FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
-                        $result = mysqli_query($db, $search_query);
-                        while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['poids'];
-                        }?> Kg </p>
+                            <?php $search_query = "SELECT poids FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                            $result = mysqli_query($db, $search_query);
+                            while ($donnees = mysqli_fetch_array($result)) {
+                                echo $donnees['poids'];
+                            } ?> Kg </p>
                         <i class="fas fa-edit"></i>
                     </div>
 
@@ -91,7 +187,7 @@ if (isset($_GET['logout'])) {
         ";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['SUM(calories)'];
+                            echo $donnees['SUM(calories)'] . " kcal";
                         }
                         ?>
                     </p>
@@ -103,7 +199,7 @@ if (isset($_GET['logout'])) {
                                          AND c.dateCons = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['SUM(calories)'];
+                            echo $donnees['SUM(calories)'] . " kcal";
                         }
                         ?></p>
                     <p> Collation : <?php
@@ -113,7 +209,7 @@ if (isset($_GET['logout'])) {
                                          AND c.dateCons = CURRENT_DATE";
                                     $result = mysqli_query($db, $search_query);
                                     while ($donnees = mysqli_fetch_array($result)) {
-                                        echo $donnees['SUM(calories)'];
+                                        echo $donnees['SUM(calories)'] . " kcal";
                                     }
                                     ?></p>
                     <p>Dîner : <?php
@@ -123,16 +219,16 @@ if (isset($_GET['logout'])) {
                                          AND c.dateCons = CURRENT_DATE";
                                 $result = mysqli_query($db, $search_query);
                                 while ($donnees = mysqli_fetch_array($result)) {
-                                    echo $donnees['SUM(calories)'];
+                                    echo $donnees['SUM(calories)'] . " kcal";
                                 }
                                 ?></p>
                     <p>Totale de calories : <?php
                                             $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
-                                         AND c.dateCons = CURRENT_DATE";
+                                            WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                            AND c.dateCons = CURRENT_DATE";
                                             $result = mysqli_query($db, $search_query);
                                             while ($donnees = mysqli_fetch_array($result)) {
-                                                echo $donnees['SUM(calories)'];
+                                                echo $donnees['SUM(calories)'] . " kcal";
                                             }
                                             ?></p>
                 </div>
@@ -143,7 +239,7 @@ if (isset($_GET['logout'])) {
                                             $search_query = "SELECT COUNT(*) FROM type";
                                             $result = mysqli_query($db, $search_query);
                                             while ($donnees = mysqli_fetch_array($result)) {
-                                                echo $donnees['COUNT(*)'];
+                                                echo $donnees['COUNT(*)'] . " repas pris";
                                             }
                                             ?></p>
                     <p>Sport :
@@ -153,7 +249,11 @@ if (isset($_GET['logout'])) {
                                          AND p.dateSport = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['nomSport'];
+                            if ($donnees['nomSport'] == null) {
+                                echo "Aucun sport de la journée";
+                            }else{
+                                echo $donnees['nomSport'];
+                            }
                         }
                         ?>
                     </p>
@@ -171,39 +271,46 @@ if (isset($_GET['logout'])) {
     </main>
 
     <script>
+        var vartoday = <?php echo json_encode($today) ?>;
+        var day_less_1 = <?php echo json_encode($day_less_1) ?>;
+        var day_less_2 = <?php echo json_encode($day_less_2) ?>;
+        var day_less_3 = <?php echo json_encode($day_less_3) ?>;
+        var day_less_4 = <?php echo json_encode($day_less_4) ?>;
+        var day_less_5 = <?php echo json_encode($day_less_5) ?>;
+        var day_less_6 = <?php echo json_encode($day_less_6) ?>;
+        var day_less_7 = <?php echo json_encode($day_less_7) ?>;
+        var xValues = [day_less_7, day_less_6, day_less_5, day_less_4, day_less_3, day_less_2, day_less_1, vartoday];
 
-    
-var vartoday = <?php echo json_encode($today)?>;
-var day_less_one = <?php echo json_encode($day_less_one)?>;
-var xValues = [300,400,500,600,700,800,day_less_one,vartoday];
+        var cal_today = <?php echo json_encode($cal_today) ?>;
+        var cal_day_less_1 = <?php echo json_encode($cal_day_less_1) ?>;
+        var cal_day_less_2 = <?php echo json_encode($cal_day_less_2) ?>;
+        var cal_day_less_3 = <?php echo json_encode($cal_day_less_3) ?>;
+        var cal_day_less_4 = <?php echo json_encode($cal_day_less_4) ?>;
+        var cal_day_less_5 = <?php echo json_encode($cal_day_less_5) ?>;
+        var cal_day_less_6 = <?php echo json_encode($cal_day_less_6) ?>;
+        var cal_day_less_7 = <?php echo json_encode($cal_day_less_7) ?>;
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    data: [cal_day_less_7, cal_day_less_6, cal_day_less_5, cal_day_less_4, cal_day_less_3, cal_day_less_2, cal_day_less_1, cal_today],
+                    label: 'Calories',
+                    borderColor: '#fe9124',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
 
-new Chart("myChart", {
-  type: "line",
-  data: {
-    labels: xValues,
-    datasets: [{
-      data: [1060,1060,1070,1110,1330,2210,7830,2478],
-      label: 'Calories',
-      borderColor: '#fe9124',
-      fill:false
-    },{
-      data: [1700,1900,2000,2700,4000,5000,6000,7000],
-      label: 'Poids',
-      borderColor: '#39ad90',
-      fill: false
-    }]
-  },
-  options: {
-    responsive: true,
-     
-    legend: {
-      display: true,
-    
-    }
-  }
+                legend: {
+                    display: true,
 
-  
-});
+                }
+            }
+
+
+        });
     </script>
 </body>
 
