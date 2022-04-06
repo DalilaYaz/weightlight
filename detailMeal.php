@@ -32,7 +32,7 @@
                 <?php
                 include('database.php');
                 $meal_query = "
-                SELECT repas.intitule, repas.calories 
+                SELECT repas.intitule, repas.calories, repas.idRepas
                 FROM repas 
                 JOIN consommer 
                 ON repas.idRepas = consommer.idRepas
@@ -44,7 +44,7 @@
                 while ($donnees = mysqli_fetch_array($result)) {
                     array_push($array, $donnees['calories']);
 
-                    echo "<p>" . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . "</p>";
+                    echo "<p>" . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-minus-circle'></i></a>" . "</p>";
                 }
                 $sum = array_sum($array);
                 ?>

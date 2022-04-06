@@ -45,8 +45,10 @@ if (isset($_GET['logout'])) {
         <!-- logged in user information -->
 
         <?php
+        include('database.php');
         // Return current date from the remote server
         $today = date("d/m/y");
+
         ?>
 
         <div class="headerInfo">
@@ -66,21 +68,79 @@ if (isset($_GET['logout'])) {
                 </div>
 
                 <div class="mg">
-                    <p>Petit-déjeuner : 200</p>
-                    <p>Collation Midi : 200</p>
-                    <p>Dîner : 120 </p>
-                    <p>Totale de calories : 520</p>
+                    <p>Petit-déjeuner :
+
+                        <?php
+                        $search_query = "
+        SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        AND c.idType = 1
+        AND c.dateCons = CURRENT_DATE 
+        ";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['SUM(calories)'];
+                        }
+                        ?>
+                    </p>
+                    <p> Déjeuner : 
+                        <?php
+                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         AND c.idType = 2
+                                         AND c.dateCons = CURRENT_DATE";
+                                    $result = mysqli_query($db, $search_query);
+                                    while ($donnees = mysqli_fetch_array($result)) {
+                                        echo $donnees['SUM(calories)'];
+                                    }
+                                    ?></p>
+                    <p> Collation :  <?php
+                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         AND c.idType = 3
+                                         AND c.dateCons = CURRENT_DATE";
+                                    $result = mysqli_query($db, $search_query);
+                                    while ($donnees = mysqli_fetch_array($result)) {
+                                        echo $donnees['SUM(calories)'];
+                                    }
+                                    ?></p>
+                    <p>Dîner :  <?php
+                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         AND c.idType = 4
+                                         AND c.dateCons = CURRENT_DATE";
+                                    $result = mysqli_query($db, $search_query);
+                                    while ($donnees = mysqli_fetch_array($result)) {
+                                        echo $donnees['SUM(calories)'];
+                                    }
+                                    ?></p>
+                    <p>Totale de calories :  <?php
+                        $search_query = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
+                                         WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                                         AND c.dateCons = CURRENT_DATE";
+                                    $result = mysqli_query($db, $search_query);
+                                    while ($donnees = mysqli_fetch_array($result)) {
+                                        echo $donnees['SUM(calories)'];
+                                    }
+                                    ?></p>
                 </div>
 
 
                 <div class="mg mg-2">
-                    <p>Nombre de Repas : 3</p>
-                    <p>Journée : 12/12/2022</p>
+                    <p>Nombre de Repas :  <?php
+                        $search_query = "SELECT COUNT(*) FROM type";
+                                    $result = mysqli_query($db, $search_query);
+                                    while ($donnees = mysqli_fetch_array($result)) {
+                                        echo $donnees['COUNT(*)'];
+                                    }
+                                    ?></p>
                     <p>Sport : Velo</p>
                 </div>
             </div>
 
+            <?php
 
+            ?>
         </div>
         <div style="width:100%; margin-top:5rem">
             <canvas id="myChart"></canvas>

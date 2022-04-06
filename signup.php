@@ -27,12 +27,12 @@
 			<div class="field row">
 				<div>
 					<label for="firstname">Prénom </label>
-					<input type="text" name="firstname" value="<?php echo $firstname; ?>" required>
+					<input type="text" name="firstname" value="<?php echo $prenomUt; ?>" required>
 				</div>
 
 				<div>
 					<label for="lastname">Nom</label>
-					<input type="text" name="lastname" value="<?php echo $lastname; ?>" required>
+					<input type="text" name="lastname" value="<?php echo $nomUt; ?>" required>
 				</div>
 			</div>
 
