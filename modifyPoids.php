@@ -1,5 +1,24 @@
 <?php require_once 'includes/nav1.php' ?>
+<?php
+include('database.php');     
+session_start();
+if (isset($_POST['submit'])) {
 
+    $poids = $_POST['poids'];
+    $sql = "UPDATE utilisateur SET poids = {$poids} WHERE idUser = ( SELECT idUser WHERE email = '{$_SESSION['email']}' ) ";
+    $result = $db->query($sql);
+    if ($result == true) {
+  
+      echo '<script>alert("Poids modifié avec succès")</script>';
+    } else {
+  
+      echo "Error:" . $sql . "<br>" . $db->error;
+    }
+  
+    $db->close();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,8 +43,8 @@
         <form action="" method="POST">
 
             <div class="field">
-                <label for="intitule">Poids</label> <br>
-                <input type="text" name="intitule" id="intitule">
+                <label for="poids">Poids</label> <br>
+                <input type="text" name="poids" id="poids">
             </div>
 
 
