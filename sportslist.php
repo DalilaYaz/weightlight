@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
     while ($donnees = mysqli_fetch_array($result2)) {
         array_push($array, $donnees['idSport'],$donnees['duree']);
     }
-    var_dump($array);
     $sql2 = "INSERT INTO pratiquer VALUES ( 4 , $array[0] , $array[1]  , CURRENT_DATE )";
     $result3 = $db->query($sql2);
     if ($result == TRUE) {
