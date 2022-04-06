@@ -1,7 +1,7 @@
 <?php require_once 'includes/nav1.php' ?>
 <?php
 session_start();
-var_dump($_SESSION['email']);
+
 if (!isset($_SESSION['email'])) {
     $_SESSION['msg'] = "You must log in first";
     header('location: login.php');
@@ -265,17 +265,16 @@ if (isset($_GET['logout'])) {
                                          WHERE p.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND p.dateSport = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
-                        if ($result == null) {
-                            echo "Aucun sport de la journée";
-                        } else {
                             while ($donnees = mysqli_fetch_array($result)) {
                                 echo $donnees['nomSport'];
                             }
-                            
-                        }
-                            
                         
-                        
+                       
+
+
+
+
+
                         ?>
                     </p>
                 </div>
