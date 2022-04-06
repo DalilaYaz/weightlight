@@ -57,7 +57,7 @@ if (isset($_GET['logout'])) {
         $day_less_7 = date("d/m/y", (time() - 7 * 86400));
 
         $search_cal_today = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                       AND c.dateCons = CURRENT_DATE";
         $result = mysqli_query($db, $search_cal_today);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -69,7 +69,7 @@ if (isset($_GET['logout'])) {
         }
 
         $search_cal_day_less_1 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                       AND c.dateCons = CURRENT_DATE - 1";
         $result = mysqli_query($db, $search_cal_day_less_1);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -80,7 +80,7 @@ if (isset($_GET['logout'])) {
             }
         }
         $search_cal_day_less_2 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+                      WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                       AND c.dateCons = CURRENT_DATE - 2";
         $result = mysqli_query($db, $search_cal_day_less_2);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -91,7 +91,7 @@ if (isset($_GET['logout'])) {
             }
         }
         $search_cal_day_less_3 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+       WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
         AND c.dateCons = CURRENT_DATE - 3";
         $result = mysqli_query($db, $search_cal_day_less_3);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -102,7 +102,7 @@ if (isset($_GET['logout'])) {
             }
         }
         $search_cal_day_less_4 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
         AND c.dateCons = CURRENT_DATE - 4";
         $result = mysqli_query($db, $search_cal_day_less_4);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -113,7 +113,7 @@ if (isset($_GET['logout'])) {
             }
         }
         $search_cal_day_less_5 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
         AND c.dateCons = CURRENT_DATE - 5";
         $result = mysqli_query($db, $search_cal_day_less_5);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -124,7 +124,7 @@ if (isset($_GET['logout'])) {
             }
         }
         $search_cal_day_less_6 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
         AND c.dateCons = CURRENT_DATE - 6";
         $result = mysqli_query($db, $search_cal_day_less_6);
         while ($donnees = mysqli_fetch_array($result)) {
@@ -135,7 +135,7 @@ if (isset($_GET['logout'])) {
             }
         }
         $search_cal_day_less_7 = "SELECT SUM(calories) FROM repas r INNER JOIN consommer c ON r.idRepas = c.idRepas
-        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE prenomUt LIKE 'test1' )
+        WHERE c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
         AND c.dateCons = CURRENT_DATE - 7";
         $result = mysqli_query($db, $search_cal_day_less_7);
         while ($donnees = mysqli_fetch_array($result)) {
