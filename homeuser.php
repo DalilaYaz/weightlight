@@ -309,21 +309,28 @@ if (isset($_GET['logout'])) {
                         }
                         echo $var . " repas pris";
                         ?></p>
-                    <p>Sport :
+                    <p>
                         <?php
-                        $search_query = "SELECT nomSport FROM sport s INNER JOIN pratiquer p ON s.idSport = p.idSport
+                        $search_query = "SELECT s.nomSport,s.idSport FROM sport s INNER JOIN pratiquer p ON s.idSport = p.idSport
                                          WHERE p.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND p.dateSport = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
-                        while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['nomSport'];
-                            if (empty($donnees['nomSport'])) {
-                                echo "Pas de sport de la journée";
+                        if ($result == true) {
+                            echo "Sport : ";
+
+                            while ($donnees = mysqli_fetch_array($result)) {
+
+                                echo $donnees['nomSport'] . " <a href='deleteSport.php?idSport=";
+                                echo $donnees['idSport'] . "'";
+                                echo "><i class='fas fa-trash'></i></a>";
                             }
+                        } else {
+
+                            echo "Pas de sport de la journée";
                         }
 
                         ?>
-                        <a href="deleteSport.php"><i class="fas fa-trash"></i></a>
+
                     </p>
 
                 </div>

@@ -2,8 +2,6 @@
 
 include('database.php');
 
-
-include "database.php";
 session_start();
 if (!isset($_SESSION['email'])) {
     $_SESSION['msg'] = "You must log in first";
@@ -21,7 +19,7 @@ if (isset($_GET['idRepas'])) {
 
     $sql = "DELETE FROM consommer WHERE consommer.idRepas=$idRepas";
     $result = mysqli_query($db, $sql);
-
+    
     $sql2 = "DELETE FROM repas WHERE repas.idRepas=$idRepas";
     $result2 = mysqli_query($db, $sql2);
 
