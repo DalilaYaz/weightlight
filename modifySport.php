@@ -77,7 +77,7 @@ if (isset($_POST['submit']) && isset($_GET['idSport'])) {
             <div class="field">
                 <label for="poids">Duree ( min )</label> <br>
                 <?php
-                echo "<input type='text' name='duree' id='duree' value='";
+                echo "<input type='number' name='duree' id='duree' value='";
                 $sql = "SELECT duree
                         FROM sport
                         WHERE idSport = {$_GET['idSport']}";

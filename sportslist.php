@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="field">
                     <label for="duree">Durée</label> <br>
-                    <input type="text" name="duree" id="duree">
+                    <input type="number" name="duree" id="duree">
                 </div>
                 <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>
 

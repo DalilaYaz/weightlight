@@ -168,7 +168,7 @@ if (isset($_GET['logout'])) {
                             $result = mysqli_query($db, $search_query);
                             while ($donnees = mysqli_fetch_array($result)) {
                                 echo $donnees['poids'];
-                            } ?> Kg </p>
+                            } ?> kg </p>
                         <a href="modifyPoids.php"><i class="fas fa-edit"></i></a>
                     </div>
 
@@ -322,13 +322,14 @@ if (isset($_GET['logout'])) {
                             }else{
                             while ($donnees = mysqli_fetch_array($result)) {
 
-                                echo $donnees['nomSport'] . " ( "  . $donnees['duree']. " minutes )" ." <a href='deleteSport.php?idSport=";
+                                echo " - " . $donnees['nomSport'] . " ( "  . $donnees['duree']. " minute(s) )" ." <a href='deleteSport.php?idSport=";
                                 echo $donnees['idSport'] . "'";
                                 echo "><i class='fas fa-trash'></i></a>";
                                
                                 echo " <a href='modifySport.php?idSport=";
                                 echo $donnees['idSport'] . "'";
                                 echo "><i class='fas fa-edit'></i></a>";
+                                echo "<br>";
                             }
                         }
                          

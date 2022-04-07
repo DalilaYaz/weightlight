@@ -57,7 +57,7 @@ if (isset($_POST['submit'])) {
             <div class="field">
                 <label for="poids">Poids ( kg )</label> <br>
                 <?php
-                echo "<input type='text' name='poids' id='poids' value='";
+                echo "<input type='number' name='poids' id='poids' value='";
                 $sql = "SELECT poids
                         FROM utilisateur
                         WHERE idUser = ( SELECT idUser WHERE email = '{$_SESSION['email']}' )";

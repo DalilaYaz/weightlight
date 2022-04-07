@@ -80,7 +80,7 @@ if (isset($_POST['submit'])) {
 
       <div class="field">
         <label for="calories">Calories</label> <br>
-        <input type="text" name="calories" id="calories">
+        <input type="number" name="calories" id="calories">
       </div>
 
 
