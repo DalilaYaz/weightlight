@@ -253,7 +253,10 @@ if (isset($_GET['logout'])) {
 
                 <div class="mg mg-2">
                     <p>Nombre de Repas : <?php
-                                            $search_query = "SELECT COUNT(*) FROM type";
+                                            $search_query = "SELECT COUNT(*) FROM type t 
+                                            INNER JOIN consommer c 
+                                            ON t.idType = c.idType 
+                                            WHERE c.dateCons = CURRENT_DATE";
                                             $result = mysqli_query($db, $search_query);
                                             while ($donnees = mysqli_fetch_array($result)) {
                                                 echo $donnees['COUNT(*)'] . " repas pris";
@@ -267,14 +270,11 @@ if (isset($_GET['logout'])) {
                         $result = mysqli_query($db, $search_query);
                             while ($donnees = mysqli_fetch_array($result)) {
                                 echo $donnees['nomSport'];
+                                if(empty($donnees['nomSport'])){
+                                    echo "Pas de sport de la journée";
+                                }
                             }
-                        
-                       
-
-
-
-
-
+                            
                         ?>
                     </p>
                 </div>

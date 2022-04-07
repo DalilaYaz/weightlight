@@ -1,5 +1,17 @@
 <?php require_once 'includes/nav1.php';
-session_start()?>
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header("location: login.php");
+}
+
+?>
 
 <?php $today = date("d/m/y"); ?>
 <!DOCTYPE html>
