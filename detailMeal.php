@@ -30,13 +30,30 @@ if (isset($_GET['logout'])) {
     <title>WeightLight</title>
 </head>
 
-
-
 <body>
     <main>
         <div class="detail">
-            <img src="images/meals/breakfast.png" alt="">
-            <p>PETIT DÉJEUNER</p>
+            <?php if($_GET["idType"] == 1){
+                echo "<img src='images/meals/breakfast.png' alt='Petit déjeuner'>";
+            } else if($_GET["idType"] == 2){
+                echo "<img src='images/meals/lunch.png' alt='Déjeuner'>";
+            }else if($_GET["idType"] == 3){
+                echo "<img src='images/meals/collation.png' alt='Collation'>";
+            }
+            else if($_GET["idType"] == 4){
+                echo "<img src='images/meals/dinner.png' alt='Dîner'>";
+            }
+            ?>
+            
+            <p>
+            <?php
+            $type_query = "SELECT nomType FROM `type` WHERE idType = '{$_GET["idType"]}'  ";
+                                                    $result = mysqli_query($db, $type_query);
+                                                    while ($donnees = mysqli_fetch_array($result)) {
+                                                        echo strtoupper($donnees['nomType']);
+                                                    }  
+            ?>
+            </p>
             <div class="caloriesInfo">
                 <div class="intro">
                     <p>Bonjour <span class="orange"><?php
