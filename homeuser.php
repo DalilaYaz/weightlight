@@ -252,15 +252,62 @@ if (isset($_GET['logout'])) {
 
 
                 <div class="mg mg-2">
-                    <p>Nombre de Repas : <?php
-                                            $search_query = "SELECT COUNT(*) FROM type t 
+                    <p>Nombre de Repas : 
+                        
+                        <?php
+                                            $var = 0;
+                                            $search_query_1 = "SELECT COUNT(*) FROM type t 
                                             INNER JOIN consommer c 
                                             ON t.idType = c.idType 
-                                            WHERE c.dateCons = CURRENT_DATE";
-                                            $result = mysqli_query($db, $search_query);
-                                            while ($donnees = mysqli_fetch_array($result)) {
-                                                echo $donnees['COUNT(*)'] . " repas pris";
+                                            WHERE c.idType = 1
+                                            AND c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
+                                            AND c.dateCons = CURRENT_DATE";
+                                            $result_1 = mysqli_query($db, $search_query_1);
+                                            while ($donnees_1 = mysqli_fetch_array($result_1)) {
+                                                if(!empty($donnees_1[0])){
+                                                    $var ++;
+                                                }
                                             }
+                                            $search_query_2 = "SELECT COUNT(*) FROM type t 
+                                            INNER JOIN consommer c 
+                                            ON t.idType = c.idType 
+                                            WHERE c.idType = 2
+                                            AND c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
+                                            AND c.dateCons = CURRENT_DATE";
+                                            $result_2 = mysqli_query($db, $search_query_2);
+                                            while ($donnees_2 = mysqli_fetch_array($result_2)) {
+                                                
+                                                if(!empty($donnees_2[0])){
+                                                    $var ++;
+                                                }
+                                            }
+                                            $search_query_3 = "SELECT COUNT(*) FROM type t 
+                                            INNER JOIN consommer c 
+                                            ON t.idType = c.idType 
+                                            WHERE c.idType = 3
+                                            AND c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
+                                            AND c.dateCons = CURRENT_DATE";
+                                            $result_3 = mysqli_query($db, $search_query_3);
+                                            while ($donnees_3 = mysqli_fetch_array($result_3)) {
+                                                
+                                                if(!empty($donnees_3[0])){
+                                                    $var ++;
+                                                }
+                                            }
+                                            $search_query_4 = "SELECT COUNT(*) FROM type t 
+                                            INNER JOIN consommer c 
+                                            ON t.idType = c.idType 
+                                            WHERE c.idType = 4
+                                            AND c.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
+                                            AND c.dateCons = CURRENT_DATE";
+                                            $result_4 = mysqli_query($db, $search_query_4);
+                                            while ($donnees_4 = mysqli_fetch_array($result_4)) {
+                                               
+                                                if(!empty($donnees_4[0])){
+                                                    $var ++;
+                                                }
+                                            }
+                                            echo $var . " repas pris";
                                             ?></p>
                     <p>Sport :
                         <?php
