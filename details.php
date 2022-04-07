@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
                 <canvas id="graph"></canvas>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
             </div>
-
+            
         </div>
 
         <!-- card 2 meals -->
@@ -177,8 +177,10 @@ if (isset($_GET['logout'])) {
                     <a href="detailMeal.php?idType=4"><i class="fas fa-info-circle"></i></a>
                     <a href="addMeals.php?idType=4"><i class="fas fa-plus-circle"></i></a>
                 </div>
-            </div>
 
+                
+            </div>
+            TOTAL : <?php echo $sum5 ?> Kcal
 
         </div>
 
