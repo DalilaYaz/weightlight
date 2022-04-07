@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
     <!-- utilities.css Représente le code css commun entre les pages -->
     <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sportslist.css">
     <link rel="stylesheet" href="css/addMeal.css">
     <title>WeightLight</title>
 </head>
@@ -60,21 +60,17 @@ if (isset($_POST['submit'])) {
         <div class="">
 
             <form action="" method="POST">
-
                 <div class="field">
                     <label for="nomSport">Nom du Sport</label> <br>
                     <input type="text" name="nomSport" id="nomSport">
                 </div>
-
                 <div class="field">
                     <label for="duree">Durée</label> <br>
                     <input type="text" name="duree" id="duree">
                 </div>
-
                 <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>
-
-
             </form>
+
         </div>
 
         <img src="./images/sports/foot.png" alt="">
