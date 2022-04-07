@@ -65,7 +65,11 @@ if (isset($_GET['logout'])) {
                 while ($donnees = mysqli_fetch_array($result)) {
                     array_push($array, $donnees['calories']);
 
-                    echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>" . "</p>";
+                    echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>" ;
+                    echo " <a href='modifyMeal.php?idRepas=";
+                    echo $donnees['idRepas'] . "'";
+                    echo "><i class='fas fa-edit'></i></a>";
+                    echo "</p>";
                 }
                 $sum = array_sum($array);
                 ?>

@@ -61,11 +61,11 @@ if (isset($_POST['submit']) && isset($_GET['idSport'])) {
 
             <div class="field">
                 <label for="poids">Sport</label> <br>
-                <input type="text" name="sport" id="sport">
+                <input type="text" name="sport" id="sport" required>
             </div>
             <div class="field">
-                <label for="poids">Duree</label> <br>
-                <input type="text" name="duree" id="duree">
+                <label for="poids">Duree ( min )</label> <br>
+                <input type="text" name="duree" id="duree" required>
             </div>
 
             <button type="submit" name="submit" class="btnPrimary" value="Modifier" id="submit">Modifier</button>

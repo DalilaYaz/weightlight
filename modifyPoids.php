@@ -52,11 +52,11 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="mainBlock">
         <h3>Modifier votre Poids</h3>
-        <form action="" method="POST">
+        <form action="modifyPoids.php" method="POST">
 
             <div class="field">
-                <label for="poids">Poids</label> <br>
-                <input type="text" name="poids" id="poids">
+                <label for="poids">Poids ( kg )</label> <br>
+                <input type="text" name="poids" id="poids" required>
             </div>
 
 

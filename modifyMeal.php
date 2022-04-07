@@ -14,6 +14,27 @@ if (isset($_GET['logout'])) {
     unset($_SESSION['email']);
     header("location: login.php");
 }
+
+if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
+
+    $idRepas  = $_GET['idRepas'];
+    $intitule = $_POST['intitule'];
+    $calories = $_POST['calories'];
+
+    $sql = "UPDATE repas 
+    SET intitule = '{$intitule}',calories = '{$calories}'
+    WHERE idRepas = {$_GET['idRepas']}";
+    $result = $db->query($sql);
+    if ($result == true) {
+
+        header('location: details.php');
+    } else {
+
+        echo "Error:" . $sql . "<br>" . $db->error;
+    }
+
+    $db->close();
+}
 ?>
 
 
@@ -42,12 +63,12 @@ if (isset($_GET['logout'])) {
 
             <div class="field">
                 <label for="intitule">Nom du repas</label> <br>
-                <input type="text" name="intitule" id="intitule">
+                <input type="text" name="intitule" id="intitule" required>
             </div>
 
             <div class="field">
-                <label for="calories">Calories</label> <br>
-                <input type="text" name="calories" id="calories">
+                <label for="calories">Calories ( kcal )</label> <br>
+                <input type="text" name="calories" id="calories" required>
             </div>
 
 
