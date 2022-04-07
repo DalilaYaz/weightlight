@@ -80,6 +80,7 @@ if (isset($_POST['submit'])) {
                     <input type="text" name="duree" id="duree">
                 </div>
                 <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>
+
             </form>
 
         </div>
