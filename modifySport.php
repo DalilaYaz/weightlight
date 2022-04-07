@@ -69,10 +69,10 @@ if (isset($_POST['submit']) && isset($_GET['idSport'])) {
                 $result = $db->query($sql);
                 while ($donnees = mysqli_fetch_array($result)) {
                     echo $donnees['nomSport'] . "' required>";
-                }  
-                 
+                }
+
                 ?>
-                
+
             </div>
             <div class="field">
                 <label for="poids">Duree ( min )</label> <br>
@@ -84,9 +84,9 @@ if (isset($_POST['submit']) && isset($_GET['idSport'])) {
                 $result = $db->query($sql);
                 while ($donnees = mysqli_fetch_array($result)) {
                     echo $donnees['duree'] . "' required>";
-                }  
+                }
                 ?>
-                
+
             </div>
 
             <button type="submit" name="submit" class="btnPrimary" value="Modifier" id="submit">Modifier</button>

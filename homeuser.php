@@ -315,26 +315,26 @@ if (isset($_GET['logout'])) {
                                          WHERE p.idUser = ( SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}' )
                                          AND p.dateSport = CURRENT_DATE";
                         $result = mysqli_query($db, $search_query);
-                        
-                            echo "Sport : ";
-                            if($result->num_rows == 0){
-                                echo "Pas de sport de la journée";
-                            }else{
+
+                        echo "Sport : ";
+                        if ($result->num_rows == 0) {
+                            echo "Pas de sport de la journée";
+                        } else {
                             while ($donnees = mysqli_fetch_array($result)) {
 
-                                echo " - " . $donnees['nomSport'] . " ( "  . $donnees['duree']. " minute(s) )" ." <a href='deleteSport.php?idSport=";
+                                echo $donnees['nomSport'] . " ( "  . $donnees['duree'] . " minute(s) )" . " <a href='deleteSport.php?idSport=";
                                 echo $donnees['idSport'] . "'";
                                 echo "><i class='fas fa-trash'></i></a>";
-                               
+
                                 echo " <a href='modifySport.php?idSport=";
                                 echo $donnees['idSport'] . "'";
                                 echo "><i class='fas fa-edit'></i></a>";
                                 echo "<br>";
                             }
                         }
-                         
-                            
-                        
+
+
+
 
                         ?>
 
