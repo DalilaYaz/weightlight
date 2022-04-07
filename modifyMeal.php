@@ -20,19 +20,22 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
     $idRepas  = $_GET['idRepas'];
     $intitule = $_POST['intitule'];
     $calories = $_POST['calories'];
-
-    $sql = "UPDATE repas 
+    if (preg_match("/^[a-zA-Z\s]+$/", $intitule)) {
+        $sql = "UPDATE repas 
     SET intitule = '{$intitule}',calories = '{$calories}'
     WHERE idRepas = {$_GET['idRepas']}";
-    $result = $db->query($sql);
-    if ($result == true) {
-        header('location: details.php');
+        $result = $db->query($sql);
+        if ($result == true) {
+            header('location: details.php');
+        } else {
+
+            echo "Error:" . $sql . "<br>" . $db->error;
+        }
+
+        $db->close();
     } else {
-
-        echo "Error:" . $sql . "<br>" . $db->error;
+        echo "<script>alert('Nom d'aliment invalide, veuillez réessayer !')</script>";
     }
-
-    $db->close();
 }
 ?>
 
@@ -70,8 +73,8 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
                 $result = $db->query($sql);
                 while ($donnees = mysqli_fetch_array($result)) {
                     echo $donnees['intitule'] . "' required>";
-                }  
-                 
+                }
+
                 ?>
             </div>
 
@@ -85,10 +88,10 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
                 $result = $db->query($sql);
                 while ($donnees = mysqli_fetch_array($result)) {
                     echo $donnees['calories'] . "' required>";
-                }  
-                 
+                }
+
                 ?>
-                
+
             </div>
 
 

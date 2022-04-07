@@ -33,26 +33,25 @@ if (isset($_GET['logout'])) {
 <body>
     <main>
         <div class="detail">
-            <?php if($_GET["idType"] == 1){
+            <?php if ($_GET["idType"] == 1) {
                 echo "<img src='images/meals/breakfast.png' alt='Petit déjeuner'>";
-            } else if($_GET["idType"] == 2){
+            } else if ($_GET["idType"] == 2) {
                 echo "<img src='images/meals/lunch.png' alt='Déjeuner'>";
-            }else if($_GET["idType"] == 3){
+            } else if ($_GET["idType"] == 3) {
                 echo "<img src='images/meals/collation.png' alt='Collation'>";
-            }
-            else if($_GET["idType"] == 4){
+            } else if ($_GET["idType"] == 4) {
                 echo "<img src='images/meals/dinner.png' alt='Dîner'>";
             }
             ?>
-            
+
             <p>
-            <?php
-            $type_query = "SELECT nomType FROM `type` WHERE idType = '{$_GET["idType"]}'  ";
-                                                    $result = mysqli_query($db, $type_query);
-                                                    while ($donnees = mysqli_fetch_array($result)) {
-                                                        echo strtoupper($donnees['nomType']);
-                                                    }  
-            ?>
+                <?php
+                $type_query = "SELECT nomType FROM `type` WHERE idType = '{$_GET["idType"]}'  ";
+                $result = mysqli_query($db, $type_query);
+                while ($donnees = mysqli_fetch_array($result)) {
+                    echo strtoupper($donnees['nomType']);
+                }
+                ?>
             </p>
             <div class="caloriesInfo">
                 <div class="intro">
@@ -82,7 +81,7 @@ if (isset($_GET['logout'])) {
                 while ($donnees = mysqli_fetch_array($result)) {
                     array_push($array, $donnees['calories']);
 
-                    echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>" ;
+                    echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>";
                     echo " <a href='modifyMeal.php?idRepas=";
                     echo $donnees['idRepas'] . "'";
                     echo "><i class='fas fa-edit'></i></a>";

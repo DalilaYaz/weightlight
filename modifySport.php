@@ -15,24 +15,27 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_POST['submit']) && isset($_GET['idSport'])) {
+    if (preg_match("/^[a-zA-Z]+$/", $_POST['sport'])) {
+        $idSport  = $_GET['idSport'];
+        $sport = $_POST['sport'];
+        $duree = $_POST['duree'];
 
-    $idSport  = $_GET['idSport'];
-    $sport = $_POST['sport'];
-    $duree = $_POST['duree'];
-
-    $sql = "UPDATE sport 
+        $sql = "UPDATE sport 
     SET nomSport = '{$sport}',duree = '{$duree}'
     WHERE idSport = {$_GET['idSport']}";
-    $result = $db->query($sql);
-    if ($result == true) {
+        $result = $db->query($sql);
+        if ($result == true) {
 
-        header('location: homeuser.php');
+            header('location: homeuser.php');
+        } else {
+
+            echo "Error:" . $sql . "<br>" . $db->error;
+        }
+
+        $db->close();
     } else {
-
-        echo "Error:" . $sql . "<br>" . $db->error;
+        echo "<script>alert('Nom de sport invalide, veuillez réessayer !')</script>";
     }
-
-    $db->close();
 }
 
 ?>

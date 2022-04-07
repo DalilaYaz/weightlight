@@ -15,38 +15,41 @@ if (isset($_GET['logout'])) {
 }
 $idType = $_GET['idType'];
 if (isset($_POST['submit'])) {
+  if (preg_match("/^[a-zA-Z\s]+$/", $_POST['intitule'])) {
+    $intitule = $_POST['intitule'];
+    $calories = $_POST['calories'];
 
-  $intitule = $_POST['intitule'];
-  $calories = $_POST['calories'];
+    $sql = "INSERT INTO repas(intitule, calories) VALUES ('$intitule','$calories')";
+    $result = $db->query($sql);
 
-  $sql = "INSERT INTO repas(intitule, calories) VALUES ('$intitule','$calories')";
-  $result = $db->query($sql);
+    $search_query = "SELECT idRepas FROM repas WHERE intitule = '$intitule' AND idRepas = ( SELECT MAX( idRepas ) FROM repas )";
+    $result2 = mysqli_query($db, $search_query);
+    $array = array();
+    while ($donnees = mysqli_fetch_array($result2)) {
+      array_push($array, $donnees['idRepas']);
+    }
 
-  $search_query = "SELECT idRepas FROM repas WHERE intitule = '$intitule' AND idRepas = ( SELECT MAX( idRepas ) FROM repas )";
-  $result2 = mysqli_query($db, $search_query);
-  $array = array();
-  while ($donnees = mysqli_fetch_array($result2)) {
-    array_push($array, $donnees['idRepas']);
-  }
+    $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
+    $result_id = mysqli_query($db, $search_id);
+    while ($donnees = mysqli_fetch_array($result_id)) {
+      $idUser = $donnees['idUser'];
+    }
 
-  $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
-  $result_id = mysqli_query($db, $search_id);
-  while ($donnees = mysqli_fetch_array($result_id)) {
-    $idUser = $donnees['idUser'];
-  }
+    $sql2 = "INSERT INTO consommer VALUES ( $idUser , $array[0] , $idType , CURRENT_DATE )";
+    $result3 = $db->query($sql2);
 
-  $sql2 = "INSERT INTO consommer VALUES ( $idUser , $array[0] , $idType , CURRENT_DATE )";
-  $result3 = $db->query($sql2);
+    if ($result == true) {
 
-  if ($result == true) {
+      header('location: details.php');
+    } else {
 
-    header('location: details.php');
+      echo "Error:" . $sql . "<br>" . $db->error;
+    }
+
+    $db->close();
   } else {
-
-    echo "Error:" . $sql . "<br>" . $db->error;
+    echo "<script>alert('Nom de'aliment invalide, veuillez réessayer !')</script>";
   }
-
-  $db->close();
 }
 
 ?>

@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_POST['submit'])) {
-
+    
     $poids = $_POST['poids'];
     $sql = "UPDATE utilisateur SET poids = {$poids} WHERE idUser = ( SELECT idUser WHERE email = '{$_SESSION['email']}' ) ";
     $result = $db->query($sql);
