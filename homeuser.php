@@ -326,7 +326,9 @@ if (isset($_GET['logout'])) {
                                 echo $donnees['idSport'] . "'";
                                 echo "><i class='fas fa-trash'></i></a>";
                                
-                                
+                                echo "<a href='modifySport.php?idSport=";
+                                echo $donnees['idSport'] . "'";
+                                echo "><i class='fas fa-edit'></i></a>";
                             }
                         }
                          

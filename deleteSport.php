@@ -13,7 +13,7 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_GET['idSport'])) {
-    echo $_GET['idSport'];
+    
     $idSport  = $_GET['idSport'];
 
     $sql = "DELETE FROM pratiquer WHERE pratiquer.idSport=$idSport";

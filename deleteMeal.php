@@ -26,12 +26,6 @@ if (isset($_GET['idRepas'])) {
     if ($result == true && $result2 == true) {
         header('location: details.php');
     }
-
-    /*if ($result == TRUE && $result2 == TRUE) {
-        echo " deleted successfully.";
-    } else {
-
-        echo "Error:" . $sql . "<br>" . $db->error;
-        echo "Error:" . $sql2 . "<br>" . $db->error;
-    }*/
+}else{
+    echo "No IdRepas found";
 }

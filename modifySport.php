@@ -14,10 +14,15 @@ if (isset($_GET['logout'])) {
     header("location: login.php");
 }
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) && isset($_GET['idSport'])) {
 
-    $poids = $_POST['poids'];
-    $sql = "UPDATE utilisateur SET poids = {$poids} WHERE idUser = ( SELECT idUser WHERE email = '{$_SESSION['email']}' ) ";
+    $idSport  = $_GET['idSport'];
+    $sport = $_POST['sport'];
+    $duree = $_POST['duree'];
+
+    $sql = "UPDATE sport 
+    SET nomSport = '{$sport}',duree = '{$duree}'
+    WHERE idSport = {$_GET['idSport']}";
     $result = $db->query($sql);
     if ($result == true) {
 
@@ -51,14 +56,17 @@ if (isset($_POST['submit'])) {
 
 <body>
     <div class="mainBlock">
-        <h3>Modifier votre Poids</h3>
+        <h3>Modifier votre Sport</h3>
         <form action="" method="POST">
 
             <div class="field">
-                <label for="poids">Poids</label> <br>
-                <input type="text" name="poids" id="poids">
+                <label for="poids">Sport</label> <br>
+                <input type="text" name="sport" id="sport">
             </div>
-
+            <div class="field">
+                <label for="poids">Duree</label> <br>
+                <input type="text" name="duree" id="duree">
+            </div>
 
             <button type="submit" name="submit" class="btnPrimary" value="Modifier" id="submit">Modifier</button>
 
