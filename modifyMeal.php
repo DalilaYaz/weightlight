@@ -26,7 +26,6 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
     WHERE idRepas = {$_GET['idRepas']}";
     $result = $db->query($sql);
     if ($result == true) {
-
         header('location: details.php');
     } else {
 
@@ -63,12 +62,33 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
 
             <div class="field">
                 <label for="intitule">Nom du repas</label> <br>
-                <input type="text" name="intitule" id="intitule" required>
+                <?php
+                echo "<input type='text' name='intitule' id='intitule' value='";
+                $sql = "SELECT intitule
+                        FROM repas
+                        WHERE idRepas = {$_GET['idRepas']}";
+                $result = $db->query($sql);
+                while ($donnees = mysqli_fetch_array($result)) {
+                    echo $donnees['intitule'] . "' required>";
+                }  
+                 
+                ?>
             </div>
 
             <div class="field">
                 <label for="calories">Calories ( kcal )</label> <br>
-                <input type="text" name="calories" id="calories" required>
+                <?php
+                echo "<input type='text' name='calories' id='calories' value='";
+                $sql = "SELECT calories
+                        FROM repas
+                        WHERE idRepas = {$_GET['idRepas']}";
+                $result = $db->query($sql);
+                while ($donnees = mysqli_fetch_array($result)) {
+                    echo $donnees['calories'] . "' required>";
+                }  
+                 
+                ?>
+                
             </div>
 
 

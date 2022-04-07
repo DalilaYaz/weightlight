@@ -61,11 +61,32 @@ if (isset($_POST['submit']) && isset($_GET['idSport'])) {
 
             <div class="field">
                 <label for="poids">Sport</label> <br>
-                <input type="text" name="sport" id="sport" required>
+                <?php
+                echo "<input type='text' name='sport' id='sport' value='";
+                $sql = "SELECT nomSport
+                        FROM sport
+                        WHERE idSport = {$_GET['idSport']}";
+                $result = $db->query($sql);
+                while ($donnees = mysqli_fetch_array($result)) {
+                    echo $donnees['nomSport'] . "' required>";
+                }  
+                 
+                ?>
+                
             </div>
             <div class="field">
                 <label for="poids">Duree ( min )</label> <br>
-                <input type="text" name="duree" id="duree" required>
+                <?php
+                echo "<input type='text' name='duree' id='duree' value='";
+                $sql = "SELECT duree
+                        FROM sport
+                        WHERE idSport = {$_GET['idSport']}";
+                $result = $db->query($sql);
+                while ($donnees = mysqli_fetch_array($result)) {
+                    echo $donnees['duree'] . "' required>";
+                }  
+                ?>
+                
             </div>
 
             <button type="submit" name="submit" class="btnPrimary" value="Modifier" id="submit">Modifier</button>

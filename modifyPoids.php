@@ -56,7 +56,18 @@ if (isset($_POST['submit'])) {
 
             <div class="field">
                 <label for="poids">Poids ( kg )</label> <br>
-                <input type="text" name="poids" id="poids" required>
+                <?php
+                echo "<input type='text' name='poids' id='poids' value='";
+                $sql = "SELECT poids
+                        FROM utilisateur
+                        WHERE idUser = ( SELECT idUser WHERE email = '{$_SESSION['email']}' )";
+                $result = $db->query($sql);
+                while ($donnees = mysqli_fetch_array($result)) {
+                    echo $donnees['poids'] . "' required>";
+                }  
+                 
+                ?>
+
             </div>
 
 
