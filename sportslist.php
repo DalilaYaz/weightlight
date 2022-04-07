@@ -15,36 +15,41 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_POST['submit'])) {
+    if (preg_match("/[a-z]/i", $_POST['nomSport'])) {
+        $nomSport = $_POST['nomSport'];
+        $duree = $_POST['duree'];
 
-    $nomSport = $_POST['nomSport'];
-    $duree = $_POST['duree'];
+        $sql = "INSERT INTO `sport`(`nomSport`, `duree`) VALUES ('$nomSport','$duree')";
+        $result = $db->query($sql);
 
-    $sql = "INSERT INTO `sport`(`nomSport`, `duree`) VALUES ('$nomSport','$duree')";
-    $result = $db->query($sql);
+        $search_query = "SELECT idSport,duree FROM sport WHERE nomSport = '$nomSport' AND idSport = ( SELECT MAX( idSport ) FROM sport )";
+        $result2 = mysqli_query($db, $search_query);
+        $array = array();
+        while ($donnees = mysqli_fetch_array($result2)) {
+            array_push($array, $donnees['idSport'], $donnees['duree']);
+        }
 
-    $search_query = "SELECT idSport,duree FROM sport WHERE nomSport = '$nomSport' AND idSport = ( SELECT MAX( idSport ) FROM sport )";
-    $result2 = mysqli_query($db, $search_query);
-    $array = array();
-    while ($donnees = mysqli_fetch_array($result2)) {
-        array_push($array, $donnees['idSport'], $donnees['duree']);
+        $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
+        $result_id = mysqli_query($db, $search_id);
+        while ($donnees = mysqli_fetch_array($result_id)) {
+            $idUser = $donnees['idUser'];
+        }
+        $sql2 = "INSERT INTO pratiquer VALUES ( $idUser , $array[0] , $array[1]  , CURRENT_DATE )";
+        $result3 = $db->query($sql2);
+        if ($result == TRUE) {
+            header('location: homeuser.php');
+        } else {
+
+            echo "Error:" . $sql . "<br>" . $db->error;
+        }
+
+        $db->close();
     }
-
-    $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
-    $result_id = mysqli_query($db, $search_id);
-    while ($donnees = mysqli_fetch_array($result_id)) {
-        $idUser = $donnees['idUser'];
-    }
-    $sql2 = "INSERT INTO pratiquer VALUES ( $idUser , $array[0] , $array[1]  , CURRENT_DATE )";
-    $result3 = $db->query($sql2);
-    if ($result == TRUE) {
-        header('location: homeuser.php');
-    } else {
-
-        echo "Error:" . $sql . "<br>" . $db->error;
-    }
-
-    $db->close();
+} else {
+    echo "<script>alert('Please enter a valid nomSport')</script>";
 }
+
+
 
 ?>
 
@@ -88,58 +93,6 @@ if (isset($_POST['submit'])) {
         <img src="./images/sports/foot.png" alt="">
 
     </div>
-
-    <!-- <form action="code.php" method="POST">
-
-                <div class="from-group mb-3">
-                    <label for="nomSport"></label>
-                    <select name="nomSport" class="form-control">
-                        <option value="">-- Nom de l'activité -- </option>
-                        <option value="Football">Football</option>
-                        <option value="Natation">Natation</option>
-                        <option value="Basket-ball">Basket-ball</option>
-                        <option value="Course à pied">Course à pied</option>
-                        <option value="Pêche">Pêche</option>
-                    </select>
-                </div>
-                <div class="from-group mb-3">
-                    <button type="submit" class="btnPrimary" name="save_select" value="Ajouter">Ajouter</button>
-
-                </div>
-            </form> -->
-
-    <!-- <div class="dropdown">
-                <label for="sport-select">Activité sportif </label>
-                <select name="sports" id="sport-select">
-
-                    <option value="">Nom de l'activité</option>
-                    <option value="dog">Course à pieds</option>
-                    <option value="cat">Football</option>
-                    <option value="hamster">Basket-ball</option>
-                    <option value="parrot">Natation</option>
-                    <option value="spider">Cyclisme</option>
-                    <option value="goldfish">Pêche</option>
-                </select>
-            </div> -->
-
-    <!-- <div class="dropdown">
-                <label for="duration-select">Duration </label>
-                <select name="duration" id="duration-select">
-                    <option value="">Duration</option>
-                    <option value="5m">5 minutes</option>
-                    <option value="10m">10 minutes</option>
-                    <option value="15m">15 minutes</option>
-                    <option value="20m">20 minutes</option>
-                    <option value="30m">30 minutes</option>
-                    <option value="45m">45 minutes</option>
-                    <option value="1h">1 heure</option>
-                    <option value="2h">2 heures</option>
-                    <option value="3h">3 heures</option>
-                </select>
-            </div> -->
-
-
-
 
 </body>
 
