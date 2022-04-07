@@ -322,7 +322,7 @@ if (isset($_GET['logout'])) {
                             }else{
                             while ($donnees = mysqli_fetch_array($result)) {
 
-                                echo $donnees['nomSport'] . " ( "  . $donnees['duree']. " minutes)" ." <a href='deleteSport.php?idSport=";
+                                echo $donnees['nomSport'] . " ( "  . $donnees['duree']. " minutes )" ." <a href='deleteSport.php?idSport=";
                                 echo $donnees['idSport'] . "'";
                                 echo "><i class='fas fa-trash'></i></a>";
                                
