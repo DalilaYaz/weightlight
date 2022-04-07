@@ -15,7 +15,7 @@ if (isset($_GET['logout'])) {
 }
 
 if (isset($_POST['submit'])) {
-    if (preg_match("/[a-z]/i", $_POST['nomSport'])) {
+    if (preg_match("/^[a-zA-Z]+$/", $_POST['nomSport'])) {
         $nomSport = $_POST['nomSport'];
         $duree = $_POST['duree'];
 
@@ -45,7 +45,7 @@ if (isset($_POST['submit'])) {
 
         $db->close();
     }else {
-        echo "<script>alert('Please enter a valid nomSport')</script>";
+        echo "<script>alert('Nom de sport invalide, veuillez réessayer !')</script>";
     }
 } 
 
@@ -78,11 +78,11 @@ if (isset($_POST['submit'])) {
             <form action="" method="POST">
                 <div class="field">
                     <label for="nomSport">Nom du Sport</label> <br>
-                    <input type="text" name="nomSport" id="nomSport">
+                    <input type="text" name="nomSport" id="nomSport" required>
                 </div>
                 <div class="field">
                     <label for="duree">Durée</label> <br>
-                    <input type="number" name="duree" id="duree">
+                    <input type="number" name="duree" id="duree" required>
                 </div>
                 <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>
 
