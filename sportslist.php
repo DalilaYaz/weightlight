@@ -44,10 +44,10 @@ if (isset($_POST['submit'])) {
         }
 
         $db->close();
+    }else {
+        echo "<script>alert('Please enter a valid nomSport')</script>";
     }
-} else {
-    echo "<script>alert('Please enter a valid nomSport')</script>";
-}
+} 
 
 
 
