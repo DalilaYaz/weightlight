@@ -348,19 +348,19 @@ if (isset($_GET['logout'])) {
                             $IMC = $donnees['poids'] / $taille_2;
                             echo number_format($IMC, 1);
                             if ($IMC < 18) {
-                                echo " ( maigre )";
+                                echo " ( Maigre )";
                             }
                             if ($IMC > 18 && $IMC  <= 25) {
-                                echo " ( normale )";
+                                echo " ( Normal )";
                             }
                             if ($IMC > 25 && $IMC  <= 30) {
-                                echo " ( surpoids )";
+                                echo " ( Surpoids )";
                             }
                             if ($IMC > 30 && $IMC  <= 35) {
-                                echo " ( obésité )";
+                                echo " ( Obésité )";
                             }
                             if ($IMC > 35 ) {
-                                echo " ( obésité sévère )";
+                                echo " ( Obésité sévère )";
                             }
                         } ?> </p>
                 </div>
