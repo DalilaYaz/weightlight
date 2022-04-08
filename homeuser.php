@@ -338,15 +338,15 @@ if (isset($_GET['logout'])) {
                         <?php $search_query = "SELECT  taille FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
-                            echo $donnees['taille'];
-                        } ?> cm </p>
+                            echo number_format(($donnees['taille'] / 100), 2 );
+                        } ?> m </p>
                     <p class="weight">IMC :
                         <?php $search_query = "SELECT poids, taille FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
                             $taille_2 =  ($donnees['taille'] / 100) *  ($donnees['taille'] / 100);
                             $IMC = $donnees['poids'] / $taille_2;
-                            echo $IMC;
+                            echo number_format($IMC, 1);
                             if ($IMC < 18) {
                                 echo " ( maigre )";
                             }
