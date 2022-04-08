@@ -171,7 +171,6 @@ if (isset($_GET['logout'])) {
                             } ?> kg </p>
                         <a href="modifyPoids.php"><i class="fas fa-edit"></i></a>
                     </div>
-
                 </div>
 
                 <div class="mg">
@@ -332,14 +331,38 @@ if (isset($_GET['logout'])) {
                                 echo "<br>";
                             }
                         }
-
-
-
-
                         ?>
 
                     </p>
-
+                    <p class="weight">Taille :
+                        <?php $search_query = "SELECT  taille FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            echo $donnees['taille'];
+                        } ?> cm </p>
+                    <p class="weight">IMC :
+                        <?php $search_query = "SELECT poids, taille FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
+                        $result = mysqli_query($db, $search_query);
+                        while ($donnees = mysqli_fetch_array($result)) {
+                            $taille_2 =  ($donnees['taille'] / 100) *  ($donnees['taille'] / 100);
+                            $IMC = $donnees['poids'] / $taille_2;
+                            echo $IMC;
+                            if ($IMC < 18) {
+                                echo " ( maigre )";
+                            }
+                            if ($IMC > 18 && $IMC  <= 25) {
+                                echo " ( normale )";
+                            }
+                            if ($IMC > 25 && $IMC  <= 30) {
+                                echo " ( surpoids )";
+                            }
+                            if ($IMC > 30 && $IMC  <= 35) {
+                                echo " ( obésité )";
+                            }
+                            if ($IMC > 35 ) {
+                                echo " ( obésité sévère )";
+                            }
+                        } ?> </p>
                 </div>
             </div>
 
