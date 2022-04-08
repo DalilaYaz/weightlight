@@ -339,7 +339,10 @@ if (isset($_GET['logout'])) {
                         $result = mysqli_query($db, $search_query);
                         while ($donnees = mysqli_fetch_array($result)) {
                             echo number_format(($donnees['taille'] / 100), 2 );
-                        } ?> m </p>
+                        } ?> m
+                    <a href="modifyTaille.php"><i class="fas fa-edit"></i></a>  
+                    </p>
+
                     <p class="weight">IMC :
                         <?php $search_query = "SELECT poids, taille FROM utilisateur WHERE email = '{$_SESSION['email']}'  ";
                         $result = mysqli_query($db, $search_query);
