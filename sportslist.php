@@ -14,39 +14,39 @@ if (isset($_GET['logout'])) {
     header("location: login.php");
 }
 
-if (isset($_POST['submit'])){ 
+if (isset($_POST['submit'])) {
     if (preg_match("/^[a-zA-Z]+$/", $_POST['nomSport'])) {
-    $nomSport = $_POST['nomSport'];
-    $duree = $_POST['duree'];
+        $nomSport = $_POST['nomSport'];
+        $duree = $_POST['duree'];
 
-    $sql = "INSERT INTO `sport`(`nomSport`, `duree`) VALUES ('$nomSport','$duree')";
-    $result = $db->query($sql);
+        $sql = "INSERT INTO `sport`(`nomSport`, `duree`) VALUES ('$nomSport','$duree')";
+        $result = $db->query($sql);
 
-    $search_query = "SELECT idSport,duree FROM sport WHERE nomSport = '$nomSport' AND idSport = ( SELECT MAX( idSport ) FROM sport )";
-    $result2 = mysqli_query($db, $search_query);
-    $array = array();
-    while ($donnees = mysqli_fetch_array($result2)) {
-        array_push($array, $donnees['idSport'], $donnees['duree']);
-    }
+        $search_query = "SELECT idSport,duree FROM sport WHERE nomSport = '$nomSport' AND idSport = ( SELECT MAX( idSport ) FROM sport )";
+        $result2 = mysqli_query($db, $search_query);
+        $array = array();
+        while ($donnees = mysqli_fetch_array($result2)) {
+            array_push($array, $donnees['idSport'], $donnees['duree']);
+        }
 
-    $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
-    $result_id = mysqli_query($db, $search_id);
-    while ($donnees = mysqli_fetch_array($result_id)) {
-        $idUser = $donnees['idUser'];
-    }
-    $sql2 = "INSERT INTO pratiquer VALUES ( $idUser , $array[0] , $array[1]  , CURRENT_DATE )";
-    $result3 = $db->query($sql2);
-    if ($result == TRUE) {
-        header('location: homeuser.php');
+        $search_id = "SELECT idUser FROM utilisateur WHERE email = '{$_SESSION['email']}'";
+        $result_id = mysqli_query($db, $search_id);
+        while ($donnees = mysqli_fetch_array($result_id)) {
+            $idUser = $donnees['idUser'];
+        }
+        $sql2 = "INSERT INTO pratiquer VALUES ( $idUser , $array[0] , $array[1]  , CURRENT_DATE )";
+        $result3 = $db->query($sql2);
+        if ($result == TRUE) {
+            header('location: homeuser.php');
+        } else {
+
+            echo "Error:" . $sql . "<br>" . $db->error;
+        }
+
+        $db->close();
     } else {
-
-        echo "Error:" . $sql . "<br>" . $db->error;
+        echo "<script>alert('Nom de sport invalide, veuillez réessayer !')</script>";
     }
-
-    $db->close();
-} else {
-    echo "<script>alert('Nom de sport invalide, veuillez réessayer !')</script>";
-}
 }
 
 
@@ -81,7 +81,7 @@ if (isset($_POST['submit'])){
                     <input type="text" name="nomSport" id="nomSport" required>
                 </div>
                 <div class="field">
-                    <label for="duree">Durée</label> <br>
+                    <label for="duree">Durée ( min )</label> <br>
                     <input type="number" name="duree" id="duree" required>
                 </div>
                 <button type="submit" name="submit" class="btnPrimary" value="Ajouter" id="submit">Ajouter</button>

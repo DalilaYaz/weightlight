@@ -15,7 +15,6 @@ if (isset($_GET['logout'])) {
 }
 $idType = $_GET['idType'];
 if (isset($_POST['submit'])) {
-  if (preg_match("/^[a-zA-Z\s]+$/", $_POST['intitule'])) {
     $intitule = $_POST['intitule'];
     $calories = $_POST['calories'];
 
@@ -47,9 +46,7 @@ if (isset($_POST['submit'])) {
     }
 
     $db->close();
-  } else {
-    echo "<script>alert('Nom de'aliment invalide, veuillez réessayer !')</script>";
-  }
+  
 }
 
 ?>
@@ -78,12 +75,12 @@ if (isset($_POST['submit'])) {
 
       <div class="field">
         <label for="intitule">Nom du repas</label> <br>
-        <input type="text" name="intitule" id="intitule">
+        <input type="text" name="intitule" id="intitule"required>
       </div>
 
       <div class="field">
         <label for="calories">Calories</label> <br>
-        <input type="number" name="calories" id="calories">
+        <input type="number" name="calories" id="calories" required>
       </div>
 
 

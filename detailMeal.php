@@ -62,7 +62,7 @@ if (isset($_GET['logout'])) {
                                                         echo $donnees['prenomUt'];
                                                     }
                                                     ?> </span></p>
-                    <p>vous avez consommé pendant ce repas :</p>
+
                 </div>
                 <?php
                 include('database.php');
@@ -78,18 +78,23 @@ if (isset($_GET['logout'])) {
 
                 $result = mysqli_query($db, $meal_query);
                 $array = array();
-                while ($donnees = mysqli_fetch_array($result)) {
-                    array_push($array, $donnees['calories']);
-
-                    echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>";
-                    echo " <a href='modifyMeal.php?idRepas=";
-                    echo $donnees['idRepas'] . "'";
-                    echo "><i class='fas fa-edit'></i></a>";
-                    echo "</p>";
+                if ($result->num_rows == 0) {
+                    echo " Vous n'avez rien consommé durant ce repas";
+                } else {
+                    while ($donnees = mysqli_fetch_array($result)) {
+                        array_push($array, $donnees['calories']);
+                        echo "<p>vous avez consommé pendant ce repas :</p>";
+                        echo "<p> 👉 " . $donnees['intitule'] . " ( " . $donnees['calories'] . " kcal )" . " <a href='deleteMeal.php?idRepas={$donnees['idRepas']}'><i class='fas fa-trash'></i></a>";
+                        echo " <a href='modifyMeal.php?idRepas=";
+                        echo $donnees['idRepas'] . "'";
+                        echo "><i class='fas fa-edit'></i></a>";
+                        echo "</p>";
+                    }
                 }
                 $sum = array_sum($array);
                 ?>
-                <p>Total de la journée : <span class="green"><?php echo $sum ?> Kcal </span> obtenu pendant votre repas.</p>
+                
+                <p><br/>Total du repas : <span class="green"><?php echo $sum ?> Kcal </span> obtenu.</p>
             </div>
         </div>
     </main>

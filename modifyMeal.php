@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
     $idRepas  = $_GET['idRepas'];
     $intitule = $_POST['intitule'];
     $calories = $_POST['calories'];
-    if (preg_match("/^[a-zA-Z\s]+$/", $intitule)) {
+    
         $sql = "UPDATE repas 
     SET intitule = '{$intitule}',calories = '{$calories}'
     WHERE idRepas = {$_GET['idRepas']}";
@@ -33,9 +33,6 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
         }
 
         $db->close();
-    } else {
-        echo "<script>alert('Nom d'aliment invalide, veuillez réessayer !')</script>";
-    }
 }
 ?>
 
@@ -81,7 +78,7 @@ if (isset($_POST['submit']) && isset($_GET['idRepas'])) {
             <div class="field">
                 <label for="calories">Calories ( kcal )</label> <br>
                 <?php
-                echo "<input type='text' name='calories' id='calories' value='";
+                echo "<input type='number' name='calories' id='calories' value='";
                 $sql = "SELECT calories
                         FROM repas
                         WHERE idRepas = {$_GET['idRepas']}";
